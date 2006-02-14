@@ -228,7 +228,7 @@ a:hover {
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
-  color:__cHeadline__;
+  color:__HeadlineColor__;
   text-decoration:none;
 }
 
@@ -809,11 +809,11 @@ dl.img_tags dt {
   background-color: __medium__;
 }
 dl.img_tags dd {
-  background-color: __lightgrey__;
+  background-color: __lightgray__;
 }
 
 div.imagemeta {
-  color: __darkgrey__;
+  color: __darkgray__;
   font-size: __FontSize__;
   line-height: 95%;
 }
