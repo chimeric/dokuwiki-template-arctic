@@ -377,7 +377,7 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover
-{ text-decoration:none; }
+{ text-decoration:none; color: __HeadlineColor__; }
 
 /* special headlines */
 h1 {margin-left: 0px; font-size: __FontSizeH1__; border-bottom:1px solid __cLightBoarder__;}
