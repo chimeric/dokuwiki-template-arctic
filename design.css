@@ -257,14 +257,15 @@ a.windows:hover {
 
 /* interwiki link */
 a.interwiki{
+  color: __cInterwikiLink__;
   padding-left: 16px;
-  color:#436976;
   text-decoration:none;
 }
 a.interwiki:visited {
-  color:#436976;
+  color: __cInterwikiLink__;
 }
 a.interwiki:hover {
+  color: __cInterwikiLinkHover__;
   text-decoration:underline;
 }
 
