@@ -363,6 +363,22 @@ h1, h2, h3, h4, h5 {
   clear: left;
 }
 
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a
+{ color: __HeadlineColor__; }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a:hover
+{ text-decoration:none; }
+
 /* special headlines */
 h1 {margin-left: 0px; font-size: __FontSizeH1__; border-bottom:1px solid __cLightBoarder__;}
 h2 {margin-left: 4px; font-size: __FontSizeH2__; border-bottom:1px solid __cLightBoarder__;}
