@@ -33,12 +33,12 @@
 }
 
 .pagename a:link, .pagename a:visited {
-  color:#436976;
+  color:__PageNameColor__;
   text-decoration:none;
 }
 
 .pagename a:hover, .pagename a:active {
-  color:#FF9933;
+  color:__PageNameColor__;
 }
 
 .logo {
@@ -115,7 +115,7 @@ div.meta div.doc{
 
 div.uploadform {
   margin-top: 0.5em;
-  border-top: 1px solid #8cacbb;
+  border-top: 1px solid __dark__;
 }
 
 .mediaselect-left {
@@ -126,7 +126,7 @@ div.uploadform {
 
 .mediaselect-right {
   float:right;
-  border-left: 1px solid #8cacbb;
+  border-left: 1px solid __dark__;
   padding: 0.5em;
   width:65%;
 }
@@ -140,7 +140,7 @@ div.mediaref .search_result {
 }
 
 .mediaref_ref {
-	color:#009900;
+	color:__existing__;
 }
 
 div.mediaref_hidden {

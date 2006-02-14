@@ -104,7 +104,8 @@ div.searchform {
   margin-bottom: 0.2em;
 }
 
-label {
+label.block {
+  display:block;
   text-align: right;
   font-weight: bold;
 }
@@ -114,7 +115,7 @@ label.simple {
   font-weight: normal;
 }
 
-label input.edit {
+label.block input.edit {
   width: 50%;
 }
 
@@ -129,7 +130,7 @@ textarea.edit {
   font-family:monospace;
   border: 1px solid __cFormBoarder__;  
   color: __FontColor__;
-  background-color: #fdfdfd;
+  background-color: __white__;
   font-size:__FontSize__;
   padding: 3px;
   width:99%;
@@ -224,6 +225,11 @@ a {
 a:hover {
   color:__cLinkHover__;
   text-decoration:underline;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
+  color:__cHeadline__;
+  text-decoration:none;
 }
 
 /* external link */
@@ -364,22 +370,6 @@ h1, h2, h3, h4, h5 {
   clear: left;
 }
 
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a
-{ color: __HeadlineColor__; }
-
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover
-{ text-decoration:none; color: __HeadlineColor__; }
-
 /* special headlines */
 h1 {margin-left: 0px; font-size: __FontSizeH1__; border-bottom:1px solid __cLightBoarder__;}
 h2 {margin-left: 4px; font-size: __FontSizeH2__; border-bottom:1px solid __cLightBoarder__;}
@@ -398,7 +388,7 @@ div.level5 {margin-left: 16px;}
 ul { 
   line-height: 1.5em;
   list-style-type: square;
-  color: #638c9c;
+  color: __darker__;
   font-size:__FontSize__;
   margin: 0 0 0.5em 2em;
   padding: 0;
@@ -411,7 +401,7 @@ ol {
   line-height: 1.5em;
   margin: 0 0 0.5em 2.5em;
   padding: 0;
-  color: #638c9c;
+  color: __darker__;
   font-weight: bold;
   list-style-image: none;
 }
@@ -445,18 +435,18 @@ blockquote {
 /* code blocks by indention */
 pre.pre {
   padding: 0.5em;
-  border: 1px dashed #8cacbb;
+  border: 1px dashed __dark__;
   color: __FontColor__;
-  background-color: #f7f9fa;
+  background-color: __lighter__;
   overflow: auto;
 }
 
 /* code blocks by code tag */
 pre.code {
   padding: 0.5em;
-  border: 1px dashed #c3c3c3;
+  border: 1px dashed __dark__;
   color: __FontColor__;
-  background-color: #fdfdfd;
+  background-color: __lighter__;
   overflow: auto !important;
   overflow: scroll;
   width:98%;
@@ -470,29 +460,29 @@ code {
 /* code blocks by file tag */
 pre.file {
   padding: 0.5em;
-  border: 1px dashed #8cacbb;
+  border: 1px dashed __dark__;
   color: __FontColor__;
-  background-color: #dee7ec;
+  background-color: __medium__;
   overflow: auto;
   width:98%;
 }
 
 /* inline tables */
 table.inline {
-  background-color: #ffffff;
+  background-color: __white__;
   border-spacing: 0px;
   border-collapse: collapse;
 }
 
 table.inline th {
   padding: 3px;
-  border: 1px solid #8cacbb;
-  background-color: #dee7ec;
+  border: 1px solid __dark__;
+  background-color: __medium__;
 }
 
 table.inline td {
   padding: 3px;
-  border: 1px solid #8cacbb;
+  border: 1px solid __dark__;
 }
 
 .leftalign{
@@ -576,10 +566,10 @@ a.toc:hover {
 }
 
 /* ---------------------------- Diff rendering --------------------------*/
-table.diff { background:#fdfdfd; }
+table.diff { background:__white__; }
 td.diff-blockheader {font-weight:bold}
 td.diff-header {
-  border-bottom: 1px solid #8cacbb;
+  border-bottom: 1px solid __dark__;
   font-size:__FontSize__;
 }
 td.diff-addedline {
@@ -627,8 +617,8 @@ a.fn_bot{
 div.insitu-footnote {
   font-size: __FontSize__;
   line-height: 1.2em;
-  border: 1px solid #8cacbb;
-  background: #eef3f8;
+  border: 1px solid __dark__;
+  background: __light__;
   text-align: left;
   padding: 4px;
   max-width: 40%;    /* IE's width is handled in javascript */  
@@ -647,18 +637,18 @@ div.insitu-footnote {
 }
 
 .search_snippet{
-  color: #999999;
+  color: __mediumgray__;
   font-size: __FontSize__;
   margin-left: 20px;
 }
 
 .search_sep{
-  color: #000000;
+  color: __black__;
 }
 
 .search_hit{
-  color: #000000;
-  background: #FFFF99;
+  color: __black__;
+  background: __highlight__;
 }
 
 div.search_quickresult{
@@ -666,7 +656,7 @@ div.search_quickresult{
   padding-bottom: 5px;
   margin-left: 8px;
   padding-right: 10px;
-  background: url(images/hborder.jpg) repeat-x 0px 15px;
+  border-bottom: 1px dashed __cDarkBoarder__;
 }
 
 ul.search_quickhits {
@@ -723,8 +713,8 @@ div.ajax_qsearch {
   /*opacity: 0.9;*/
   display:none;
   font-size: __FontSize__;
-  border: 1px solid #8cacbb;
-  background: #fff6dc;
+  border: 1px solid __dark__;
+  background: __light__;
   text-align: left;
   padding: 4px;
 }
@@ -750,7 +740,7 @@ button.toolbutton{
 div.picker {
   width: 250px;
   border: 1px solid __cFormBoarder__;
-  background: #f8f8f8;
+  background: __light__;
 }
 
 button.pickerbutton {
@@ -774,9 +764,9 @@ div#spell_suggest {
   left: 0;
   top: 0;
   display: none;
-  background-color: #fdfdfd;
+  background-color: __white__;
   padding: 2px;
-  border: 1px solid #000;
+  border: 1px solid __black__;
   font-size:__FontSize__;
   z-index: 2;
 }
@@ -792,10 +782,10 @@ div#spell_result {
   overflow: auto;
   z-index: 1;
 
-  /*#fdfdfd-space: pre-wrap;       /* css-3 */
-  /*#fdfdfd-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  /*#fdfdfd-space: -pre-wrap;      /* Opera 4-6 */
-  /*#fdfdfd-space: -o-pre-wrap;    /* Opera 7 */
+  /*__white__-space: pre-wrap;       /* css-3 */
+  /*__white__-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  /*__white__-space: -pre-wrap;      /* Opera 4-6 */
+  /*__white__-space: -o-pre-wrap;    /* Opera 7 */
   /*word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
@@ -816,14 +806,14 @@ div.img_big {
 
 dl.img_tags dt {
   font-weight: bold;
-  background-color: #dee7ec;
+  background-color: __medium__;
 }
 dl.img_tags dd {
-  background-color: #f5f5f5;
+  background-color: __lightgrey__;
 }
 
 div.imagemeta {
-  color: #666;
+  color: __darkgrey__;
   font-size: __FontSize__;
   line-height: 95%;
 }
