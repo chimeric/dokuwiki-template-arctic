@@ -1,0 +1,156 @@
+/**
+ * Tableless Layout for default template
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author moraes <moraes@tipos.com.br>
+ * additional editing by
+ * @author Michael Klier <chi@chimeric.de>
+ */
+
+
+/* -------------- top row --------------- */
+.header {
+  height:__heightHeader__;
+  border:1px solid __cDarkBoarder__;
+  background-color: __cWikiHeaderBg__;
+  margin:__marginHeader__;
+}
+
+.stylehead {
+  margin:0;
+}
+
+.stylefoot {
+  display:block;
+  border-top:1px solid __cLightBoarder__;
+  border-bottom:1px solid __cLightBoarder__;
+  margin-top:10px;
+	font-weight:normal;
+	text-align:right;
+  padding:10px;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.pagename a:link, .pagename a:visited {
+  color:#436976;
+  text-decoration:none;
+}
+
+.pagename a:hover, .pagename a:active {
+  color:#FF9933;
+}
+
+.logo {
+	font-weight:normal;
+	text-align:right;
+  margin-right:7px;
+  margin-top:9px;
+}
+
+.logo a:link, .logo a:visited, .logo a:hover, .logo a:active {
+	color:__PageNameColor__;
+	text-decoration:none;
+	letter-spacing:2pt;
+  font-size:__FontSizePagename__;
+}
+
+/* ---------------  top and bottom bar ---------------- */
+.bar {
+	margin:0;
+}
+
+.bar a.interwiki {
+  font-size:11px;
+  background:none;
+  padding:0;
+  text-decoration:none;
+  margin:0;
+}
+
+#bar_top a.interwiki:hover {
+  color:__cWikiLink1__;
+}
+
+.bar-left {
+  text-align:left;
+  padding-left:3px;
+}
+
+.bar-right {
+  text-align:right;
+  padding-right:3px;
+}
+
+#bar_top {
+  display:block;
+  margin-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+  border-top:1px solid __cLightBoarder__;
+  border-bottom:1px solid __cLightBoarder__;
+}
+
+#bar_bottom {
+  display:block;
+  margin-bottom:3px;
+}
+
+/* ------------- File Metadata ----------------------- */
+
+div.meta {
+  clear: both;
+  color:__FontColor__;
+  font-size:__FontSize__;
+  text-align:right;
+}
+
+div.meta div.user {
+}
+
+div.meta div.doc{
+}
+
+/* ---------------  Media Selection  ----------------- */
+
+div.uploadform {
+  margin-top: 0.5em;
+  border-top: 1px solid #8cacbb;
+}
+
+.mediaselect-left {
+  float:left;
+  padding: 0.5em;
+  width:30%;
+}
+
+.mediaselect-right {
+  float:right;
+  border-left: 1px solid #8cacbb;
+  padding: 0.5em;
+  width:65%;
+}
+
+div.mediaref_head {
+	margin-left:0.5em;
+}
+
+div.mediaref .search_result {
+	padding-left:1em;
+}
+
+.mediaref_ref {
+	color:#009900;
+}
+
+div.mediaref_hidden {
+	margin-top:1em;
+	text-align:center;
+	font-size:1.2em;
+	color:#BB0000;
+}
+
+div.mediaref_footer {
+	margin-top:1em;
+	text-align:center;
+}
