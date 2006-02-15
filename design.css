@@ -447,9 +447,7 @@ pre.code {
   border: 1px dashed __dark__;
   color: __FontColor__;
   background-color: __lighter__;
-  overflow: auto !important;
-  overflow: scroll;
-  width:98%;
+  overflow: auto;
   line-height:140%;
 }
 
@@ -464,7 +462,6 @@ pre.file {
   color: __FontColor__;
   background-color: __medium__;
   overflow: auto;
-  width:98%;
 }
 
 /* inline tables */
