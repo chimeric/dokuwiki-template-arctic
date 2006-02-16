@@ -140,9 +140,9 @@ input.edit,select.edit {
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
   background-color: #fdfdfd;
-  vertical-align: middle;
   padding: 1px;
   display: inline;
+  font-size: __FontSizeButton__;
 }
 
 div.centeralign input.edit { margin-bottom:0.2em; }
@@ -157,7 +157,6 @@ input.missing {
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
   background-color: #ffcccc;
-  vertical-align: middle;
   padding: 1px;
   display: inline;
 }
@@ -168,20 +167,18 @@ input.button, button.button{
   border: 1px solid __cFormBoarder__;  
   color: __FontColor__;
   background-color: #fdfdfd;
-  vertical-align: middle;
   text-decoration:none;
   cursor: pointer;
   font-size:__FontSizeButton__;
-  margin: 1px;
   margin-left:0;
   display: inline;
+  font-size: __FontSizeButton__;
 }
 
 div.secedit input.button {
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
   background-color: #fdfdfd;
-  vertical-align: middle;
   text-decoration:none;
   margin: 0px;
   padding: 0px;

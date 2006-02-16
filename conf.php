@@ -25,10 +25,10 @@ $conf['tpl_arctic']['tb_link_separator']    = '&nbsp;&middot;&nbsp;';   // strin
 
 // define the order of the sidebars
 $conf['tpl_arctic']['sidebar_order']        = array( 
-                                                'mSb',  // MainSidebar 
-                                                'nSb',  // NamespaceSidebars
-                                                'gSb',  // GroupSidebars
                                                 'uSb',  // UserSidebars
+                                                'gSb',  // GroupSidebars
+                                                'nSb',  // NamespaceSidebars
+                                                'mSb',  // MainSidebar 
                                                 'bcr'   // Breadcrumbs
                                                 );  
 
