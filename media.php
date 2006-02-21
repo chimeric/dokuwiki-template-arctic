@@ -46,6 +46,7 @@
 			</div>
 		</div>
 
+    <div class="clearer"><div>
   </div>
 
 </div>

@@ -79,6 +79,8 @@
       </dl>
       <?php //Comment in for Debug// dbg(tpl_img_getTag('Simple.Raw'));?>
 		</div>
+    
+     <div class="clearer"></div>
 
   <?php } ?>
   </div>
