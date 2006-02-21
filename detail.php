@@ -23,17 +23,7 @@
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_BASE?>lib/images/favicon.ico" />
-  <link rel="stylesheet" media="screen" type="text/css" href="<?php echo DOKU_TPL?>layout.css" />
-  <link rel="stylesheet" media="screen" type="text/css" href="<?php echo DOKU_TPL?>design.css" />
-
-  <!--[if gte IE 5]>
-  <style type="text/css">
-    /* that IE 5+ conditional comment makes this only visible in IE 5+ */
-    /* IE bugfix for transparent PNGs */
-    //DISABLED img { behavior: url("<?php echo DOKU_BASE?>lib/scripts/pngbehavior.htc"); }
-  </style>
-  <![endif]-->
+  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 </head>
 
 <body>
@@ -43,8 +33,11 @@
   <div class="page">
 	  <?php if($ERROR){ print $ERROR; }else{ ?>
 
-	  <h1 style="background:none;"><?php echo hsc(tpl_img_getTag('IPTC.Headline',$IMG))?></h1>
+	  <h1><?php echo hsc(tpl_img_getTag('IPTC.Headline',$IMG))?></h1>
 
+	  <div class="img_big">
+	  	<?php tpl_img(900,700) ?>
+	  </div>
 
 		<div class="img_detail">
 		  <p class="img_caption">
@@ -88,9 +81,6 @@
 		</div>
 
   <?php } ?>
-	  <div class="img_big">
-	  	<?php tpl_img(900,700) ?>
-	  </div>
   </div>
 </div>
 </body>

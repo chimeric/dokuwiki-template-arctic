@@ -20,29 +20,20 @@
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_BASE?>lib/images/favicon.ico" />
-  <link rel="stylesheet" media="screen" type="text/css" href="<?php echo DOKU_TPL?>layout.css" />
-  <link rel="stylesheet" media="screen" type="text/css" href="<?php echo DOKU_TPL?>design.css" />
+  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 
-  <!--[if gte IE 5]>
-  <style type="text/css">
-    /* that IE 5+ conditional comment makes this only visible in IE 5+ */
-    /* IE bugfix for transparent PNGs */
-    //DISABLED img { behavior: url("<?php echo DOKU_BASE?>lib/scripts/pngbehavior.htc"); }
-  </style>
-  <![endif]-->
 </head>
 
 <body>
-<div class="dokuwiki" style="background:none; border:none;">
+<div class="dokuwiki">
   <?php html_msgarea()?>
 
-  <h1 style="background:none;"><?php echo hsc($lang['mediaselect'])?> <code style="background:none;"><?php echo hsc($NS)?></code></h1>
+  <h1><?php echo hsc($lang['mediaselect'])?> <code><?php echo hsc($NS)?></code></h1>
 
   <div class="mediaselect">
 
     <div class="mediaselect-left">
-      <b><a href="<?php echo DOKU_BASE?>lib/exe/media.php?ns="><?php echo hsc($lang['namespaces'])?></a></b>
+      <strong><a href="<?php echo DOKU_BASE?>lib/exe/media.php?ns="><?php echo hsc($lang['namespaces'])?></a></strong>
 
 			<?php tpl_medianamespaces()?>
 		</div>
@@ -60,4 +51,3 @@
 </div>
 </body>
 </html>
-
