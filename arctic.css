@@ -102,6 +102,8 @@ div.right_sidebar a.urlextern:visited
 {
   color:__cSidebarLink__;
   padding:0.2em;
+  background:none;
+  line-height:140%;
 }
 
 div.right_sidebar a.wikilink2:hover,
