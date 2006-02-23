@@ -170,7 +170,7 @@ input.button, button.button{
   text-decoration:none;
   cursor: pointer;
   font-size:__FontSizeButton__;
-  margin-left:0;
+  margin-left:1px;
   display: inline;
   font-size: __FontSizeButton__;
 }
@@ -495,8 +495,8 @@ table.inline td {
 
 div.toc {
   margin-left: 10px;
-  margin-bottom: 0;
-  margin-top:20px;
+  margin-bottom: 0.5em;
+  margin-top:0.5em;
   float:right;
   width: 25em;
   clear:both;
@@ -672,6 +672,7 @@ div.footerinc {
   margin:__marginFooter__;
   border:1px solid __cDarkBoarder__;
   background-color: __cWikiFooterBg__;
+  margin-top:0.5em;
 }
 
 .syndication {

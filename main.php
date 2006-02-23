@@ -19,6 +19,7 @@
  */
 
  require_once(dirname(__FILE__).'/tpl_functions.php');
+ $sep = $conf['tpl_arctic']['actionlink_separator'];
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
  lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
@@ -62,15 +63,39 @@
     <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
     </div>
 
-    <div class="bar" id="bar_top">
-      <?php if($conf['tpl_arctic']['position'] == 0) { ?>
-      <div class="bar-right">
-      <?php } else { ?>
-      <div class="bar-left">
-        <?php } ?>
-        <?php tpl_topbar() ?>
+    <div id="bar_top">
+        <div class="bar">
+          <div class="bar-left">
+            <?php 
+              if($conf['tpl_arctic']['use_buttons']) { 
+                tpl_button('edit');
+                tpl_button('history');     
+              } else {
+                tpl_actionlink('edit');
+                print ($sep);
+                tpl_actionlink('history');
+              } 
+            ?>
+          </div>
+          <div class="bar-right">
+            <?php
+              if($conf['tpl_arctic']['use_buttons']) {
+                tpl_button('admin');
+                tpl_button('recent');
+                tpl_button('index');
+                tpl_button('login');
+              } else {
+                tpl_actionlink('admin');
+                if(auth_quickaclcheck($ID) == 255) print ($sep);
+                tpl_actionlink('recent');
+                print ($sep);
+                tpl_actionlink('index');
+                print ($sep);
+                tpl_actionlink('login');
+              }
+            ?>
+          </div>
       </div>
-
   </div>
 
   <?php flush()?>
@@ -126,8 +151,34 @@
         <?php tpl_pageinfo()?>
       </div>
     </div>
-    <?php /*old includehook*/ @include(dirname(__FILE__).'/pagefooter.html')?>
   </div>
+
+  <div id="bar_bottom">
+    <div class="bar">
+      <div class="bar-left">
+        <?php 
+          if($conf['tpl_arctic']['use_buttons']) {
+              tpl_button('edit');
+              tpl_button('history');
+          } else {
+              tpl_actionlink('edit');
+              print ($sep);
+              tpl_actionlink('history');
+          }
+        ?>
+      </div>
+      <div class="bar-right">
+        <?php 
+          if($conf['tpl_arctic']['use_buttons']) {
+              tpl_button('top');
+          } else {
+              tpl_actionlink('top');
+          }
+        ?>
+      </div>
+    </div>
+  </div>
+
 
 <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 </div>
