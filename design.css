@@ -726,7 +726,7 @@ div.ajax_qsearch .bold {
 
 /* --------- Toolbar -------------------- */
 button.toolbutton{
-  background-color: #f8f8f8;
+  background-color: __white__;
   padding: 0px;
   margin: 0 1px 0 0;
   border: 1px solid __cFormBoarder__;
