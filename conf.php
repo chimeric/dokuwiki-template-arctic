@@ -8,7 +8,7 @@
  * @homepage:       http://www.chimeric.de
  */
 
-$conf['tpl_arctic']['enable_sidebar']       = false;                     // enable/disable sidebar
+$conf['tpl_arctic']['enable_sidebar']       = true;                     // enable/disable sidebar
 $conf['tpl_arctic']['pagename']             = 'sidebar';                // the pagename for sidebars inside namespaces
 $conf['tpl_arctic']['user_sidebar']         = true;                     // let users have their own sidebar
 $conf['tpl_arctic']['user_sidebarns']       = 'users';                  // namespace to look for namespace of logged in users
