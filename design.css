@@ -13,6 +13,7 @@ body {
   color: __FontColor__;
   margin:__marginBody__;
   line-height:__LineHeight__;
+  background:__cBodyBg__;
 }
 
 /* the document */
