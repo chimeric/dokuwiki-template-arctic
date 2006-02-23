@@ -713,6 +713,7 @@ div.ajax_qsearch {
   background: __light__;
   text-align: left;
   padding: 4px;
+  margin-top:0.2em;
 }
 
 div.ajax_qsearch .bold {
