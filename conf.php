@@ -23,7 +23,7 @@ $conf['tpl_arctic']['youarehere']           = false;                    // use y
 $conf['tpl_arctic']['position']             = 0;                        // 0=sidebar left 1=sidebar right
 
 $conf['tpl_arctic']['actionlink_separator'] = '&nbsp;&middot;&nbsp;';   // string to seperate the topbar-links
-$conf['tpl_arctic']['use_buttons']          = false;                     // use buttons instead of links
+$conf['tpl_arctic']['use_buttons']          = true;                    // use buttons instead of links
 
 // define the order of the sidebars
 $conf['tpl_arctic']['sidebar_order']        = array( 

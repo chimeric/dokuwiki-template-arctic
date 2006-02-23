@@ -140,7 +140,7 @@ textarea.edit {
 input.edit,select.edit {
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
-  background-color: #fdfdfd;
+  background-color: __white__;
   padding: 1px;
   display: inline;
   font-size: __FontSizeButton__;
@@ -154,7 +154,7 @@ input#qsearch_in {
 }
 
 input.missing {
-  font-size:__FontSize__;
+  font-size:__FontSizeButton__;
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
   background-color: #ffcccc;
@@ -167,19 +167,18 @@ input.missing {
 input.button, button.button{
   border: 1px solid __cFormBoarder__;  
   color: __FontColor__;
-  background-color: #fdfdfd;
+  background-color: __white__;
   text-decoration:none;
   cursor: pointer;
   font-size:__FontSizeButton__;
   margin-left:1px;
   display: inline;
-  font-size: __FontSizeButton__;
 }
 
 div.secedit input.button {
   border: 1px solid __cFormBoarder__;
   color: __FontColor__;
-  background-color: #fdfdfd;
+  background-color: __white__;
   text-decoration:none;
   margin: 0px;
   padding: 0px;
