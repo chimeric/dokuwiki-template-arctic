@@ -30,6 +30,7 @@ div.dokuwiki .pagename {
   margin-top:9px;
   font-size: __FontSizePagename__;
   color: __dark__;
+  float:left;
 }
 
 div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited {

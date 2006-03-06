@@ -183,7 +183,7 @@
               tpl_button('top');
           } else {
               tpl_actionlink('subscription');
-              if($conf['subscribers']) print ($sep);
+              if(isset($INFO['userinfo']['name']) && $ACT == 'show') print ($sep);
               tpl_actionlink('top');
           }
         ?>
