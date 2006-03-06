@@ -88,7 +88,6 @@
                 tpl_button('login');
               } else {
                 if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
-                print ($sep);
                 tpl_actionlink('admin');
                 if(auth_quickaclcheck($ID) == 255) print ($sep);
                 tpl_actionlink('profile');

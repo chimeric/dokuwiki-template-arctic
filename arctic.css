@@ -1,5 +1,5 @@
 /**
- * CSS for arctic-template
+ * extra CSS for arctic-template
  *
  * @author Michael Klier <chi@chimeric.de>
  */
@@ -29,6 +29,7 @@ div.dokuwiki div.right_sidebar h5,
 div.dokuwiki div.right_sidebar h6 
 {
   font-size:__FontSize__;
+  font-family: Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
   font-weight:bold;
   padding:0;
   padding-top:0.2em;
