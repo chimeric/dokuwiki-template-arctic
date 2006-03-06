@@ -82,6 +82,7 @@
               if($conf['tpl_arctic']['use_buttons']) {
                 if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
                 tpl_button('admin');
+                tpl_button('profile');
                 tpl_button('recent');
                 tpl_button('index');
                 tpl_button('login');
@@ -91,7 +92,7 @@
                 tpl_actionlink('admin');
                 if(auth_quickaclcheck($ID) == 255) print ($sep);
                 tpl_actionlink('profile');
-                print ($sep);
+                if(isset($INFO['userinfo']['name'])) print ($sep);
                 tpl_actionlink('recent');
                 print ($sep);
                 tpl_actionlink('index');
@@ -171,7 +172,6 @@
       <div class="bar-right">
         <?php 
           if($conf['tpl_arctic']['use_buttons']) {
-              tpl_button('profile');
               tpl_button('subscription');
               tpl_button('top');
           } else {
