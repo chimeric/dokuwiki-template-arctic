@@ -838,14 +838,6 @@ div.dokuwiki div#spell__result {
   font-size:__FontSize__;
   padding: 3px;
   background-color: __lighter__;
-  overflow: auto;
-  z-index: 1;
-
-  __white__-space: pre-wrap;       /* css-3 */
-  __white__-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-  __white__-space: -pre-wrap;      /* Opera 4-6 */
-  __white__-space: -o-pre-wrap;    /* Opera 7 */
-  word-wrap: break-word;           /* Internet Explorer 5.5+ */
 }
 
 div.dokuwiki span.spell_noerr {
