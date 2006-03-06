@@ -23,8 +23,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
  lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title><?php tpl_pagetitle()?> [<?php echo hsc($conf['title'])?>]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <?php tpl_metaheaders()?>
 
@@ -42,7 +42,7 @@
   <div class="stylehead">
     <div class="header">
       <div class="logo">
-        <?php tpl_link(wl(),$conf['title'],'name="top" accesskey="h" title="[ALT+H]"') ?>
+        <?php tpl_link(wl(),$conf['title'],'name="top" accesskey="h" title="[ALT+H]"')?>
       </div>
     </div>
   
@@ -100,31 +100,44 @@
   <?php if($conf['tpl_arctic']['enable_sidebar']) { ?>
     <?php if($conf['tpl_arctic']['position'] == 0) { ?>
 
-      <div class="left_sidebar">
+      <?php if($ACT != 'diff') { ?>
+        <div class="left_sidebar">
           <?php tpl_searchform() ?>
           <?php tpl_sidebar() ?>
-      </div>
-      <div class="right_page">
-        <?php tpl_content()?>
-      </div>
+        </div>
+        <div class="right_page">
+          <?php tpl_content()?>
+        </div>
+      <? } else { ?>
+        <div class="page">
+          <?php tpl_content()?> 
+        </div> 
+      <? } ?>
 
     <?php } else { ?>
 
-      <div class="left_page">
-        <?php tpl_content()?>
-      </div>
-
-      <div class="right_sidebar">
+      <?php if($ACT != 'diff') { ?>
+        <div class="left_page">
+          <?php tpl_content()?>
+        </div>
+        <div class="right_sidebar">
           <?php tpl_searchform() ?>
           <?php tpl_sidebar() ?>
-      </div>
-      
+        </div>
+      <? } else { ?>
+        <div class="page">
+          <?php tpl_content()?> 
+        </div> 
+      <? } ?>
+
     <?php } ?>
 
   <?php } else { ?>
 
     <div class="page">
+    <!-- wikipage start -->
       <?php tpl_content() ?>
+    <!-- wikipage stop -->
     </div>
 
   <?php } ?>

@@ -16,7 +16,7 @@ include(DOKU_TPLINC.'default.php');
  * @author Michael Klier <chi@chimeric.de>
  */
 function tpl_sidebar() {
-    global $conf, $ID, $REV, $INFO,$lang;
+    global $conf, $ID, $REV, $INFO, $lang;
    
     $OP    = array(); 
     $SbPn  = $conf['tpl_arctic']['pagename'];
