@@ -14,8 +14,7 @@
  * @author Andreas Gohr <andi@splitbrain.org>
  * additional editing by
  * @author Michael Klier <chi@chimeric.de>
- *
- * Last update: 2006-01-18
+ * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
  */
 
  require_once(dirname(__FILE__).'/tpl_functions.php');
@@ -166,7 +165,7 @@
               tpl_button('top');
           } else {
               tpl_actionlink('subscription');
-              print ($sep);
+              if($conf['subscribers']) print ($sep);
               tpl_actionlink('top');
           }
         ?>
