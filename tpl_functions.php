@@ -8,7 +8,7 @@
  * @homepage:       http://www.chimeric.de
  */
 
-require_once('conf.php');
+include(DOKU_TPLINC.'default.php');
 
 /**
  * fetches the sidebar-pages and displays the sidebar
