@@ -25,27 +25,37 @@ div.dokuwiki .stylefoot {
   padding-right:0.8em;
 }
 
+div.dokuwiki .pagename {
+  margin-left:7px;
+  margin-top:9px;
+  font-size: __FontSizePagename__;
+  color: __dark__;
+}
+
 div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited {
   color:__PageNameColor__;
   text-decoration:none;
+  font-size: __FontSizePagename__;
 }
 
 div.dokuwiki .pagename a:hover, div.dokuwiki .pagename a:active {
   color:__PageNameColor__;
+  font-size: __FontSizePagename__;
 }
 
 div.dokuwiki .logo {
   font-weight:normal;
   text-align:right;
+  float:right;
   margin-right:7px;
   margin-top:9px;
 }
 
 div.dokuwiki .logo a:link, div.dokuwiki .logo a:visited, div.dokuwiki .logo a:hover, div.dokuwiki .logo a:active {
-  color:__PageNameColor__;
+  color:__LogoColor__;
   text-decoration:none;
   letter-spacing:2pt;
-  font-size:__FontSizePagename__;
+  font-size:__FontSizeLogo__;
 }
 
 /* ---------------  top and bottom bar ---------------- */

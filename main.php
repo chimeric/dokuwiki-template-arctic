@@ -15,6 +15,8 @@
  * additional editing by
  * @author Michael Klier <chi@chimeric.de>
  * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
+ *
+ * Setup vim: ts=2 sw=2:
  */
 
  require_once(dirname(__FILE__).'/tpl_functions.php');
@@ -41,6 +43,9 @@
 
   <div class="stylehead">
     <div class="header">
+      <div class="pagename">
+        [[<?php tpl_link(wl($ID,'do=backlink'),$ID)?>]]
+      </div>
       <div class="logo">
         <?php tpl_link(wl(),$conf['title'],'name="top" accesskey="h" title="[ALT+H]"')?>
       </div>
