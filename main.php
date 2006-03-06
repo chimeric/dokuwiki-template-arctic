@@ -29,7 +29,7 @@
 
   <?php tpl_metaheaders()?>
 
-  <link rel="shortcut icon" href="<?php echo DOKU_BASE?>lib/images/favicon.ico" />
+  <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 
   <!--[if IE]>
   <style type="text/css">
@@ -80,13 +80,18 @@
           <div class="bar-right">
             <?php
               if($conf['tpl_arctic']['use_buttons']) {
+                if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
                 tpl_button('admin');
                 tpl_button('recent');
                 tpl_button('index');
                 tpl_button('login');
               } else {
+                if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
+                print ($sep);
                 tpl_actionlink('admin');
                 if(auth_quickaclcheck($ID) == 255) print ($sep);
+                tpl_actionlink('profile');
+                print ($sep);
                 tpl_actionlink('recent');
                 print ($sep);
                 tpl_actionlink('index');
@@ -106,9 +111,7 @@
     <?php if($conf['tpl_arctic']['position'] == 0) { ?>
 
       <div class="left_sidebar">
-        <div class="searchform">
           <?php tpl_searchform() ?>
-        </div>
           <?php tpl_sidebar() ?>
       </div>
       <div class="right_page">
@@ -122,9 +125,7 @@
       </div>
 
       <div class="right_sidebar">
-        <div class="searchform">
           <?php tpl_searchform() ?>
-        </div>
           <?php tpl_sidebar() ?>
       </div>
       
@@ -170,8 +171,12 @@
       <div class="bar-right">
         <?php 
           if($conf['tpl_arctic']['use_buttons']) {
+              tpl_button('profile');
+              tpl_button('subscription');
               tpl_button('top');
           } else {
+              tpl_actionlink('subscription');
+              print ($sep);
               tpl_actionlink('top');
           }
         ?>
@@ -183,7 +188,7 @@
 <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 </div>
 
-<?php tpl_indexerWebBug();?>
+<div class="no"><?php tpl_indexerWebBug();?></div>
 
 </body>
 </html>

@@ -9,6 +9,7 @@
  */
 
 $conf['tpl_arctic']['enable_sidebar']       = true;                     // enable/disable sidebar
+$conf['tpl_arctic']['position']             = 0;                        // 0=sidebar left 1=sidebar right
 $conf['tpl_arctic']['pagename']             = 'sidebar';                // the pagename for sidebars inside namespaces
 $conf['tpl_arctic']['user_sidebar']         = true;                     // let users have their own sidebar
 $conf['tpl_arctic']['user_sidebarns']       = 'users';                  // namespace to look for namespace of logged in users
@@ -18,9 +19,7 @@ $conf['tpl_arctic']['namespace_sidebar']    = true;                     // enabl
 
 $conf['tpl_arctic']['breadcrumbs']          = true;                     // show the trace
 $conf['tpl_arctic']['breadcrumbs_top']      = true;                     // show trace on top
-$conf['tpl_arctic']['breadcrumbs_sb']	    = false;                    // show trace inside sidebar
-$conf['tpl_arctic']['youarehere']           = false;                    // use you-are-here-styled trace
-$conf['tpl_arctic']['position']             = 0;                        // 0=sidebar left 1=sidebar right
+$conf['tpl_arctic']['breadcrumbs_sb']	      = false;                    // show trace inside sidebar
 
 $conf['tpl_arctic']['actionlink_separator'] = '&nbsp;&middot;&nbsp;';   // string to seperate the topbar-links
 $conf['tpl_arctic']['use_buttons']          = false;                    // use buttons instead of links
@@ -34,5 +33,5 @@ $conf['tpl_arctic']['sidebar_order']        = array(
                                                 'bcr'   // Breadcrumbs
                                                 );  
 
-//Setup: vim enc=utf-8 tb=4
+//Setup vim: ts=2 sw=2:
 ?>

@@ -9,41 +9,39 @@
 
 
 /* -------------- top row --------------- */
-.header {
+div.dokuwiki .header {
   height:__heightHeader__;
   border:1px solid __cDarkBoarder__;
   background-color: __cWikiHeaderBg__;
   margin:__marginHeader__;
 }
 
-.stylehead {
+div.dokuwiki .stylehead {
   margin:0;
 }
 
-.stylefoot {
+div.dokuwiki .stylefoot {
   text-align:right;
-  padding:0.5em;
-  margin-left:10px;
-  margin-right:10px;
+  padding-right:0.8em;
 }
 
-.pagename a:link, .pagename a:visited {
+div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited {
   color:__PageNameColor__;
   text-decoration:none;
 }
 
-.pagename a:hover, .pagename a:active {
+div.dokuwiki .pagename a:hover, div.dokuwiki .pagename a:active {
   color:__PageNameColor__;
 }
 
-.logo {
+div.dokuwiki .logo {
   font-weight:normal;
   text-align:right;
   margin-right:7px;
   margin-top:9px;
 }
 
-.logo a:link, .logo a:visited, .logo a:hover, .logo a:active {
+div.dokuwiki .logo a:link, div.dokuwiki .logo a:visited, div.dokuwiki .logo a:hover, div.dokuwiki .logo a:active {
   color:__PageNameColor__;
   text-decoration:none;
   letter-spacing:2pt;
@@ -51,7 +49,7 @@
 }
 
 /* ---------------  top and bottom bar ---------------- */
-.bar {
+div.dokuwiki .bar {
   border-top:1px solid __cLightBoarder__;
   border-bottom:1px solid __cLightBoarder__;
   padding-top:0.2em;
@@ -62,22 +60,23 @@
   width:100%;
 }
 
-.bar-left {
+div.dokuwiki .bar-left {
   float:left;
 }
 
-.bar-right {
+div.dokuwiki .bar-right {
   float:right;
 }
 
-#bar_top { 
+div.dokuwiki #bar_top { 
   padding-left:0.8em; 
   padding-right:0.8em; 
+  padding-bottom:0.8em;
   margin-bottom:0.5em;
   height:2em;
 }
 
-#bar_bottom {
+div.dokuwiki #bar_bottom {
   padding-left:0.8em; 
   padding-right:0.8em; 
   height:2em;
@@ -85,57 +84,59 @@
 
 /* ------------- File Metadata ----------------------- */
 
-div.meta {
+div.dokuwiki div.meta {
   color:__FontColor__;
   font-size:__FontSize__;
 }
 
-div.meta div.user {
+div.dokuwiki div.meta div.user {
+  display:inline;
 }
 
-div.meta div.doc{
+div.dokuwiki div.meta div.doc{
+  display:inline;
 }
 
 /* ---------------  Media Selection  ----------------- */
 
-div.uploadform {
+div.dokuwiki div.uploadform {
   margin-top: 0.5em;
   border-top: 1px solid __dark__;
 }
 
-.mediaselect-left {
+div.dokuwiki .mediaselect-left {
   float:left;
   padding: 0.5em;
   width:30%;
 }
 
-.mediaselect-right {
+div.dokuwiki .mediaselect-right {
   float:right;
   border-left: 1px solid __dark__;
   padding: 0.5em;
   width:65%;
 }
 
-div.mediaref_head {
+div.dokuwiki div.mediaref_head {
 	margin-left:0.5em;
 }
 
-div.mediaref .search_result {
+div.dokuwiki div.mediaref .search_result {
 	padding-left:1em;
 }
 
-.mediaref_ref {
+div.dokuwiki .mediaref_ref {
 	color:__existing__;
 }
 
-div.mediaref_hidden {
+div.dokuwiki div.mediaref_hidden {
 	margin-top:1em;
 	text-align:center;
 	font-size:1.2em;
 	color:#BB0000;
 }
 
-div.mediaref_footer {
+div.dokuwiki div.mediaref_footer {
 	margin-top:1em;
 	text-align:center;
 }

@@ -4,8 +4,6 @@
  *
  * License: GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
- * @version: 0.6 2005-01-18
- * 
  * @author:         Michael Klier <chi@chimeric.de>
  * @homepage:       http://www.chimeric.de
  */
@@ -64,12 +62,15 @@ function tpl_sidebar() {
             if($found) $OP['nSb'] = '<div class="ns_sidebar">'.p_sidebar_xhtml($nSb).'</div>';
         }
     }
+
+    $ID = $svID;
+    $REV = $svREV;
     
     foreach($conf['tpl_arctic']['sidebar_order'] as $Sb) {
         if($Sb == 'bcr') {
             if($conf['tpl_arctic']['breadcrumbs'] && $conf['tpl_arctic']['breadcrumbs_sb']) {
                 echo '<div class="bc_sidebar"><h1>'.$lang['breadcrumb'].'</h1><div class="breadcrumbs">';
-                if($conf['tpl_arctic']['youarehere']) {
+                if($conf['youarehere']) {
                     tpl_youarehere();
                 } else {
                     tpl_breadcrumbs();
@@ -80,9 +81,6 @@ function tpl_sidebar() {
             print $OP[$Sb];
         }
     }
-
-    $ID = $svID;
-    $REV = $svREV;
 }
 
 /**
@@ -97,4 +95,6 @@ function p_sidebar_xhtml($Sb) {
     }
     return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
 }
+
+//Setup vim: ts=4 sw=4:
 ?>

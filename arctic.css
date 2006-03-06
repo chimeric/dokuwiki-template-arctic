@@ -4,154 +4,67 @@
  * @author Michael Klier <chi@chimeric.de>
  */
 
-div.left_sidebar div.secedit,
-div.right_sidebar div.secedit {
-  text-align:right;
+div.dokuwiki div.left_sidebar div.secedit,
+div.dokuwiki div.right_sidebar div.secedit {
+    text-align:right;
 }
 
-div.left_sidebar div.secedit input.button,
-div.right_sidebar div.secedit input.button {
-  float:none;
-  margin:0.1em;
+div.dokuwiki div.left_sidebar div.secedit input.button,
+div.dokuwiki div.right_sidebar div.secedit input.button {
+    float:none;
+    margin:0.1em;
 }
 
-/** LEFT-SIDEBAR **/
-div.left_sidebar a.wikilink2:link,
-div.left_sidebar a.wikilink2:active,
-div.left_sidebar a.wikilink2:visited,
-div.left_sidebar a.wikilink1:link,
-div.left_sidebar a.wikilink1:active,
-div.left_sidebar a.wikilink1:visited,
-div.left_sidebar a.interwiki:link,
-div.left_sidebar a.interwiki:active,
-div.left_sidebar a.interwiki:visited,
-div.left_sidebar a.urlextern:link,
-div.left_sidebar a.urlextern:active,
-div.left_sidebar a.urlextern:visited
-{
-  color:__cSidebarLink__;
-  padding:0.2em;
-  background:none;
-  line-height:140%;
-}
-
-div.left_sidebar a.wikilink2:hover,
-div.left_sidebar a.wikilink1:hover,
-div.left_sidebar a.interwiki:hover,
-div.left_sidebar a.urlextern:hover 
-{
-  text-decoration:none;
-  color:__cSidebarLinkHover__;
-  padding:0.2em;
-  line-height:140%;
-}
-
-div.left_sidebar h1,
-div.left_sidebar h2,
-div.left_sidebar h3,
-div.left_sidebar h4,
-div.left_sidebar h5,
-div.left_sidebar h6 
+div.dokuwiki div.left_sidebar h1,
+div.dokuwiki div.left_sidebar h2,
+div.dokuwiki div.left_sidebar h3,
+div.dokuwiki div.left_sidebar h4,
+div.dokuwiki div.left_sidebar h5,
+div.dokuwiki div.left_sidebar h6,
+div.dokuwiki div.right_sidebar h1,
+div.dokuwiki div.right_sidebar h2,
+div.dokuwiki div.right_sidebar h3,
+div.dokuwiki div.right_sidebar h4,
+div.dokuwiki div.right_sidebar h5,
+div.dokuwiki div.right_sidebar h6 
 {
   font-size:__FontSize__;
-  border:none;
-  font-family: sans-serif, Verdana;
   font-weight:bold;
   padding:0;
   padding-top:0.2em;
   padding-left:0.2em;
   margin-top:0.5em;
+  border:none;
 }
 
-div.left_sidebar h1
+div.dokuwiki div.left_sidebar h1,
+div.dokuwiki div.right_sidebar h1
 {
   background:__SidebarH1Bg__;
   margin:0.2em;
+  padding-left:0.4em;
 }
 
-div.left_sidebar ul 
+div.dokuwiki div.left_sidebar ul,
+div.dokuwiki div.right_sidebar ul 
 {
 	margin-top:0;
 }
 
-div.left_sidebar div.i_sidebar,
-div.left_sidebar div.m_sidebar,
-div.left_sidebar div.u_sidebar,
-div.left_sidebar div.g_sidebar,
-div.left_sidebar div.ns_sidebar,
-div.left_sidebar div.bc_sidebar
+div.dokuwiki div.left_sidebar div.i_sidebar,
+div.dokuwiki div.left_sidebar div.m_sidebar,
+div.dokuwiki div.left_sidebar div.u_sidebar,
+div.dokuwiki div.left_sidebar div.g_sidebar,
+div.dokuwiki div.left_sidebar div.ns_sidebar,
+div.dokuwiki div.left_sidebar div.bc_sidebar,
+div.dokuwiki div.right_sidebar div.i_sidebar,
+div.dokuwiki div.right_sidebar div.m_sidebar,
+div.dokuwiki div.right_sidebar div.u_sidebar,
+div.dokuwiki div.right_sidebar div.g_sidebar,
+div.dokuwiki div.right_sidebar div.ns_sidebar,
+div.dokuwiki div.right_sidebar div.bc_sidebar
 {
-	border:1px solid #eaeaea;
+	border:1px solid __cLightBoarder__;
 	padding:0.2em;
 	margin-bottom:0.2em;
-}
-
-/** RIGHT-SIDEBAR **/
-div.right_sidebar a.wikilink2:link,
-div.right_sidebar a.wikilink2:active,
-div.right_sidebar a.wikilink2:visited,
-div.right_sidebar a.wikilink1:link,
-div.right_sidebar a.wikilink1:active,
-div.right_sidebar a.wikilink1:visited,
-div.right_sidebar a.interwiki:link,
-div.right_sidebar a.interwiki:active,
-div.right_sidebar a.interwiki:visited,
-div.right_sidebar a.urlextern:link,
-div.right_sidebar a.urlextern:active,
-div.right_sidebar a.urlextern:visited
-{
-  color:__cSidebarLink__;
-  padding:0.2em;
-  background:none;
-  line-height:140%;
-}
-
-div.right_sidebar a.wikilink2:hover,
-div.right_sidebar a.wikilink1:hover,
-div.right_sidebar a.interwiki:hover,
-div.right_sidebar a.urlextern:hover 
-{
-  text-decoration:none;
-  color:__cSidebarLinkHover__;
-  padding:0.2em;
-}
-
-div.right_sidebar h1,
-div.right_sidebar h2,
-div.right_sidebar h3,
-div.right_sidebar h4,
-div.right_sidebar h5,
-div.right_sidebar h6 
-{
-  font-size:__FontSize__;
-  border:none;
-  font-family: sans-serif, Verdana;
-  font-weight:bold;
-  margin-top:0.5em;
-  padding-bottom:0;
-  padding-top:0.2em;
-  padding-left:0.2em;
-}
-
-div.right_sidebar h1
-{
-  background:__SidebarH1Bg__;
-  margin:0.2em;
-}
-
-div.right_sidebar ul 
-{
-	margin-top:0;
-}
-
-div.right_sidebar div.i_sidebar,
-div.right_sidebar div.m_sidebar,
-div.right_sidebar div.u_sidebar,
-div.right_sidebar div.g_sidebar,
-div.right_sidebar div.ns_sidebar,
-div.right_sidebar div.bc_sidebar
-{
-  border:1px solid #eaeaea;
-  padding:0.2em;
-  margin-bottom:0.2em;
 }
