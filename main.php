@@ -105,7 +105,7 @@
   <?php if($conf['tpl_arctic']['enable_sidebar']) { ?>
     <?php if($conf['tpl_arctic']['position'] == 0) { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
         <div class="left_sidebar">
           <?php tpl_searchform() ?>
           <?php tpl_sidebar() ?>
@@ -121,7 +121,7 @@
 
     <?php } else { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
         <div class="left_page">
           <?php tpl_content()?>
         </div>
