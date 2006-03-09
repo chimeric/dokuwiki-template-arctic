@@ -50,16 +50,17 @@ div.dokuwiki div.right_sidebar {
 div.dokuwiki div.right_page {
   text-align: justify;
   float:left;
-  width:72%;
-  padding:1em;
-  margin-left:1em;
+  width:70%;
+  padding:15px;
+  margin-left:1%;
 }
 
 div.dokuwiki div.left_page {
   text-align: justify;
   float:left;
-  width:72%;
-  padding:1em;
+  width:70%;
+  padding:15px;
+  margin-left:1%;
 }
 
 div.dokuwiki table {
