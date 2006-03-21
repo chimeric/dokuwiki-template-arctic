@@ -658,7 +658,7 @@ div.dokuwiki a.fn_bot{
 }
 
 /* insitu-footnotes */
-div.dokuwiki div.insitu-footnote {
+div.insitu-footnote {
   font-size: __FontSize__;
   line-height: 1.2em;
   border: 1px solid __dark__;
