@@ -31,7 +31,7 @@ function tpl_sidebar() {
         $OP['mSb'] = '<div class="m_sidebar">'.p_sidebar_xhtml($mSb).'</div>';
     } else {
         echo '<div class="i_sidebar">';
-        html_index('.');
+        html_index($svID);
         echo '</div>';
     }
 
