@@ -113,11 +113,11 @@
         <div class="right_page">
           <?php tpl_content()?>
         </div>
-      <? } else { ?>
+      <?php } else { ?>
         <div class="page">
           <?php tpl_content()?> 
         </div> 
-      <? } ?>
+      <?php } ?>
 
     <?php } else { ?>
 
@@ -129,11 +129,11 @@
           <?php tpl_searchform() ?>
           <?php tpl_sidebar() ?>
         </div>
-      <? } else { ?>
+      <?php } else { ?>
         <div class="page">
           <?php tpl_content()?> 
         </div> 
-      <? } ?>
+      <?php } ?>
 
     <?php } ?>
 
