@@ -7,13 +7,7 @@ body {
 
 div.dokuwiki div.left_sidebar,
 div.dokuwiki div.right_sidebar {
-  visibility:hidden;
-  height:0;
-}
-
-div.dokuwiki div.right_sidebar {
-  visibility:hidden;
-  height:0;
+  display:none;
 }
 
 div.dokuwiki table {
