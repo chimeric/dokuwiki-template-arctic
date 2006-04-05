@@ -13,6 +13,7 @@ print.css      = print
 [replacements]
 ; LAYOUT
 __widthWiki__         = 90%
+__widthTOC__          = 20em
 __heightHeader__      = 5em
 __heightFooter__      = 5em
 __marginBody__        = 1.5em 
@@ -23,7 +24,9 @@ __marginHeader__      = 0.5em
 __FontSize__          = 12px
 __FontSizeFootnote__  = 10px
 __FontSizeToc__       = 11px
+__FontSizeTrace__     = 10px
 __FontSizeLogo__      = 18px
+__FontSizeActLink__   = 11px;
 __FontSizePagename__  = 18px
 __FontSizeEdit__      = 14px
 __FontSizeH1__        = 2.0em
@@ -44,10 +47,10 @@ __cWikiBg__                 = #f8f8f8
 __cWikiHeaderBg__           = #436976
 __cWikiFooterBg__           = #436976
 __cWikiTocBg__              = #fdfdfd
-__cWikiBoarder__            = #c4c4c4
-__cLightBoarder__           = #eaeaea
-__cDarkBoarder__            = #c3c3c3
-__cFormBoarder__            = #c3c3c3
+__cWikiBorder__            = #c4c4c4
+__cLightBorder__           = #eaeaea
+__cDarkBorder__            = #c3c3c3
+__cFormBorder__            = #c3c3c3
 __cTableTrHover__           = #f8f8f8
 
 ; LINK-COLORS 
@@ -69,6 +72,8 @@ __cMediaLinkHover__         = #436976
 __cMailLinkHover__          = #436976
 __cWindowsShareLink__       = #436976
 __cWindowsShareLinkHover__  = #436976
+__cActLink__                = #436976
+__cActLinkHover__           = #436976
 
 ; These are the style.ini-parts of the original dokuwiki-default-template
 ; I keep it here to be compatible to plugin-manager etc.
