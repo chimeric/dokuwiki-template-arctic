@@ -52,7 +52,7 @@
     </div>
   
     <?php if($conf['tpl_arctic']['breadcrumbs'] && $conf['tpl_arctic']['breadcrumbs_top']) {?> 
-    <div style="margin-left:10px;margin-bottom:3px;margin-top:3px;"><?php tpl_breadcrumbs()?> </div>
+    <div class="breadcrumbs"><?php tpl_breadcrumbs()?> </div>
     <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>

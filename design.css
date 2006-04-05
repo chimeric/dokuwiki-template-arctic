@@ -351,8 +351,9 @@ div.dokuwiki div.preview{
 div.dokuwiki div.breadcrumbs {
   color: __FontColor__;
   line-height:140%;
-  margin-left:0.3em;
-  font-size:__FontSize__;
+  padding:0.3em;
+  margin-left:0.8em;
+  font-size:__FontSizeTrace__;
 }
 
 div.dokuwiki span.user{
