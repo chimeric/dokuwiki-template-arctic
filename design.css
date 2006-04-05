@@ -22,7 +22,7 @@ div.dokuwiki {
   margin:auto;
   padding:0;
   width: __widthWiki__;
-  border:1px solid __cWikiBoarder__;
+  border:1px solid __cWikiBorder__;
   background:__cWikiBg__;
 }
 
@@ -36,7 +36,7 @@ div.dokuwiki div.left_sidebar {
   width:21%;
   padding:1em;
   padding-top:0;
-  border-right:1px solid  __cLightBoarder__;
+  border-right:1px solid  __cLightBorder__;
 }
 
 div.dokuwiki div.right_sidebar {
@@ -44,7 +44,7 @@ div.dokuwiki div.right_sidebar {
   width:21%;
   padding:1em;
   padding-top:0;
-  border-left:1px solid __cLightBoarder__;
+  border-left:1px solid __cLightBorder__;
 }
 
 div.dokuwiki div.right_page {
@@ -82,7 +82,7 @@ div.dokuwiki p {padding:0; margin: 0 0 1.0em 0;font-size:__FontSize__;}
 
 div.dokuwiki hr {
   border: 0px;
-  border-top: 1px solid __cDarkBoarder__;
+  border-top: 1px solid __cDarkBorder__;
   text-align:center;
   height: 0px;
 }
@@ -120,14 +120,14 @@ div.dokuwiki label.block input.edit {
 div.dokuwiki fieldset {
   width: 300px;
   text-align: center;
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   padding: 0.5em;
   margin: auto;
 }
 
 div.dokuwiki textarea.edit {
   font-family:monospace;
-  border: 1px solid __cFormBoarder__;  
+  border: 1px solid __cFormBorder__;  
   color: __FontColor__;
   background-color: __white__;
   font-size:__FontSizeEdit__;
@@ -136,7 +136,7 @@ div.dokuwiki textarea.edit {
 }
 
 div.dokuwiki input.edit, div.dokuwiki select.edit {
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   color: __FontColor__;
   background-color: __white__;
   display: inline;
@@ -144,7 +144,7 @@ div.dokuwiki input.edit, div.dokuwiki select.edit {
 }
 
 div.dokuwiki input.missing {
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   color: __FontColor__;
   background-color: #ffcccc;
   margin: 1px;
@@ -190,7 +190,7 @@ div.dokuwiki .nowrap {
 /* --------- buttons ------------------- */
 
 div.dokuwiki input.button, div.dokuwiki button.button{
-  border: 1px solid __cFormBoarder__;  
+  border: 1px solid __cFormBorder__;  
   color: __FontColor__;
   font-size:11px;
   background-color: __white__;
@@ -204,7 +204,7 @@ div.dokuwiki input.button, div.dokuwiki button.button{
 }
 
 div.dokuwiki div.secedit input.button {
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   color: __FontColor__;
   font-size:11px;
   background-color: __white__;
@@ -350,7 +350,7 @@ div.dokuwiki a.action:hover      { color:__cActLinkHover__; text-decoration:none
 
 div.dokuwiki div.preview{
   padding: 4px;
-  border: 1px dashed __cDarkBoarder__;
+  border: 1px dashed __cDarkBorder__;
 }
 
 div.dokuwiki div.breadcrumbs {
@@ -424,8 +424,8 @@ div.dokuwiki h5 {
 }
 
 /* special headlines */
-div.dokuwiki h1 {margin-left: 0px; font-size: __FontSizeH1__; border-bottom:1px solid __cLightBoarder__;}
-div.dokuwiki h2 {margin-left: 4px; font-size: __FontSizeH2__; border-bottom:1px solid __cLightBoarder__;}
+div.dokuwiki h1 {margin-left: 0px; font-size: __FontSizeH1__; border-bottom:1px solid __cLightBorder__;}
+div.dokuwiki h2 {margin-left: 4px; font-size: __FontSizeH2__; border-bottom:1px solid __cLightBorder__;}
 div.dokuwiki h3 {margin-left: 8px; font-size: __FontSizeH3__; border-bottom: none;}
 div.dokuwiki h4 {margin-left: 12px; font-size: __FontSizeH4__; border-bottom: none;}
 div.dokuwiki h5 {margin-left: 16px; font-size: __FontSizeH5__; border-bottom: none;font-weight:bold;}
@@ -560,7 +560,7 @@ div.dokuwiki div.toc {
 
 div.dokuwiki div.tocheader {
   padding: 3px;
-  border: 1px solid __cDarkBoarder__;
+  border: 1px solid __cDarkBorder__;
   background-color: __cWikiTocBg__;
   text-align: left;
   font-weight:bold;
@@ -578,7 +578,7 @@ div.dokuwiki div.tocheader img {
 }
 
 div.dokuwiki #toc__inside {
-  border: 1px solid __cDarkBoarder__;
+  border: 1px solid __cDarkBorder__;
   background-color: __cWikiTocBg__;
   text-align: left;
   padding-top: 0.5em;
@@ -643,7 +643,7 @@ div.dokuwiki span.diffchange { color: red; }
 
 div.dokuwiki div.footnotes{
   clear:both;
-  border-top: 1px solid __cDarkBoarder__;
+  border-top: 1px solid __cDarkBorder__;
   padding-left: 1em;
   margin-top: 3em;
 }
@@ -706,7 +706,7 @@ div.dokuwiki div.search_quickresult{
   padding-bottom: 5px;
   margin-left: 8px;
   padding-right: 10px;
-  border-bottom: 1px dashed __cDarkBoarder__;
+  border-bottom: 1px dashed __cDarkBorder__;
 }
 div.dokuwiki div.search_quickresult h3{
   margin: 0 0 1.0em 0;
@@ -736,7 +736,7 @@ div.dokuwiki input#qsearch_in {
 div.footerinc {
   height: __heightFooter__;
   margin:__marginFooter__;
-  border:1px solid __cDarkBoarder__;
+  border:1px solid __cDarkBorder__;
   background-color: __cWikiFooterBg__;
   margin-top:0.5em;
 }
@@ -799,13 +799,13 @@ div.dokuwiki button.toolbutton{
   background-color: __white__;
   padding: 0px;
   margin: 0 1px 0 0;
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   cursor: pointer;
 }
 
 div.dokuwiki div.picker {
   width: 250px;
-  border: 1px solid __cFormBoarder__;
+  border: 1px solid __cFormBorder__;
   background: __light__;
 }
 
@@ -840,7 +840,7 @@ div.dokuwiki div#spell__suggest {
 div.dokuwiki div#spell__result {
   display:none;
   font-family:monospace;
-  border: 1px solid __cDarkBoarder__; 
+  border: 1px solid __cDarkBorder__; 
   color: __FontColor__;
   font-size:__FontSize__;
   padding: 3px;

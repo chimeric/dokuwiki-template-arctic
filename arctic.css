@@ -71,7 +71,7 @@ div.dokuwiki div.right_sidebar div.g_sidebar,
 div.dokuwiki div.right_sidebar div.ns_sidebar,
 div.dokuwiki div.right_sidebar div.bc_sidebar
 {
-	border:1px solid __cLightBoarder__;
+	border:1px solid __cLightBorder__;
 	padding:0.2em;
 	margin-bottom:0.2em;
 }

@@ -11,7 +11,7 @@
 /* -------------- top row --------------- */
 div.dokuwiki .header {
   height:__heightHeader__;
-  border:1px solid __cDarkBoarder__;
+  border:1px solid __cDarkBorder__;
   background-color: __cWikiHeaderBg__;
   margin:__marginHeader__;
 }
@@ -61,8 +61,8 @@ div.dokuwiki .logo a:link, div.dokuwiki .logo a:visited, div.dokuwiki .logo a:ho
 
 /* ---------------  top and bottom bar ---------------- */
 div.dokuwiki .bar {
-  border-top:1px solid __cLightBoarder__;
-  border-bottom:1px solid __cLightBoarder__;
+  border-top:1px solid __cLightBorder__;
+  border-bottom:1px solid __cLightBorder__;
   padding-top:0.2em;
   padding-bottom:0.2em;
   padding-left:0.1em;
