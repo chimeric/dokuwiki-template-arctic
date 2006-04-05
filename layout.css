@@ -91,6 +91,7 @@ div.dokuwiki #bar_bottom {
   padding-left:0.8em; 
   padding-right:0.8em; 
   height:2em;
+  clear:both;
 }
 
 /* ------------- File Metadata ----------------------- */
@@ -98,18 +99,18 @@ div.dokuwiki #bar_bottom {
 div.dokuwiki div.meta {
   color:__FontColor__;
   font-size:__FontSize__;
+  clear:both;
 }
 
 div.dokuwiki div.meta div.user {
-  display:inline;
-  float:left;
-  margin-left: 1em;
+  padding-left: 1em;
   font-size:90%;
+  float:left;
 }
 
 div.dokuwiki div.meta div.doc{
-  display:inline;
   font-size:90%;
+  float:right;
 }
 
 /* ---------------  Media Selection  ----------------- */
