@@ -340,6 +340,11 @@ div.dokuwiki a.wikilink2:link    { color:__cWikiLink2__; text-decoration:none }
 div.dokuwiki a.wikilink2:visited { color:__cWikiLink2__; text-decoration:none }
 div.dokuwiki a.wikilink2:hover   { color:__cWikiLink2Hover__; text-decoration:underline }
 
+/* action-links */
+div.dokuwiki a.action:link       { font-size: __FontSizeActLink__; }
+div.dokuwiki a.action:link       { color:__cActLink__; text-decoration:none; }
+div.dokuwiki a.action:visited    { color:__cActLink__; text-decoration:none; }
+div.dokuwiki a.action:hover      { color:__cActLinkHover__; text-decoration:none; }
 
 /* ------------- Page elements ----------------- */
 
