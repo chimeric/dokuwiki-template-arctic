@@ -9,6 +9,12 @@ div.dokuwiki div.right_sidebar div.secedit {
     text-align:right;
 }
 
+div.dokuwiki div.left_sidebar div.breadcrumbs,
+div.dokuwiki div.right_sidebar div.breadcrumbs {
+    margin-left:0;
+}
+
+
 div.dokuwiki div.left_sidebar div.secedit input.button,
 div.dokuwiki div.right_sidebar div.secedit input.button {
     float:none;

@@ -19,7 +19,7 @@ $conf['tpl_arctic']['namespace_sidebar']    = true;                     // enabl
 
 $conf['tpl_arctic']['breadcrumbs']          = true;                     // show the trace
 $conf['tpl_arctic']['breadcrumbs_top']      = true;                     // show trace on top
-$conf['tpl_arctic']['breadcrumbs_sb']	      = false;                    // show trace inside sidebar
+$conf['tpl_arctic']['breadcrumbs_sb']	      = true;                    // show trace inside sidebar
 
 $conf['tpl_arctic']['actionlink_separator'] = '&nbsp;&middot;&nbsp;';   // string to seperate the topbar-links
 $conf['tpl_arctic']['use_buttons']          = false;                    // use buttons instead of links
