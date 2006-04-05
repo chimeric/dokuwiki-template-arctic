@@ -102,10 +102,14 @@ div.dokuwiki div.meta {
 
 div.dokuwiki div.meta div.user {
   display:inline;
+  float:left;
+  margin-left: 1em;
+  font-size:90%;
 }
 
 div.dokuwiki div.meta div.doc{
   display:inline;
+  font-size:90%;
 }
 
 /* ---------------  Media Selection  ----------------- */
