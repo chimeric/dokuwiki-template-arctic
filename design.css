@@ -549,7 +549,7 @@ div.dokuwiki div.toc {
   margin-bottom: 0.5em;
   margin-top:0.5em;
   float:right;
-  width: 25em;
+  width: __widthTOC__;
   clear:both;
 }
 
