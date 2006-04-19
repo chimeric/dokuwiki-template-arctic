@@ -1,0 +1,122 @@
+* 2006-04-16 Michael Klier
+- fixed font-size-bug of action-links
+
+* 2006-04-13 Michael Klier
+- fixed typo in style.ini and style.ini.dist
+
+* 2006-04-05 Michael Klier
+- added some style.ini-options (TOC-width/action-link-colors)
+- moved login-info to the right
+
+* 2006-04-03 Michael Klier
+- fixed print.css to work with MSIE
+
+* 2006-03-28 Michael Klier
+- fixed php-opening-tags in main.php
+- minor changes in footer.html
+
+* 2006-03-24 Michael Klier
+- made sidebarindex recognizing the current ID
+
+* 2006-03-21 Michael Klier
+- small bugfix (fixed footnote:hover)
+
+* 2006-03-09 Michael Klier
+- small bugfix (template breaks when viewed with 17" screens)
+
+* 2006-03-07 Michael Klier
+- fixed favicon-inclusion in mediaref.php and mediaedit.php
+
+* 2006-03-05 Michael Klier
+- put everything into div.dokuwiki-context
+- shows searchform when sidebar is disabled
+- "fullscreen" diff-view
+- fixed alignment of login-form 
+- added missing buttons/actionlinks
+- added pagename again for backlinks
+- cleaned style.ini removed unneeded stuff and added some useful
+- added style.ini.dist
+- renamed conf.php do default.php and added default.php.dist
+- removed csshover.htc table-hover-effect only in firefox
+
+* 2006-02-24 Michael Klier
+- added option to use buttons instead of action-links
+- removed the action-link-handling completely from tpl_functions.php
+  also removed config-var tb_link_order (edit main.php to change the order!)
+- added edit bar below content
+- added color-option for body-background to style.ini (devonly)
+- fixed background-color of edit-bar-buttons
+- renamed config var tb_link_separator to actionlink_separator
+
+* 2006-02-22 Michael Klier
+- added missing CSS for links in right-sidebar
+
+* 2006-02-21 Michael Klier
+- updated detail.php und media.php of devel-version
+- fixed some bugs which happend with the last update
+- updated default.style.ini
+
+* 2006-02-14 Michael Klier
+- synced CSS of the devel-version against dokuwiki-default-template
+
+* 2006-02-07 Michael Klier
+- removed mainsidebar-namespace-configuration - main-sidebar is searched in root-namespace now
+- added edit-buttons inside sidebars
+- added optional trace at top
+- a lot of css-stuff related to the developement version
+- stable/dev-version look 'almost' equal now
+- removed some unneeded stuff from style.ini
+- css cleanup
+
+* 2005-01-18 Michael Klier
+- bug-fix (edit-link didn`t work correct with old-revisions)
+
+* 2005-01-14 Michael Klier
+- small bug-fix (revisons-link didn`t send page-id)
+
+* 2005-12-21 Michael Klier
+- damn it - removed namespace-sidebar-inclusion-bug
+
+* 2005-12-20 Michael Klier
+- fixed page-name-position
+- fixed bug with ugly fonts :-/ ??
+- fixed bug with double main-sidebar-inclusion
+
+* 2005-12-12 Michael Klier
+- added possibility to disable sidebar
+- added style.ini support of for devonly DokuWiki
+- some directory cleaning
+- fixed namespace-sidebar inclusion and enhanced functionality (thx to Olivier Pichon)
+- TOC is automatically removed from sidebar-pages now
+
+* 2005-12-11 Michael Klier
+- cleaned footer.html
+
+* 2005-11-29 Michael Klier
+- some minor css-fixes again 
+- splitted into stable/devonly-Version
+- removed stupid discussion-plugin-inclusion in main.php :-/
+- added posibility to modify position of breadcrumbs in sidebar
+- added posibility to use "you-are-here"-style of breadcrumbs
+- replaced stupid hardcoded breadcrumbs-headline with $lang-string
+
+* 2005-11-21 Michael Klier
+- some more css-fixes
+
+* 2005-11-14 Michael Klier
+- added possibility to change the order of sidebars/top-links
+- added top-link for update-profile (devonly)
+- fixed font-size of footnotes
+- added support for namespace-sidebars
+- changed variable-names 
+
+* 2005-11-07 Michael Klier
+- now shows "create-this-page"-button when a page does not exist
+- removed bug when used with url-rewrite disabled
+- links use $lang - strings now
+- fixed font-size of block-quotes
+- removed images, now its pure css
+- template resizing is easier than before
+
+* 2005-11-04 Michael Klier
+- initial Release
