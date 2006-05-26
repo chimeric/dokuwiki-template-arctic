@@ -52,7 +52,9 @@
     </div>
   
     <?php if($conf['tpl_arctic']['breadcrumbs'] && $conf['tpl_arctic']['breadcrumbs_top']) {?> 
-    <div class="breadcrumbs"><?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?></div>
+    <div class="breadcrumbs">
+      <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
+    </div>
     <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
@@ -83,10 +85,8 @@
                 tpl_button('login');
               } else {
                 if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
-                tpl_actionlink('admin');
-                if(auth_quickaclcheck($ID) == 255) print ($sep);
-                tpl_actionlink('profile');
-                if(isset($INFO['userinfo']['name'])) print ($sep);
+                if(tpl_actionlink('admin')) print ($sep);
+                if(tpl_actionlink('profile')) print ($sep);
                 tpl_actionlink('recent');
                 print ($sep);
                 tpl_actionlink('index');
@@ -182,8 +182,7 @@
               tpl_button('subscription');
               tpl_button('top');
           } else {
-              tpl_actionlink('subscription');
-              if(isset($INFO['userinfo']['name']) && $ACT == 'show') print ($sep);
+              if(tpl_actionlink('subscription')) print ($sep);
               tpl_actionlink('top');
           }
         ?>
