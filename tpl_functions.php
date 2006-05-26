@@ -8,7 +8,7 @@
  * @homepage:       http://www.chimeric.de
  */
 
-include(DOKU_TPLINC.'default.php');
+if(!defined('DW_LF')) define('DW_LF',"\n");
 
 /**
  * fetches the sidebar-pages and displays the sidebar
@@ -19,67 +19,83 @@ function tpl_sidebar() {
     global $conf, $ID, $REV, $INFO, $lang;
    
     $OP    = array(); 
-    $SbPn  = $conf['tpl_arctic']['pagename'];
-    $uSbNs = $conf['tpl_arctic']['user_sidebarns'];
-    $gSbNs = $conf['tpl_arctic']['group_sidebarns'];
+    $SbPn  = tpl_getConf('pagename');
+    $uSbNs = tpl_getConf('user_sidebar_namespace');
+    $gSbNs = tpl_getConf('group_sidebar_namespace');
     $mSb   = $SbPn;
     
     $svID  = $ID;
     $svREV = $REV;
 
     if(file_exists(wikiFN($mSb))) { 
-        $OP['mSb'] = '<div class="m_sidebar">'.p_sidebar_xhtml($mSb).'</div>';
+        $OP['M'] .= '<div class="m_sidebar">' . DW_LF;
+        $OP['M'] .= '  ' . p_sidebar_xhtml($mSb) . DW_LF;
+        $OP['M'] .= '</div>';
     } else {
-        echo '<div class="i_sidebar">';
-        html_index($svID);
-        echo '</div>';
+        print '<div class="i_sidebar">' . DW_LF;
+        print '  ' . html_index($svID) . DW_LF;
+        print '</div>';
     }
 
     if(isset($INFO['userinfo']['name'])) {
-        if($conf['tpl_arctic']['user_sidebar']) {
-            $uSb = $uSbNs.':'.$_SERVER['REMOTE_USER'].':'.$SbPn; 
-            if(file_exists(wikiFN($uSb))) $OP['uSb'] = '<div class="u_sidebar">'.p_sidebar_xhtml($uSb).'</div>';
+        if(!tpl_getConf('user_sidebar')) {
+            $uSb = $uSbNs . ':' . $_SERVER['REMOTE_USER'] . ':' . $SbPn; 
+            if(file_exists(wikiFN($uSb))) {
+                $OP['U'] .= '<div class="u_sidebar">' . DW_LF;
+                $OP['U'] .= '  ' . p_sidebar_xhtml($uSb) . DW_LF;
+                $OP['U'] .= '</div>' . DW_LF;
+            }
         }
-        if($conf['tpl_arctic']['group_sidebar']) {
+        if(!tpl_getConf('group_sidebar')) {
             foreach($INFO['userinfo']['grps'] as $grp) {
                 $gSb = $gSbNs.':'.$grp.':'.$SbPn;
-                if(file_exists(wikiFN($gSb))) $OP['gSb'] .= '<div class="g_sidebar">'.p_sidebar_xhtml($gSb).'</div>';
+                if(file_exists(wikiFN($gSb))) {
+                    $OP['G'] .= '<div class="g_sidebar">' . DW_LF;
+                    $OP['G'] .= '  ' . p_sidebar_xhtml($gSb) . DW_LF;
+                    $OP['G'] .= '</div>' . DW_LF;
+                }
             }
         
         }
     }
     
-    if(isset($conf['tpl_arctic']['namespace_sidebar'])) {
+    if(!tpl_getConf('namespace_sidebar')) {
         if(!preg_match("/".$uSbNs."|".$gSbNs."/", $svID)) {
-            $path = explode(':', $svID);
-            $nSb = '';
+            $path  = explode(':', $svID);
+            $nSb   = '';
             $found = false;
             while(!$found && count($path) > 0) {
-                $nSb = implode(':', $path).':'.$SbPn;
+                $nSb   = implode(':', $path).':'.$SbPn;
                 $found = file_exists(wikiFN($nSb));
                 array_pop($path);
             }
-            if($found) $OP['nSb'] = '<div class="ns_sidebar">'.p_sidebar_xhtml($nSb).'</div>';
+            if($found) {
+                $OP['N'] .= '<div class="ns_sidebar">' . DW_LF;
+                $OP['N'] .= '  ' . p_sidebar_xhtml($nSb) . DW_LF;
+                $OP['N'] .= '</div>' . DW_LF;
+            }
         }
     }
 
-    $ID = $svID;
+    $ID  = $svID;
     $REV = $svREV;
+
+    $ORDER = explode('-',tpl_getConf('sidebar_order'));
     
-    foreach($conf['tpl_arctic']['sidebar_order'] as $Sb) {
-        if($Sb == 'bcr') {
-            if($conf['tpl_arctic']['breadcrumbs'] && $conf['tpl_arctic']['breadcrumbs_sb']) {
-                echo '<div class="bc_sidebar"><h1>'.$lang['breadcrumb'].'</h1><div class="breadcrumbs">';
-                if($conf['youarehere']) {
-                    tpl_youarehere();
-                } else {
-                    tpl_breadcrumbs();
-                }
-                echo '</div></div>';
-            }
-        } else {
-            print $OP[$Sb];
-        }
+    foreach($ORDER as $Sb) {
+        print $OP[$Sb] . DW_LF;
+    }
+
+    // print breadcrumbs
+    if(tpl_getConf('breadcrumbs') == 'sidebar' or tpl_getConf('breadcrumbs') == 'both') {
+        print '<div class="bc_sidebar">' . DW_LF;
+        print '  <h1>'.$lang['breadcrumb'].'</h1>' . DW_LF;
+        print '  <div class="breadcrumbs">' . DW_LF;
+
+       ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
+
+        print '  </div>' . DW_LF;
+        print '</div>' . DW_LF;
     }
 }
 

@@ -16,11 +16,10 @@
  * @author Michael Klier <chi@chimeric.de>
  * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
  *
- * Setup vim: ts=2 sw=2:
  */
 
  require_once(dirname(__FILE__).'/tpl_functions.php');
- $sep = $conf['tpl_arctic']['actionlink_separator'];
+ $sepchar = tpl_getConf('sepchar');
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
  lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
@@ -51,7 +50,7 @@
       </div>
     </div>
   
-    <?php if($conf['tpl_arctic']['breadcrumbs'] && $conf['tpl_arctic']['breadcrumbs_top']) {?> 
+    <?php if(tpl_getConf('breadcrumbs') == 'top' or tpl_getConf('breadcrumbs') == 'both') {?> 
     <div class="breadcrumbs">
       <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
     </div>
@@ -63,37 +62,47 @@
     <div id="bar_top">
         <div class="bar">
           <div class="bar-left">
+
             <?php 
-              if($conf['tpl_arctic']['use_buttons']) { 
-                tpl_button('edit');
-                tpl_button('history');     
-              } else {
-                tpl_actionlink('edit');
-                print ($sep);
-                tpl_actionlink('history');
+              switch(tpl_getConf('wiki_actionlinks')) {
+                case('buttons'):
+                  tpl_button('edit');
+                  tpl_button('history');     
+                  break;
+                case('links'):
+                  tpl_actionlink('edit');
+                  print ($sepchar);
+                  tpl_actionlink('history');
+                  break;
               } 
             ?>
+
           </div>
           <div class="bar-right">
+
             <?php
-              if($conf['tpl_arctic']['use_buttons']) {
-                if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
-                tpl_button('admin');
-                tpl_button('profile');
-                tpl_button('recent');
-                tpl_button('index');
-                tpl_button('login');
-              } else {
-                if(!$conf['tpl_arctic']['enable_sidebar']) tpl_searchform();
-                if(tpl_actionlink('admin')) print ($sep);
-                if(tpl_actionlink('profile')) print ($sep);
-                tpl_actionlink('recent');
-                print ($sep);
-                tpl_actionlink('index');
-                print ($sep);
-                tpl_actionlink('login');
+              switch(tpl_getConf('wiki_actionlinks')) {
+                case('buttons'):
+                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                  tpl_button('admin');
+                  tpl_button('profile');
+                  tpl_button('recent');
+                  tpl_button('index');
+                  tpl_button('login');
+                  break;
+                case('links'):
+                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                  if(tpl_actionlink('admin')) print ($sepchar);
+                  if(tpl_actionlink('profile')) print ($sepchar);
+                  tpl_actionlink('recent');
+                  print ($sepchar);
+                  tpl_actionlink('index');
+                  print ($sepchar);
+                  tpl_actionlink('login');
+                  break;
               }
             ?>
+
           </div>
       </div>
   </div>
@@ -102,42 +111,53 @@
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
 
-  <?php if($conf['tpl_arctic']['enable_sidebar']) { ?>
-    <?php if($conf['tpl_arctic']['position'] == 0) { ?>
+  <?php if(tpl_getConf('sidebar') == 'left') { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
-        <div class="left_sidebar">
-          <?php tpl_searchform() ?>
-          <?php tpl_sidebar() ?>
-        </div>
-        <div class="right_page">
-          <?php tpl_content()?>
-        </div>
-      <?php } else { ?>
-        <div class="page">
-          <?php tpl_content()?> 
-        </div> 
-      <?php } ?>
+    <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
+
+      <div class="left_sidebar">
+        <?php tpl_searchform() ?>
+        <?php tpl_sidebar() ?>
+      </div>
+      <div class="right_page">
+        <!-- wikipage start -->
+        <?php tpl_content()?>
+        <!-- wikipage stop -->
+      </div>
 
     <?php } else { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
-        <div class="left_page">
-          <?php tpl_content()?>
-        </div>
-        <div class="right_sidebar">
-          <?php tpl_searchform() ?>
-          <?php tpl_sidebar() ?>
-        </div>
-      <?php } else { ?>
-        <div class="page">
-          <?php tpl_content()?> 
-        </div> 
-      <?php } ?>
+      <div class="page">
+        <!-- wikipage start -->
+        <?php tpl_content()?> 
+        <!-- wikipage stop -->
+      </div> 
 
     <?php } ?>
 
-  <?php } else { ?>
+  <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
+    <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
+
+      <div class="left_page">
+        <!-- wikipage start -->
+        <?php tpl_content()?>
+        <!-- wikipage stop -->
+      </div>
+      <div class="right_sidebar">
+        <?php tpl_searchform() ?>
+        <?php tpl_sidebar() ?>
+      </div>
+
+    <?php } else { ?>
+
+      <div class="page">
+        <!-- wikipage start -->
+        <?php tpl_content()?> 
+        <!-- wikipage stop -->
+      </div> 
+
+    <?php }?>
+  <?php } elseif(tpl_getConf('sidebar') == 'none') { ?>
 
     <div class="page">
     <!-- wikipage start -->
@@ -154,10 +174,14 @@
   <div class="stylefoot">
     <div class="meta">
       <div class="user">
+
         <?php tpl_userinfo()?>
+
       </div>
       <div class="doc">
+
         <?php tpl_pageinfo()?>
+
       </div>
     </div>
   </div>
@@ -165,27 +189,37 @@
   <div id="bar_bottom">
     <div class="bar">
       <div class="bar-left">
+
         <?php 
-          if($conf['tpl_arctic']['use_buttons']) {
+          switch(tpl_getConf('wiki_actionlinks')) {
+            case('buttons'):
               tpl_button('edit');
               tpl_button('history');
-          } else {
+              break;
+            case('links'):
               tpl_actionlink('edit');
-              print ($sep);
+              print ($sepchar);
               tpl_actionlink('history');
+              break;
           }
         ?>
+
       </div>
       <div class="bar-right">
+
         <?php 
-          if($conf['tpl_arctic']['use_buttons']) {
+          switch(tpl_getConf('wiki_actionlinks')) {
+            case('buttons'):
               tpl_button('subscription');
               tpl_button('top');
-          } else {
-              if(tpl_actionlink('subscription')) print ($sep);
+              break;
+            case('links'):
+              if(tpl_actionlink('subscription')) print ($sepchar);
               tpl_actionlink('top');
+              break;
           }
         ?>
+
       </div>
     </div>
   </div>
@@ -195,6 +229,6 @@
 </div>
 
 <div class="no"><?php tpl_indexerWebBug()?></div>
-
+<?php //setup vim: ts=2 sw=2: ?>
 </body>
 </html>
