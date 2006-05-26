@@ -3,13 +3,17 @@
 ; @author: Michael Klier <chi@chimeric.de>
 
 [stylesheets]
-layout.css  = screen
-design.css  = screen
-style.css   = screen
-media.css   = screen
-arctic.css  = screen
-rtl.css     = rtl
-print.css   = print
+layout.css        = screen
+arctic_layout.css = screen
+design.css        = screen
+arctic_design.css = screen
+style.css         = screen
+media.css         = screen
+arctic_media.css  = screen
+rtl.css           = rtl
+arctic_rtl.css    = rtl
+print.css         = print
+arctic_print.css  = print
 
 [replacements]
 ; LAYOUT
