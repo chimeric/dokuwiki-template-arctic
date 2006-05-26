@@ -4,7 +4,7 @@
 /**
  * DokuWiki Default Template
  *
- * This is the template for the media selection popup.
+ * This is the template for the media manager popup
  *
  * You should leave the doctype at the very top - It should
  * always be the very first line of a document.
@@ -15,40 +15,27 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>" lang="<?php echo $conf['lang']?>" dir="ltr">
 <head>
-  <title><?php echo hsc($lang['mediaselect'])?> [<?php echo hsc($conf['title'])?>]</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+  <title><?php echo hsc($lang['mediaselect'])?> [<?php echo hsc($conf['title'])?>]</title>
   <?php tpl_metaheaders()?>
-
   <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
-
 </head>
 
 <body>
-<div class="dokuwiki">
-  <?php html_msgarea()?>
+<div id="media__manager" class="dokuwiki">
+    <div id="media__left">
+        <?html_msgarea()?>
+        <h1><?php echo hsc($lang['mediaselect'])?></h1>
 
-  <h1><?php echo hsc($lang['mediaselect'])?> <code><?php echo hsc($NS)?></code></h1>
+        <?php /* keep the id! additional elements are inserted via JS here */?>
+        <div id="media__opts"></div>
 
-  <div class="mediaselect">
+        <?php tpl_mediaTree() ?>
+    </div>
 
-    <div class="mediaselect-left">
-      <strong><a href="<?php echo DOKU_BASE?>lib/exe/media.php?ns="><?php echo hsc($lang['namespaces'])?></a></strong>
-
-			<?php tpl_medianamespaces()?>
-		</div>
-
-    <div class="mediaselect-right">
-      <?php tpl_mediafilelist()?>
-
-			<div class="uploadform">
-			<?php tpl_mediauploadform()?>
-			</div>
-		</div>
-
-    <div class="clearer"><div>
-  </div>
-
+    <div id="media__right">
+        <?php tpl_mediaContent() ?>
+    </div>
 </div>
 </body>
 </html>
