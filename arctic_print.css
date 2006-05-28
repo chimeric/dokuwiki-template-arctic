@@ -1,5 +1,9 @@
 /**
- * File:    
- * Author:      Michael Klier chi@chimeric.de
- * Homepage:    http://www.chimeric.de
+ * print additional CSS for the artic template
+ * @author Michael Klier <chi@chimeric.de>
  */
+
+div.dokuwiki div.left_sidebar,
+div.dokuwiki div.right_sidebar {
+  display:none;
+}

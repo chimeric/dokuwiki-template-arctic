@@ -36,6 +36,7 @@
     <div id="media__right">
         <?php tpl_mediaContent() ?>
     </div>
+        <div class="clearer">&nbsp;</div>
 </div>
 </body>
 </html>

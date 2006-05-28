@@ -5,72 +5,68 @@ body {
   color: Black;
 }
 
-div.dokuwiki div.left_sidebar,
-div.dokuwiki div.right_sidebar {
-  display:none;
-}
-
-div.dokuwiki table {
+table {
   font-size: 100%;
   padding:0;
   margin:0;
 }
 
-div.dokuwiki tr,div.dokuwiki td,div.dokuwiki th {padding:0; margin:0;}
+tr,td,th {padding:0; margin:0;}
 
-div.dokuwiki img {border:0}
+img {border:0}
 
-div.dokuwiki a {
+a {
   color:#000000;
   text-decoration:none;
+  background: none !important;
 }
 
 
-div.dokuwiki div.meta {
+div.meta {
   clear:both;
   margin-top: 1em;
   font-size:70%;
   text-align:right;
 }
 
-div.dokuwiki div.breadcrumbs{
+div.breadcrumbs{
   display:none;
 }
 
-div.dokuwiki div.secedit{
+div.secedit{
   display:none;
 }
 
 /* --------------------- Text formating -------------------------------- */
 
 /* external link */
-div.dokuwiki a.urlextern:after {
+a.urlextern:after {
    content: " [" attr(href) "]";
    font-size: 90%;
 }
 
 /* interwiki link */
-div.dokuwiki a.interwiki:after {
+a.interwiki:after {
    content: " [" attr(href) "]";
    font-size: 90%;
 }
 
 /* email link */
-div.dokuwiki a.mail:after {
+a.mail:after {
    content: " [" attr(href) "]";
    font-size: 90%;
 }
 
 /* existing wikilink */
-div.dokuwiki a.wikilink1    {text-decoration:underline }
+a.wikilink1    {text-decoration:underline }
 
 /* the document */
-div.dokuwiki div.page {
+div.page {
   text-align: justify;
 }
 
 /* general headline setup */
-div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki h5 {
+h1, h2, h3, h4, h5 {
     color: Black;
     background-color: transparent;
     font-family: "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;
@@ -89,31 +85,31 @@ div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki
 }
 
 /* special headlines */
-div.dokuwiki h1 {font-size: 160%; font-weight: bold;}
-div.dokuwiki h2 {font-size: 150%; }
-div.dokuwiki h3 {font-size: 140%; border-bottom: none; }
-div.dokuwiki h4 {font-size: 120%; border-bottom: none; }
-div.dokuwiki h5 {font-size: 100%; border-bottom: none; }
+h1 {font-size: 160%; font-weight: bold;}
+h2 {font-size: 150%; }
+h3 {font-size: 140%; border-bottom: none; }
+h4 {font-size: 120%; border-bottom: none; }
+h5 {font-size: 100%; border-bottom: none; }
 
 /* embedded images */
-div.dokuwiki img.media {
+img.media {
   margin: 3px;
 }
 
-div.dokuwiki img.medialeft {
+img.medialeft {
   border: 0;
   float: left;
   margin: 0 1.5em 0 0;
-} 
-  
-div.dokuwiki img.mediaright {
+}
+
+img.mediaright {
   border: 0;
   float: right;
   margin: 0 0 0 1.5em;
 }
 
 /* unordered lists */
-div.dokuwiki ul { 
+ul {
     line-height: 1.5em;
     list-style-type: square;
     margin: 0 0 1.0em 1.5em;
@@ -122,7 +118,7 @@ div.dokuwiki ul {
 }
 
 /* ordered lists */
-div.dokuwiki ol {
+ol {
     line-height: 1.0em;
     margin: 0 0 1.0em 1.0em;
     padding: 0;
@@ -130,12 +126,12 @@ div.dokuwiki ol {
 }
 
 /* the list items overriding the ol definition */
-div.dokuwiki span.li {
+span.li {
     font-weight: normal;
 }
 
 /* code blocks by indention */
-div.dokuwiki pre.pre {
+pre.pre {
   font-size: 8pt;
   padding: 0.5em;
   border: 1px dashed #000000;
@@ -144,7 +140,7 @@ div.dokuwiki pre.pre {
 }
 
 /* code blocks by code tag */
-div.dokuwiki pre.code {
+pre.code {
   font-size: 8pt;
   padding: 0.5em;
   border: 1px dashed #000000;
@@ -153,12 +149,12 @@ div.dokuwiki pre.code {
 }
 
 /* inline code words */
-div.dokuwiki code {
+code {
   font-size: 120%;
 }
 
 /* code blocks by file tag */
-div.dokuwiki pre.file {
+pre.file {
   font-size: 8pt;
   padding: 0.5em;
   border: 1px dotted #000000;
@@ -167,62 +163,64 @@ div.dokuwiki pre.file {
 }
 
 /* footnotes */
-div.dokuwiki div.footnotes{
+div.footnotes{
   clear:both;
   border-top: 1px solid #000000;
   padding-left: 1em;
   margin-top: 1em;
 }
 
-div.dokuwiki div.fn{
+div.fn{
   font-size:90%;
 }
 
-div.dokuwiki a.fn_top{
+a.fn_top{
   vertical-align:super;
   font-size:80%;
 }
 
-div.dokuwiki a.fn_bot{
+a.fn_bot{
   vertical-align:super;
   font-size:80%;
   font-weight:bold;
 }
 
-div.dokuwiki acronym{
+acronym{
   border: 0;
 }
 
 /* ---------- inline tables ------------------- */
 
-div.dokuwiki table.inline {
+table.inline {
   font-size: 80%;
   background-color: #ffffff;
   border-spacing: 0px;
   border-collapse: collapse;
 }
 
-div.dokuwiki table.inline th {
+table.inline th {
   padding: 3px;
   border: 1px solid #000000;
   border-bottom: 2px solid #000000;
 }
 
-div.dokuwiki table.inline td {
+table.inline td {
   padding: 3px;
   border: 1px solid #000000;
 }
 
-div.dokuwiki .leftalign{
+.leftalign{
   text-align: left;
 }
 
-div.dokuwiki .centeralign{
+.centeralign{
   text-align: center;
 }
 
-div.dokuwiki .rightalign{
+.rightalign{
   text-align: right;
 }
 
-div.dokuwiki .toc, div.dokuwiki .footerinc, div.dokuwiki .header, div.dokuwiki .bar, div.dokuwiki .user {display:none}
+.toc, .footerinc, .header, .bar, .user {display:none}
+
+#sidebar {display:none}

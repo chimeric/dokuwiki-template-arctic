@@ -3,72 +3,51 @@
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author moraes <moraes@tipos.com.br>
- * additional editing by
- * @author Michael Klier <chi@chimeric.de>
  */
-
 
 /* -------------- top row --------------- */
 div.dokuwiki .header {
-  height:__heightHeader__;
-  border:1px solid __cDarkBorder__;
-  background-color: __cWikiHeaderBg__;
-  margin:__marginHeader__;
-}
-
-div.dokuwiki .stylehead {
-  margin:0;
-}
-
-div.dokuwiki .stylefoot {
-  text-align:right;
-  padding-right:0.8em;
+  padding:3px 0 0 2px;
 }
 
 div.dokuwiki .pagename {
-  margin-left:7px;
-  margin-top:9px;
-  font-size: __FontSizePagename__;
-  color: __medium__;
   float:left;
+  font-size:200%;
+  font-weight:bolder;
+  color: __medium__;
+  text-align:left;
+  vertical-align:middle;
+  padding: 0;
 }
 
-div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited {
-  color:__PageNameColor__;
+div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited, div.dokuwiki .pagename a:hover, div.dokuwiki .pagename a:active {
+  color: __extern__;
   text-decoration:none;
-  font-size: __FontSizePagename__;
-}
-
-div.dokuwiki .pagename a:hover, div.dokuwiki .pagename a:active {
-  color:__PageNameColor__;
-  font-size: __FontSizePagename__;
 }
 
 div.dokuwiki .logo {
-  font-weight:normal;
-  text-align:right;
   float:right;
-  margin-right:7px;
-  margin-top:9px;
+  font-size:220%;
+  font-weight:bolder;
+  text-align:right;
+  vertical-align:middle;
 }
 
 div.dokuwiki .logo a:link, div.dokuwiki .logo a:visited, div.dokuwiki .logo a:hover, div.dokuwiki .logo a:active {
-  color:__LogoColor__;
+  color: __medium__;
   text-decoration:none;
+  font-variant:small-caps;
   letter-spacing:2pt;
-  font-size:__FontSizeLogo__;
 }
 
 /* ---------------  top and bottom bar ---------------- */
 div.dokuwiki .bar {
-  border-top:1px solid __cLightBorder__;
-  border-bottom:1px solid __cLightBorder__;
-  padding-top:0.2em;
-  padding-bottom:0.2em;
-  padding-left:0.1em;
-  padding-right:0.1em;
-  float:left;
-  width:100%;
+  border-top:1px solid __dark__;
+  border-bottom:1px solid __dark__;
+  background: __medium__;
+  padding: 0.1em 0.15em;
+  margin:0;
+  clear: both;
 }
 
 div.dokuwiki .bar-left {
@@ -77,40 +56,28 @@ div.dokuwiki .bar-left {
 
 div.dokuwiki .bar-right {
   float:right;
+  text-align:right;
 }
 
-div.dokuwiki #bar_top { 
-  padding-left:0.8em; 
-  padding-right:0.8em; 
-  padding-bottom:0.8em;
-  margin-bottom:0.5em;
-  height:2em;
-}
-
-div.dokuwiki #bar_bottom {
-  padding-left:0.8em; 
-  padding-right:0.8em; 
-  height:2em;
-  clear:both;
+div.dokuwiki #bar__bottom {
+  margin-bottom:3px;
 }
 
 /* ------------- File Metadata ----------------------- */
 
 div.dokuwiki div.meta {
-  color:__FontColor__;
-  font-size:__FontSize__;
-  clear:both;
+  clear: both;
+  margin-top: 1em;
+  color: __extern__;
+  font-size:70%;
 }
 
 div.dokuwiki div.meta div.user {
-  padding-left: 1em;
-  font-size:90%;
   float:left;
 }
 
 div.dokuwiki div.meta div.doc{
-  font-size:90%;
-  float:right;
+  text-align:right;
 }
 
 /* ---------------  Media Selection  ----------------- */
@@ -134,25 +101,26 @@ div.dokuwiki .mediaselect-right {
 }
 
 div.dokuwiki div.mediaref_head {
-	margin-left:0.5em;
+  margin-left:0.5em;
 }
 
 div.dokuwiki div.mediaref .search_result {
-	padding-left:1em;
+  padding-left:1em;
 }
 
 div.dokuwiki .mediaref_ref {
-	color:__existing__;
+  color: __existing__;
 }
 
 div.dokuwiki div.mediaref_hidden {
-	margin-top:1em;
-	text-align:center;
-	font-size:1.2em;
-	color:#BB0000;
+  margin-top:1em;
+  text-align:center;
+  font-size:1.2em;
+  color: #BB0000;
 }
 
 div.dokuwiki div.mediaref_footer {
-	margin-top:1em;
-	text-align:center;
+  margin-top:1em;
+  text-align:center;
 }
+

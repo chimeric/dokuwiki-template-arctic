@@ -1,8 +1,74 @@
 /**
- * extra CSS for arctic-template
+ * Design Elements - additional  CSS for the arctic-template
  *
  * @author Michael Klier <chi@chimeric.de>
  */
+
+/* -------------- general elements --------------- */
+
+body {
+  font: __FontSize__ Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
+  color: __black__;
+  margin:__marginBody__;
+  line-height:__LineHeight__;
+  background:__BodyBg__;
+}
+
+div#wrapper {
+  margin:auto;
+  width: __widthWiki__;
+  border:1px solid __mediumgray__;
+  background:__WikiBg__;
+  padding:__paddingWiki__;
+}
+
+div.dokuwiki div.left_sidebar {
+  float:left;
+  width:21%;
+  padding-top:0.2em;
+  padding-right:0.8em;
+  border-right:1px solid  __mediumgray__;
+}
+
+div.dokuwiki div.right_sidebar {
+  float:right;
+  width:21%;
+  padding-top:0.2em;
+  padding-left:0.8em;
+  border-left:1px solid __mediumgray__;
+}
+
+div.dokuwiki div.page {
+  text-align:justify;
+  padding-top:0;
+}
+
+div.dokuwiki div.right_page {
+  text-align:justify;
+  float:left;
+  width:75%;
+  padding:0.8em;
+}
+
+div.dokuwiki div.left_page {
+  text-align:justify;
+  float:left;
+  width:75%;
+  padding:0.8em;
+}
+
+div.footerinc {
+  height: __heightFooter__;
+  border:1px solid __mediumgray__;
+  background-color: __WikiFooterBg__;
+  margin-top:0.5em;
+}
+
+div.dokuwiki .footerinc a img {
+  padding-top:1.8em;
+}
+
+/* -------------- the sidebar --------------- */
 
 div.dokuwiki div.left_sidebar div.secedit,
 div.dokuwiki div.right_sidebar div.secedit {
@@ -71,7 +137,143 @@ div.dokuwiki div.right_sidebar div.g_sidebar,
 div.dokuwiki div.right_sidebar div.ns_sidebar,
 div.dokuwiki div.right_sidebar div.bc_sidebar
 {
-	border:1px solid __cLightBorder__;
+	border:1px solid __mediumgray__;
 	padding:0.2em;
 	margin-bottom:0.2em;
 }
+
+/* --------------- Links ------------------ */
+div.dokuwiki a:hover {
+  color:__extern__;
+}
+
+div.dokuwiki h1 a
+{
+  display:block;
+}
+
+div.dokuwiki a.action {
+  font-size:80%;
+  color:__extern__;
+}
+
+/* ------------- Page elements ----------------- */
+div.dokuwiki div.breadcrumbs{
+}
+
+div.dokuwiki div.left_sidebar div.breadcrumbs,
+div.dokuwiki div.right_sidebar div.breadcrumbs {
+  padding-left:0.5em;
+}
+
+/* general headline setup */
+div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki h5 {
+  color:__black__;
+  border-color:__mediumgray__;
+}
+
+/* special headlines */
+div.dokuwiki h1 {font-size: 180%; font-weight: normal;}
+div.dokuwiki h2 {font-size: 170%; }
+div.dokuwiki h3 {font-size: 160%; font-weight: normal;}
+div.dokuwiki h4 {font-size: 140%; font-weight: normal;}
+div.dokuwiki h5 {font-size: 120%; font-weight: bold;}
+
+/* ---------------- forms ------------------------ */
+
+div.dokuwiki fieldset {
+  border-color: __FormBorder__;
+}
+
+div.dokuwiki textarea.edit {
+  border-color: __FormBorder__;
+}
+
+div.dokuwiki input.edit, div.dokuwiki select.edit {
+  border-color: __FormBorder__;
+  font-size:80%;
+}
+
+div.dokuwiki input.missing {
+  border-color: __FormBorder__;
+  font-size:80%;
+}
+
+div.dokuwiki div.left_sidebar form#dw__search,
+div.dokuwiki div.right_sidebar form#dw__search {
+  margin-bottom: 0.2em;
+  display:block;
+}
+
+div.dokuwiki div.bar form#dw__search {
+  margin-right:0.2em;
+}
+
+div.dokuwiki div.left_sidebar form#dw__search input.edit,
+div.dokuwiki div.right_sidebar form#dw__search input.edit {
+  margin-left:0;
+  font-size:80%;
+}
+
+/* --------- buttons ------------------- */
+
+div.dokuwiki input.button, div.dokuwiki button.button{
+  border-color: __FormBorder__;
+  font-size:80%;
+}
+
+div.dokuwiki div.secedit input.button {
+  border-color: __FormBorder__;
+  font-size:80%;
+}
+
+/* ---------- table of contents ------------------- */
+div.dokuwiki div.toc {
+  width:20em;
+}
+
+div.dokuwiki div.tocheader {
+  border-color:__mediumgray__;
+  background-color: __white__;
+}
+
+div.dokuwiki #toc__inside {
+  border-color:__mediumgray__;
+}
+
+div.dokuwiki a.toc:hover {
+  color:__extern__;
+}
+
+/* ---------- AJAX quicksearch ----------- */
+div.dokuwiki div.left_sidebar div.ajax_qsearch,
+div.dokuwiki div.right_sidebar div.ajax_qsearch {
+  position:relative;
+  left:0;
+  display:none;
+  border: 1px solid __dark__;
+  background: __light__;
+  text-align: left;
+  padding: 4px;
+  margin-top:0.2em;
+  font-size:100%;
+}
+
+div.dokuwiki div.ajax_qsearch {
+  position:absolute;
+  right:100px;;
+  margin-top:5px;
+  width: 200px;
+  opacity: 0.9;
+  display:none;
+  border: 1px solid __dark__;
+  background: __light__;
+  text-align: left;
+  padding: 4px;
+  font-size:100%;
+}
+
+
+/* 
+setup vim: ts=2 sw=2: 
+*/

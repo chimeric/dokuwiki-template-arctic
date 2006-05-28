@@ -36,158 +36,151 @@
 
 <body>
 <?php /*old includehook*/ @include(dirname(__FILE__).'/topheader.html')?>
-<div class="dokuwiki">
+<div id="wrapper">
+  <div class="dokuwiki">
 
-  <?php html_msgarea()?>
+    <?php html_msgarea()?>
 
-  <div class="stylehead">
-    <div class="header">
-      <div class="pagename">
-        [[<?php tpl_link(wl($ID,'do=backlink'),$ID)?>]]
+    <div class="stylehead">
+      <div class="header">
+        <div class="pagename">
+          [[<?php tpl_link(wl($ID,'do=backlink'),$ID)?>]]
+        </div>
+        <div class="logo">
+          <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
+        </div>
       </div>
-      <div class="logo">
-        <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
+    
+      <?php if(tpl_getConf('breadcrumbs') == 'top' or tpl_getConf('breadcrumbs') == 'both') {?> 
+      <div class="breadcrumbs">
+        <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
       </div>
+      <?php } ?>
+
+      <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
+      </div>
+
+      <div class="bar" id="bar__top">
+        <div class="bar-left">
+
+          <?php 
+            switch(tpl_getConf('wiki_actionlinks')) {
+              case('buttons'):
+                tpl_button('edit');
+                tpl_button('history');     
+                break;
+              case('links'):
+                tpl_actionlink('edit');
+                print ($sepchar);
+                tpl_actionlink('history');
+                break;
+            } 
+          ?>
+
+        </div>
+        <div class="bar-right">
+
+          <?php
+            switch(tpl_getConf('wiki_actionlinks')) {
+              case('buttons'):
+                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                tpl_button('admin');
+                tpl_button('profile');
+                tpl_button('recent');
+                tpl_button('index');
+                tpl_button('login');
+                break;
+              case('links'):
+                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                if(tpl_actionlink('admin')) print ($sepchar);
+                if(tpl_actionlink('profile')) print ($sepchar);
+                tpl_actionlink('recent');
+                print ($sepchar);
+                tpl_actionlink('index');
+                print ($sepchar);
+                tpl_actionlink('login');
+                break;
+            }
+          ?>
+
+        </div>
     </div>
-  
-    <?php if(tpl_getConf('breadcrumbs') == 'top' or tpl_getConf('breadcrumbs') == 'both') {?> 
-    <div class="breadcrumbs">
-      <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
-    </div>
-    <?php } ?>
 
-    <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
-    </div>
+    <?php flush()?>
 
-    <div id="bar_top">
-        <div class="bar">
-          <div class="bar-left">
+    <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
 
-            <?php 
-              switch(tpl_getConf('wiki_actionlinks')) {
-                case('buttons'):
-                  tpl_button('edit');
-                  tpl_button('history');     
-                  break;
-                case('links'):
-                  tpl_actionlink('edit');
-                  print ($sepchar);
-                  tpl_actionlink('history');
-                  break;
-              } 
-            ?>
+    <?php if(tpl_getConf('sidebar') == 'left') { ?>
 
-          </div>
-          <div class="bar-right">
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
 
-            <?php
-              switch(tpl_getConf('wiki_actionlinks')) {
-                case('buttons'):
-                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
-                  tpl_button('admin');
-                  tpl_button('profile');
-                  tpl_button('recent');
-                  tpl_button('index');
-                  tpl_button('login');
-                  break;
-                case('links'):
-                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
-                  if(tpl_actionlink('admin')) print ($sepchar);
-                  if(tpl_actionlink('profile')) print ($sepchar);
-                  tpl_actionlink('recent');
-                  print ($sepchar);
-                  tpl_actionlink('index');
-                  print ($sepchar);
-                  tpl_actionlink('login');
-                  break;
-              }
-            ?>
+        <div class="left_sidebar">
+          <?php tpl_searchform() ?>
+          <?php tpl_sidebar() ?>
+        </div>
+        <div class="right_page">
+          <!-- wikipage start -->
+          <?php tpl_content()?>
+          <!-- wikipage stop -->
+        </div>
 
-          </div>
-      </div>
-  </div>
+      <?php } else { ?>
 
-  <?php flush()?>
+        <div class="page">
+          <!-- wikipage start -->
+          <?php tpl_content()?> 
+          <!-- wikipage stop -->
+        </div> 
 
-  <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
+      <?php } ?>
 
-  <?php if(tpl_getConf('sidebar') == 'left') { ?>
+    <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
 
-    <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
+        <div class="left_page">
+          <!-- wikipage start -->
+          <?php tpl_content()?>
+          <!-- wikipage stop -->
+        </div>
+        <div class="right_sidebar">
+          <?php tpl_searchform() ?>
+          <?php tpl_sidebar() ?>
+        </div>
 
-      <div class="left_sidebar">
-        <?php tpl_searchform() ?>
-        <?php tpl_sidebar() ?>
-      </div>
-      <div class="right_page">
-        <!-- wikipage start -->
-        <?php tpl_content()?>
-        <!-- wikipage stop -->
-      </div>
+      <?php } else { ?>
 
-    <?php } else { ?>
+        <div class="page">
+          <!-- wikipage start -->
+          <?php tpl_content()?> 
+          <!-- wikipage stop -->
+        </div> 
+
+      <?php }?>
+    <?php } elseif(tpl_getConf('sidebar') == 'none') { ?>
 
       <div class="page">
-        <!-- wikipage start -->
-        <?php tpl_content()?> 
-        <!-- wikipage stop -->
-      </div> 
+      <!-- wikipage start -->
+        <?php tpl_content() ?>
+      <!-- wikipage stop -->
+      </div>
 
     <?php } ?>
-
-  <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
-    <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
-
-      <div class="left_page">
-        <!-- wikipage start -->
-        <?php tpl_content()?>
-        <!-- wikipage stop -->
-      </div>
-      <div class="right_sidebar">
-        <?php tpl_searchform() ?>
-        <?php tpl_sidebar() ?>
+      <div class="stylefoot">
+        <div class="meta">
+          <div class="user">
+          <?php tpl_userinfo()?>
+          </div>
+          <div class="doc">
+          <?php tpl_pageinfo()?>
+          </div>
+        </div>
       </div>
 
-    <?php } else { ?>
+    <div class="clearer">&nbsp;</div>
 
-      <div class="page">
-        <!-- wikipage start -->
-        <?php tpl_content()?> 
-        <!-- wikipage stop -->
-      </div> 
+    <?php flush()?>
 
-    <?php }?>
-  <?php } elseif(tpl_getConf('sidebar') == 'none') { ?>
-
-    <div class="page">
-    <!-- wikipage start -->
-      <?php tpl_content() ?>
-    <!-- wikipage stop -->
-    </div>
-
-  <?php } ?>
-
-  <div class="clearer">&nbsp;</div>
-
-  <?php flush()?>
-
-  <div class="stylefoot">
-    <div class="meta">
-      <div class="user">
-
-        <?php tpl_userinfo()?>
-
-      </div>
-      <div class="doc">
-
-        <?php tpl_pageinfo()?>
-
-      </div>
-    </div>
-  </div>
-
-  <div id="bar_bottom">
-    <div class="bar">
+    <div class="bar" id="bar__bottom">
       <div class="bar-left">
 
         <?php 
@@ -222,10 +215,10 @@
 
       </div>
     </div>
+
+
+  <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
   </div>
-
-
-<?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 </div>
 
 <div class="no"><?php tpl_indexerWebBug()?></div>
