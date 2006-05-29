@@ -15,7 +15,7 @@ div.dokuwiki .header {
 div.dokuwiki .pagename {
   margin:0.2em;
   font-size:130%;
-  color:__PageNameColor__;
+  color:__lightgray__;
 }
 
 div.dokuwiki .logo {
