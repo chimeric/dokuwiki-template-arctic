@@ -58,14 +58,14 @@ div.dokuwiki div.left_page {
 }
 
 div.footerinc {
-  height: __heightFooter__;
   border:1px solid __mediumgray__;
   background-color: __WikiFooterBg__;
   margin-top:0.5em;
 }
 
 div.dokuwiki .footerinc a img {
-  padding-top:1.8em;
+  padding-top:__paddingFooter__;
+  padding-bottom:__paddingFooter__;
 }
 
 /* -------------- the sidebar --------------- */
