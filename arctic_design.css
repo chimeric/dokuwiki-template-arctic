@@ -159,6 +159,7 @@ div.dokuwiki a.action {
 
 /* ------------- Page elements ----------------- */
 div.dokuwiki div.breadcrumbs{
+  background:none;
 }
 
 div.dokuwiki div.left_sidebar div.breadcrumbs,
