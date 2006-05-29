@@ -46,15 +46,15 @@ div.dokuwiki div.page {
 div.dokuwiki div.right_page {
   text-align:justify;
   float:left;
-  width:75%;
-  padding:0.8em;
+  width:73%;
+  padding:2%;
 }
 
 div.dokuwiki div.left_page {
   text-align:justify;
   float:left;
-  width:75%;
-  padding:0.8em;
+  width:73%;
+  padding:2%;
 }
 
 div.footerinc {
@@ -237,6 +237,10 @@ div.dokuwiki div.tocheader {
   background-color: __white__;
 }
 
+div.dokuwiki div.tocheader img {
+  margin-top:0.6em;
+}
+
 div.dokuwiki #toc__inside {
   border-color:__mediumgray__;
 }
@@ -270,6 +274,14 @@ div.dokuwiki div.ajax_qsearch {
   background: __light__;
   text-align: left;
   padding: 4px;
+  font-size:100%;
+}
+
+/* code blocks by indention */
+div.dokuwiki pre.code,
+div.dokuwiki pre.file {
+  width:auto !important;
+  width:98%;
   font-size:100%;
 }
 
