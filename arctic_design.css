@@ -174,7 +174,7 @@ div.dokuwiki div.right_sidebar div.breadcrumbs {
 
 /* general headline setup */
 div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki h5 {
-  color:__black__;
+  color:__HeadlineColor__;
   border-color:__mediumgray__;
 }
 

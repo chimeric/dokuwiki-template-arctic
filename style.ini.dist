@@ -29,6 +29,7 @@ __LineHeight__      = 150%
 __PageNameColor__   = #f8f8f8
 __LogoColor__       = #f8f8f8
 __SidebarH1Bg__     = #eaeaea
+__HeadlineColor__   = #333333
 
 ; LAYOUT-COLORS 
 __BodyBg__         = #ffffff
