@@ -157,6 +157,11 @@ div.dokuwiki a.action {
   color:__extern__;
 }
 
+div.dokuwiki a.urlextern{
+    background: transparent url(images/urlextern.png) 0px 1px no-repeat;
+    padding-left:18px;
+}
+
 /* ------------- Page elements ----------------- */
 div.dokuwiki div.breadcrumbs{
   background:none;
