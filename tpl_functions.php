@@ -38,7 +38,7 @@ function tpl_sidebar() {
     }
 
     if(isset($INFO['userinfo']['name'])) {
-        if(tpl_getConf('user_sidebar') == 1) {
+        if(tpl_getConf('user_sidebar')) {
             $uSb = $uSbNs . ':' . $_SERVER['REMOTE_USER'] . ':' . $SbPn; 
             if(file_exists(wikiFN($uSb))) {
                 $OP['U'] .= '<div class="u_sidebar">' . DW_LF;
@@ -46,7 +46,7 @@ function tpl_sidebar() {
                 $OP['U'] .= '</div>' . DW_LF;
             }
         }
-        if(tpl_getConf('group_sidebar') == 1) {
+        if(tpl_getConf('group_sidebar')) {
             foreach($INFO['userinfo']['grps'] as $grp) {
                 $gSb = $gSbNs.':'.$grp.':'.$SbPn;
                 if(file_exists(wikiFN($gSb))) {
@@ -59,7 +59,7 @@ function tpl_sidebar() {
         }
     }
     
-    if(tpl_getConf('namespace_sidebar') == 1) {
+    if(tpl_getConf('namespace_sidebar')) {
         if(!preg_match("/".$uSbNs."|".$gSbNs."/", $svID)) {
             $path  = explode(':', $svID);
             $nSb   = '';
@@ -97,20 +97,6 @@ function tpl_sidebar() {
         print '  </div>' . DW_LF;
         print '</div>' . DW_LF;
     }
-}
-
-function tpl_stylefoot() {
-    $out = '<div class="stylefoot">' . DW_LF
-         . '  <div class="meta">' . DW_LF
-         . '    <div class="user">' . DW_LF
-         . '      ' . tpl_userinfo() . DW_LF
-         . '    </div>' . DW_LF
-         . '    <div class="doc">' . DW_LF
-         . '    ' . tpl_pageinfo() . DW_LF
-         . '    </div>' . DW_LF
-         . '  </div>' . DW_LF
-         . '</div>' . DW_LF;
-    print($out);
 }
 
 /**
