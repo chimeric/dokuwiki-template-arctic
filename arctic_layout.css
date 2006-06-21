@@ -23,12 +23,12 @@ div.dokuwiki .logo {
   font-size:130%;
 }
 
-div.dokuwiki .pagename a:link, div.dokuwiki .pagename a:visited, div.dokuwiki .pagename a:hover, div.dokuwiki .pagename a:active {
-  color:__PageNameColor__;
+div.dokuwiki .pagename a {
+  color:__PageNameColor__ !important;
 }
 
-div.dokuwiki .logo a:link, div.dokuwiki .logo a:visited, div.dokuwiki .logo a:hover, div.dokuwiki .logo a:active {
-  color:__LogoColor__;
+div.dokuwiki .logo a {
+  color:__LogoColor__ !important;
 }
 
 

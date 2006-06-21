@@ -1,122 +1,263 @@
-* 2006-04-16 Michael Klier
-- fixed font-size-bug of action-links
+Thu Jun  8 14:22:41 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * synced against recent mediamanager changes
 
-* 2006-04-13 Michael Klier
-- fixed typo in style.ini and style.ini.dist
+Fri Jun  2 14:48:20 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * cleaned up tpl_functions
 
-* 2006-04-05 Michael Klier
-- added some style.ini-options (TOC-width/action-link-colors)
-- moved login-info to the right
+Thu Jun  1 10:42:24 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * changed default-width in style.ini
 
-* 2006-04-03 Michael Klier
-- fixed print.css to work with MSIE
+Thu Jun  1 10:37:24 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added wrapper-div to detail.php
 
-* 2006-03-28 Michael Klier
-- fixed php-opening-tags in main.php
-- minor changes in footer.html
+Wed May 31 16:34:59 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added style.ini-opt HeadlineColor
 
-* 2006-03-24 Michael Klier
-- made sidebarindex recognizing the current ID
+Wed May 31 16:33:30 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * changed urlextern-link-icon
 
-* 2006-03-21 Michael Klier
-- small bugfix (fixed footnote:hover)
+Wed May 31 11:57:36 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * fixed font-size in code/file-blocks
 
-* 2006-03-09 Michael Klier
-- small bugfix (template breaks when viewed with 17" screens)
+Mon May 29 16:58:16 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * fixed font-size for code-blocks
 
-* 2006-03-07 Michael Klier
-- fixed favicon-inclusion in mediaref.php and mediaedit.php
+Mon May 29 11:12:02 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added extra CSS for mediamanager
 
-* 2006-03-05 Michael Klier
-- put everything into div.dokuwiki-context
-- shows searchform when sidebar is disabled
-- "fullscreen" diff-view
-- fixed alignment of login-form 
-- added missing buttons/actionlinks
-- added pagename again for backlinks
-- cleaned style.ini removed unneeded stuff and added some useful
-- added style.ini.dist
-- renamed conf.php do default.php and added default.php.dist
-- removed csshover.htc table-hover-effect only in firefox
+Mon May 29 10:59:39 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added english config-translation
 
-* 2006-02-24 Michael Klier
-- added option to use buttons instead of action-links
-- removed the action-link-handling completely from tpl_functions.php
-  also removed config-var tb_link_order (edit main.php to change the order!)
-- added edit bar below content
-- added color-option for body-background to style.ini (devonly)
-- fixed background-color of edit-bar-buttons
-- renamed config var tb_link_separator to actionlink_separator
+Mon May 29 10:31:54 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * removed breadcrumbs background
 
-* 2006-02-22 Michael Klier
-- added missing CSS for links in right-sidebar
+Mon May 29 10:16:08 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * changed default-setting for footer
 
-* 2006-02-21 Michael Klier
-- updated detail.php und media.php of devel-version
-- fixed some bugs which happend with the last update
-- updated default.style.ini
+Mon May 29 10:15:07 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * updated style.ini.dist
 
-* 2006-02-14 Michael Klier
-- synced CSS of the devel-version against dokuwiki-default-template
+Mon May 29 10:14:35 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * optimized footer
 
-* 2006-02-07 Michael Klier
-- removed mainsidebar-namespace-configuration - main-sidebar is searched in root-namespace now
-- added edit-buttons inside sidebars
-- added optional trace at top
-- a lot of css-stuff related to the developement version
-- stable/dev-version look 'almost' equal now
-- removed some unneeded stuff from style.ini
-- css cleanup
+Mon May 29 10:11:00 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * minor style-fix
 
-* 2005-01-18 Michael Klier
-- bug-fix (edit-link didn`t work correct with old-revisions)
+Mon May 29 09:54:06 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * further CSS-fixes for IE
 
-* 2005-01-14 Michael Klier
-- small bug-fix (revisons-link didn`t send page-id)
+Mon May 29 00:02:31 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * big css-update
+      The template now uses its own set of CSS files in which the rules
+      of the default-template are overwritten. This makes it easier to
+      keep the style in sync with upcoming changes. The template can now
+      be configured via the config-manager. Some of the style.ini-options
+      were removed. The new mediamanger is included.
 
-* 2005-12-21 Michael Klier
-- damn it - removed namespace-sidebar-inclusion-bug
+Fri May 26 16:36:13 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added template-specific css-files
 
-* 2005-12-20 Michael Klier
-- fixed page-name-position
-- fixed bug with ugly fonts :-/ ??
-- fixed bug with double main-sidebar-inclusion
+Fri May 26 16:28:08 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * removed obsolete default.php and default.php.dist
 
-* 2005-12-12 Michael Klier
-- added possibility to disable sidebar
-- added style.ini support of for devonly DokuWiki
-- some directory cleaning
-- fixed namespace-sidebar inclusion and enhanced functionality (thx to Olivier Pichon)
-- TOC is automatically removed from sidebar-pages now
+Fri May 26 16:20:28 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * made main.php and tpl_functions.php use tpl_getConf
 
-* 2005-12-11 Michael Klier
-- cleaned footer.html
+Fri May 26 15:22:42 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added conf/ for use with config-manager
 
-* 2005-11-29 Michael Klier
-- some minor css-fixes again 
-- splitted into stable/devonly-Version
-- removed stupid discussion-plugin-inclusion in main.php :-/
-- added posibility to modify position of breadcrumbs in sidebar
-- added posibility to use "you-are-here"-style of breadcrumbs
-- replaced stupid hardcoded breadcrumbs-headline with $lang-string
+Fri May 26 12:06:51 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * added media.css to style.ini
 
-* 2005-11-21 Michael Klier
-- some more css-fixes
+Fri May 26 12:04:02 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * now uses new mediamanager
 
-* 2005-11-14 Michael Klier
-- added possibility to change the order of sidebars/top-links
-- added top-link for update-profile (devonly)
-- fixed font-size of footnotes
-- added support for namespace-sidebars
-- changed variable-names 
+Fri May 26 12:01:17 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * fixed seperator-printing for action-links
 
-* 2005-11-07 Michael Klier
-- now shows "create-this-page"-button when a page does not exist
-- removed bug when used with url-rewrite disabled
-- links use $lang - strings now
-- fixed font-size of block-quotes
-- removed images, now its pure css
-- template resizing is easier than before
+Sun May 21 16:55:32 CEST 2006  'Michael Klier <chi@chimeric.de>'
+  * enabled you-are-here breadcrumbs for top-trace
 
-* 2005-11-04 Michael Klier
-- initial Release
+Wed Apr 19 11:24:38 CEST 2006  chi@chimeric.de
+  * updated changelog
+
+Wed Apr 19 11:19:27 CEST 2006  chi@chimeric.de
+  * added changelog
+
+Sun Apr 16 15:39:50 CEST 2006  chi@chimeric.de
+  * fixed font-size-bug of action-links
+
+Thu Apr 13 15:05:49 CEST 2006  chi@chimeric.de
+  * fixed typo in style.ini and stlye.ini.dist
+
+Wed Apr  5 17:54:52 CEST 2006  chi@chimeric.de
+  * fixed user-info
+
+Wed Apr  5 17:49:00 CEST 2006  chi@chimeric.de
+  * updated style.ini.dist
+
+Wed Apr  5 14:18:09 CEST 2006  chi@chimeric.de
+  * corrected typo in style.ini
+
+Wed Apr  5 11:43:36 CEST 2006  chi@chimeric.de
+  * reverted default.php
+
+Wed Apr  5 11:43:04 CEST 2006  chi@chimeric.de
+  * fixed margin for Trace in sidebar
+
+Wed Apr  5 11:37:13 CEST 2006  chi@chimeric.de
+  * moved login-info to the left
+
+Wed Apr  5 11:28:54 CEST 2006  chi@chimeric.de
+  * added style.ini-options for action-links
+
+Wed Apr  5 11:24:21 CEST 2006  chi@chimeric.de
+  * added style.ini-option for TOC-width
+
+Wed Apr  5 11:22:24 CEST 2006  chi@chimeric.de
+  * added style.ini-option for breadcrumbs font-size
+
+Wed Apr  5 11:19:27 CEST 2006  chi@chimeric.de
+  * fixed top-link in main.php
+
+Mon Apr  3 14:38:53 CEST 2006  chi@chimeric.de
+  * fixed print.css
+
+Tue Mar 28 18:07:08 CEST 2006  chi@chimeric.de
+  * fixed php-opening-tags in main.php and footer.html
+
+Fri Mar 24 12:57:30 CET 2006  chi@chimeric.de
+  * made sidebar-index capable of current ID
+
+Tue Mar 21 23:38:12 CET 2006  chi@chimeric.de
+  * fixed footnots:hover
+
+Thu Mar  9 20:52:19 CET 2006  chi@chimeric.de
+  * fixed padding of main-page
+
+Thu Mar  9 20:51:14 CET 2006  chi@chimeric.de
+  * fixed with of page to avoid design-break on 17-monitors
+
+Tue Mar  7 12:29:36 CET 2006  chi@chimeric.de
+  * changed favicon-inclusion in mediaref.php and mediaedit.php
+
+Tue Mar  7 12:11:50 CET 2006  chi@chimeric.de
+  * added missing authide-sidebar while preview
+
+Tue Mar  7 11:49:37 CET 2006  chi@chimeric.de
+  * added autohide-sidebar in edit-mode
+
+Tue Mar  7 09:43:23 CET 2006  chi@chimeric.de
+  * fixed style.ini
+
+Mon Mar  6 17:57:57 CET 2006  chi@chimeric.de
+  * added config-files
+
+Mon Mar  6 17:42:45 CET 2006  chi@chimeric.de
+  * beautified style.ini
+
+Mon Mar  6 17:07:54 CET 2006  chi@chimeric.de
+  * small fix for main.php
+
+Mon Mar  6 16:57:45 CET 2006  chi@chimeric.de
+  * template shows pagename now
+
+Mon Mar  6 13:22:15 CET 2006  chi@chimeric.de
+  * sidebar disabled on diff-view
+
+Mon Mar  6 11:01:48 CET 2006  chi@chimeric.de
+  * added default.php.dist
+
+Mon Mar  6 10:28:01 CET 2006  chi@chimeric.de
+  * last edit of main.php
+
+Mon Mar  6 10:24:22 CET 2006  chi@chimeric.de
+  * changes main.php again
+
+Mon Mar  6 10:18:38 CET 2006  chi@chimeric.de
+  * another main.php fix
+
+Mon Mar  6 10:14:39 CET 2006  chi@chimeric.de
+  * minor fixes of main.php
+
+Mon Mar  6 09:20:03 CET 2006  chi@chimeric.de
+  * removed csshover.htc
+
+Mon Mar  6 09:15:04 CET 2006  chi@chimeric.de
+  * removed width from ajax_qsearch
+
+Mon Mar  6 01:04:16 CET 2006  chi@chimeric.de
+  * CSS Update Part 1
+
+Thu Feb 23 13:17:32 CET 2006  chi@chimeric.de
+  * restored default conf.php
+
+Thu Feb 23 13:17:10 CET 2006  chi@chimeric.de
+  * fixed button font-size background
+
+Thu Feb 23 12:22:20 CET 2006  chi@chimeric.de
+  * fixed margin of search-quickresult
+
+Thu Feb 23 12:19:30 CET 2006  chi@chimeric.de
+  * fixed background of toolbar-button
+
+Thu Feb 23 12:12:57 CET 2006  chi@chimeric.de
+  * added color-option for body
+
+Thu Feb 23 12:10:20 CET 2006  chi@chimeric.de
+  * revert to default conf.php
+
+Thu Feb 23 12:07:40 CET 2006  chi@chimeric.de
+  * added optional use of buttons
+      This pach introduces a new way of handling the action links and 
+      a new bar at the bottom of the page. It lets you choose betwenn the 
+      usage of links and buttons. Also it removes the action-link handling
+      from the tpl_functions.php. 
+
+Thu Feb 23 09:00:49 CET 2006  chi@chimeric.de
+  * some minor CSS corrections
+
+Wed Feb 22 10:06:15 CET 2006  chi@chimeric.de
+  * fixed externeal link in right-sidebar
+
+Tue Feb 21 22:04:36 CET 2006  chi@chimeric.de
+  * fixed broken style.ini again
+
+Tue Feb 21 21:56:55 CET 2006  chi@chimeric.de
+  * revert style.ini
+
+Tue Feb 21 21:23:05 CET 2006  chi@chimeric.de
+  * added missing div-clearer to detail.php and media.php
+
+Tue Feb 21 21:19:43 CET 2006  chi@chimeric.de
+  * removed blog-plugin-stuff :-/
+
+Tue Feb 21 21:17:06 CET 2006  chi@chimeric.de
+  * update media.php and detail.php
+
+Thu Feb 16 12:41:45 CET 2006  chi@chimeric.de
+  * fixed search form font-size
+
+Wed Feb 15 12:55:38 CET 2006  chi@chimeric.de
+  * fixed TOC-overlapping boxes
+
+Wed Feb 15 00:14:16 CET 2006  chi@chimeric.de
+  * fixed CSS-Errors
+
+Tue Feb 14 23:40:42 CET 2006  chi@chimeric.de
+  * CSS synced against default-css
+
+Tue Feb 14 17:11:51 CET 2006  chi@chimeric.de
+  * fixed interwiki-link colors
+
+Tue Feb 14 17:02:58 CET 2006  chi@chimeric.de
+  * fixed headine anchors again
+
+Tue Feb 14 17:01:59 CET 2006  chi@chimeric.de
+  * fixed headine anchors
+
+Tue Feb 14 16:59:36 CET 2006  chi@chimeric.de
+  * fixed headline anchors
+
+Tue Feb 14 13:18:19 CET 2006  chi@chimeric.de
+  * Initial report.

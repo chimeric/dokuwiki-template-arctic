@@ -19,7 +19,6 @@
 
 #media__right {
     width: 69.7%;
-
     height: 100%;
     overflow: auto;
     position: absolute;
@@ -73,6 +72,9 @@ it's dirty, so any "real" fixes are welcome */
     display: block;
     float: left;
     margin-left: 30px;
+}
+* html #media__opts label {
+    margin-left: 10px;
 }
 * html #media__opts label {
     margin-left: 10px;
