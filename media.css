@@ -9,7 +9,7 @@
 
 #media__left {
     width: 30%;
-    border-right: solid 1px __dark__;
+    border-right: solid 1px __border__;
 
     height: 100%;
     overflow: auto;
@@ -19,6 +19,7 @@
 
 #media__right {
     width: 69.7%;
+
     height: 100%;
     overflow: auto;
     position: absolute;
@@ -49,7 +50,7 @@
     list-style-image: none;
 }
 * html #media__tree li {
-    border: 1px solid __white__;
+    border: 1px solid __background__;
 }/* I don't understand this, but this fixes a style bug in IE;
 it's dirty, so any "real" fixes are welcome */
 
@@ -76,9 +77,6 @@ it's dirty, so any "real" fixes are welcome */
 * html #media__opts label {
     margin-left: 10px;
 }
-* html #media__opts label {
-    margin-left: 10px;
-}
 
 #media__opts br {
     clear: left;
@@ -91,11 +89,11 @@ it's dirty, so any "real" fixes are welcome */
 }
 
 #media__content #scroll__here {
-    border: 1px dashed __dark__;
+    border: 1px dashed __border__;
 }
 
 #media__content .odd {
-    background-color: __lighter__;
+    background-color: __background_other__;
     padding: 0.4em;
 }
 
@@ -125,21 +123,45 @@ it's dirty, so any "real" fixes are welcome */
 }
 
 #media__content div.example {
-    color: __darkgray__;
+    color: __text_neu__;
     margin-left: 1em;
 }
 
 /* --- upload form --- */
 
 #media__content div.upload {
-    font-size: 80%;
-    padding: 0.5em 0 0.5em 0.5em;
+    font-size: 90%;
+    padding: 0 0.5em 0.5em 0.5em;
 }
 
 #media__content form.upload {
     display: block;
-    border-bottom: solid 1px __dark__;
-    padding: 0 0 1em 2em;
+    border-bottom: solid 1px __border__;
+    padding: 0 0.5em 1em 0.5em;
+}
+#media__content form.upload fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: auto;
+}
+#media__content form.upload p {
+    clear: left;
+    text-align: left;
+    padding: 0.25em 0;
+    margin: 0;
+    line-height: 1.0em;
+}
+#media__content form.upload label {
+    float: left;
+    width: 30%;
+}
+#media__content form.upload label.check {
+    float: none;
+    width: auto;
+}
+#media__content form.upload input.check {
+    margin-left: 30%;
 }
 
 /* --- meta edit form --- */

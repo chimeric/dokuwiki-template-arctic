@@ -24,8 +24,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
  lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
 <head>
-  <title><?php tpl_pagetitle()?> [<?php echo hsc($conf['title'])?>]</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    <?php tpl_pagetitle()?>
+    [<?php echo strip_tags($conf['title'])?>]
+  </title>
 
   <?php tpl_metaheaders()?>
 
@@ -176,7 +179,7 @@
         </div>
       </div>
 
-    <div class="clearer">&nbsp;</div>
+    <div class="clearer"></div>
 
     <?php flush()?>
 

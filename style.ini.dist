@@ -38,28 +38,47 @@ __WikiHeaderBg__   = #436976
 __WikiFooterBg__   = #436976
 __FormBorder__     = #c3c3c3
 
-; These are the style.ini-parts of the original dokuwiki-default-template
-; I keep it here to be compatible to plugin-manager etc.
-; various shades of gray, mainly used for backgrounds and texts
-__white__      = #fff
-__lightgray__  = #f5f5f5
-__mediumgray__ = #ccc
-__darkgray__   = #666
-__black__      = #333
 
-; these are the shades of blue
-__lighter__   = #f7f9fa
-__light__     = #eef3f8
-__medium__    = #bdd1d7
-__dark__      = #436976
-__darker__    = #638c9c
+;--------------------------------------------------------------------------
+;------ guaranteed dokuwiki color placeholders that every plugin can use
+; main text and background colors
+__text__           = "#000"
+__background__     = "#fff"
+; alternative text and background colors
+__text_alt__       = "#638c9c"
+__background_alt__ = "#dee7ec"
+; neutral text and background colors
+__text_neu__       = "#666"
+__background_neu__ = "#f5f5f5"
+; border color
+__border__         = "#8cacbb"
+;--------------------------------------------------------------------------
+
+; other text and background colors
+__text_other__       = "#ccc"
+__background_other__ = "#f7f9fa"
 
 ; these are used for links
-__extern__    = #436976
+__extern__    = "#436976"
 __existing__  = #c37439
-__missing__   = #f30
+__missing__   = "#f30"
 
 ; highlighting search snippets
-__highlight__ = #ff9
+__highlight__ = "#ff9"
 
+;--------------------------------------------------------------------------
+;------ for keeping old templates and plugins compatible to the old pattern
+; (to be deleted at the next or after next release)
+__white__      = "#fff"
+__lightgray__  = "#f5f5f5"
+__mediumgray__ = "#ccc"
+__darkgray__   = "#666"
+__black__      = "#000"
+
+; these are the shades of blue
+__lighter__   = "#f7f9fa"
+__light__     = "#eef3f8"
+__medium__    = "#dee7ec"
+__dark__      = "#8cacbb"
+__darker__    = "#638c9c"
 ; setup vim: ts=2 sw=2:
