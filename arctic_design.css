@@ -100,7 +100,7 @@ div.dokuwiki div.right_sidebar h4,
 div.dokuwiki div.right_sidebar h5,
 div.dokuwiki div.right_sidebar h6 
 {
-  font-size:__FontSize__;
+  font-size: 100%;
   font-family: Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
   font-weight:bold;
   padding:0;
@@ -252,24 +252,25 @@ div.dokuwiki #toc__inside {
 }
 
 div.dokuwiki a.toc:hover {
-  color:__extern__;
+  color: __extern__;
 }
 
 /* ---------- AJAX quicksearch ----------- */
 div.dokuwiki div.left_sidebar div.ajax_qsearch,
 div.dokuwiki div.right_sidebar div.ajax_qsearch {
-  position:relative;
-  left:0;
-  display:none;
+  position: relative;
+  left: 0;
+  display: none;
   border: 1px solid __dark__;
   background: __light__;
   text-align: left;
   padding: 4px;
-  margin-top:0.2em;
-  font-size:100%;
+  margin-top :0.2em;
+  font-size: 85%;
+  width: 95%;
 }
 
-div.dokuwiki div.ajax_qsearch {
+div.dokuwiki div#bar__top div.ajax_qsearch {
   position:absolute;
   right:100px;;
   margin-top:5px;
@@ -280,7 +281,16 @@ div.dokuwiki div.ajax_qsearch {
   background: __light__;
   text-align: left;
   padding: 4px;
-  font-size:100%;
+  font-size: 85%;
+}
+
+div.dokuwiki  div.ajax_qsearch strong {
+  font-size: 115%;
+  background: __SidebarH1Bg__;
+  padding: 0.3em;
+  display: block;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
 }
 
 /* code blocks by indention */
