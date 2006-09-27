@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 /**
  * DokuWiki Arctic Template
@@ -18,9 +16,14 @@
  *
  */
 
+// must be run from within DokuWiki
+if (!defined('DOKU_INC')) die();
+
  require_once(dirname(__FILE__).'/tpl_functions.php');
  $sepchar = tpl_getConf('sepchar');
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>"
  lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction']?>">
 <head>
@@ -47,7 +50,7 @@
     <div class="stylehead">
       <div class="header">
         <div class="pagename">
-          [[<?php tpl_link(wl($ID,'do=backlink'),$ID)?>]]
+          [[<?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true))?>]]
         </div>
         <div class="logo">
           <?php tpl_link(wl(),$conf['title'],'name="dokuwiki__top" accesskey="h" title="[ALT+H]"')?>
