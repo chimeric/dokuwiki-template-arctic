@@ -227,7 +227,7 @@ if (!defined('DOKU_INC')) die();
   </div>
 </div>
 
-<div class="no"><?php tpl_indexerWebBug()?></div>
+<div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug()?></div>
 <?php //setup vim: ts=2 sw=2: ?>
 </body>
 </html>
