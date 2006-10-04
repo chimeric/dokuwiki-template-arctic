@@ -41,13 +41,13 @@ div.dokuwiki .bar {
 } 
 
 div.dokuwiki #bar__top {
-  height:1.6em;
+  height: 1.9em;
   background:none;
   margin-bottom:0.2em;
 }
 
 div.dokuwiki #bar__bottom {
-  height:1.6em;
+  height: 1.9em;
   background:none;
   margin-top:0.2em;
 }

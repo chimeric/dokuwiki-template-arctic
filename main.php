@@ -91,15 +91,14 @@ $sepchar = tpl_getConf('sepchar');
           <?php
             switch(tpl_getConf('wiki_actionlinks')) {
               case('buttons'):
-                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 tpl_button('admin');
                 tpl_button('profile');
                 tpl_button('recent');
                 tpl_button('index');
                 tpl_button('login');
+                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 break;
               case('links'):
-                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 if(tpl_actionlink('admin')) print ($sepchar);
                 if(tpl_actionlink('profile')) print ($sepchar);
                 tpl_actionlink('recent');
@@ -107,6 +106,8 @@ $sepchar = tpl_getConf('sepchar');
                 tpl_actionlink('index');
                 print ($sepchar);
                 tpl_actionlink('login');
+                print ($sepchar);
+                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 break;
             }
           ?>

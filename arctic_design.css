@@ -217,10 +217,6 @@ div.dokuwiki div.right_sidebar form#dw__search {
   display:block;
 }
 
-div.dokuwiki div.bar form#dw__search {
-  margin-right:0.2em;
-}
-
 div.dokuwiki div.left_sidebar form#dw__search input.edit,
 div.dokuwiki div.right_sidebar form#dw__search input.edit {
   margin-left:0;
