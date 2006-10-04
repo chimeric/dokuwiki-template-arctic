@@ -7,35 +7,35 @@
 /* -------------- general elements --------------- */
 
 body {
-  font: __FontSize__ Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
-  color: __black__;
-  margin:__marginBody__;
-  line-height:__LineHeight__;
-  background:__BodyBg__;
+  font: __font_size__ Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
+  color: __text__;
+  margin:__body_margin__;
+  line-height:__line_height__;
+  background:__body_background__;
 }
 
 div#wrapper {
   margin:auto;
-  width: __widthWiki__;
-  border:1px solid __mediumgray__;
-  background:__WikiBg__;
-  padding:__paddingWiki__;
+  width: __wiki_width__;
+  border:1px solid __border__;
+  background:__background__;
+  padding:__page_padding__;
 }
 
 div.dokuwiki div.left_sidebar {
   float:left;
-  width:21%;
+  width:22%;
   padding-top:0.2em;
-  padding-right:0.8em;
-  border-right:1px solid  __mediumgray__;
+  padding-right:0.5em;
+  border-right:1px solid  __border__;
 }
 
 div.dokuwiki div.right_sidebar {
   float:right;
-  width:21%;
+  width:22%;
   padding-top:0.2em;
-  padding-left:0.8em;
-  border-left:1px solid __mediumgray__;
+  padding-left:0.5em;
+  border-left:1px solid __border__;
 }
 
 div.dokuwiki div.page {
@@ -46,26 +46,26 @@ div.dokuwiki div.page {
 div.dokuwiki div.right_page {
   text-align:justify;
   float:left;
-  width:73%;
+  width:72%;
   padding:2%;
 }
 
 div.dokuwiki div.left_page {
   text-align:justify;
   float:left;
-  width:73%;
+  width:72%;
   padding:2%;
 }
 
 div.footerinc {
-  border:1px solid __mediumgray__;
-  background-color: __WikiFooterBg__;
+  border:1px solid __border__;
+  background-color: __footer_background__;
   margin-top:0.5em;
 }
 
 div.dokuwiki .footerinc a img {
-  padding-top:__paddingFooter__;
-  padding-bottom:__paddingFooter__;
+  padding-top:__footer_padding__;
+  padding-bottom:__footer_padding__;
 }
 
 /* -------------- the sidebar --------------- */
@@ -103,19 +103,15 @@ div.dokuwiki div.right_sidebar h6
   font-size: 100%;
   font-family: Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
   font-weight:bold;
-  padding:0;
-  padding-top:0.2em;
-  padding-left:0.2em;
-  margin-top:0.5em;
+  padding:0.1em;
   border:none;
 }
 
 div.dokuwiki div.left_sidebar h1,
 div.dokuwiki div.right_sidebar h1
 {
-  background:__SidebarH1Bg__;
-  margin:0.2em;
-  padding-left:0.4em;
+  background:__background_alt__;
+  padding-left: 0.2em;
 }
 
 div.dokuwiki div.left_sidebar ul,
@@ -137,9 +133,9 @@ div.dokuwiki div.right_sidebar div.g_sidebar,
 div.dokuwiki div.right_sidebar div.ns_sidebar,
 div.dokuwiki div.right_sidebar div.bc_sidebar
 {
-	border:1px solid __mediumgray__;
-	padding:0.2em;
+	border:1px solid __border__;
 	margin-bottom:0.2em;
+  padding: 0.2em;
 }
 
 /* --------------- Links ------------------ */
@@ -162,6 +158,16 @@ div.dokuwiki a.urlextern{
     padding-left:18px;
 }
 
+/* general headline setup */
+div.dokuwiki h1 a,
+div.dokuwiki h2 a,
+div.dokuwiki h3 a,
+div.dokuwiki h4 a,
+div.dokuwiki h5 a,
+div.dokuwiki a.nolink {
+  color: __headline_color__ !important;
+}
+
 /* ------------- Page elements ----------------- */
 div.dokuwiki div.breadcrumbs{
   background:none;
@@ -174,8 +180,8 @@ div.dokuwiki div.right_sidebar div.breadcrumbs {
 
 /* general headline setup */
 div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki h5 {
-  color:__HeadlineColor__;
-  border-color:__mediumgray__;
+  color:__headline_color__;
+  border-color:__border__;
 }
 
 /* special headlines */
@@ -188,20 +194,20 @@ div.dokuwiki h5 {font-size: 120%; font-weight: bold;}
 /* ---------------- forms ------------------------ */
 
 div.dokuwiki fieldset {
-  border-color: __FormBorder__;
+  border-color: __form_border__;
 }
 
 div.dokuwiki textarea.edit {
-  border-color: __FormBorder__;
+  border-color: __form_border__;
 }
 
 div.dokuwiki input.edit, div.dokuwiki select.edit {
-  border-color: __FormBorder__;
+  border-color: __form_border__;
   font-size:80%;
 }
 
 div.dokuwiki input.missing {
-  border-color: __FormBorder__;
+  border-color: __form_border__;
   font-size:80%;
 }
 
@@ -224,12 +230,12 @@ div.dokuwiki div.right_sidebar form#dw__search input.edit {
 /* --------- buttons ------------------- */
 
 div.dokuwiki input.button, div.dokuwiki button.button{
-  border-color: __FormBorder__;
+  border-color: __form_border__;
   font-size:80%;
 }
 
 div.dokuwiki div.secedit input.button {
-  border-color: __FormBorder__;
+  border-color: __form_border__;
   font-size:80%;
 }
 
@@ -239,8 +245,7 @@ div.dokuwiki div.toc {
 }
 
 div.dokuwiki div.tocheader {
-  border-color:__mediumgray__;
-  background-color: __white__;
+  border-color:__border__;
 }
 
 div.dokuwiki div.tocheader img {
@@ -248,7 +253,7 @@ div.dokuwiki div.tocheader img {
 }
 
 div.dokuwiki #toc__inside {
-  border-color:__mediumgray__;
+  border-color:__border__;
 }
 
 div.dokuwiki a.toc:hover {
@@ -259,15 +264,19 @@ div.dokuwiki a.toc:hover {
 div.dokuwiki div.left_sidebar div.ajax_qsearch,
 div.dokuwiki div.right_sidebar div.ajax_qsearch {
   position: relative;
-  left: 0;
+  left: 1px;
+  top: 2px;
   display: none;
-  border: 1px solid __dark__;
-  background: __light__;
-  text-align: left;
-  padding: 4px;
-  margin-top :0.2em;
+  background: none;
+  background: __background_neu__;
+  border-left: none;
+  border-top: none;
+  border-right: none;
   font-size: 85%;
-  width: 95%;
+  float: left;
+  width: 96%;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
 }
 
 div.dokuwiki div#bar__top div.ajax_qsearch {
@@ -277,20 +286,18 @@ div.dokuwiki div#bar__top div.ajax_qsearch {
   width: 200px;
   opacity: 0.9;
   display:none;
-  border: 1px solid __dark__;
-  background: __light__;
+  border: 1px solid __border__;
+  background: __background_neu__;
   text-align: left;
-  padding: 4px;
+  padding: 0.2em;
   font-size: 85%;
 }
 
 div.dokuwiki  div.ajax_qsearch strong {
   font-size: 115%;
-  background: __SidebarH1Bg__;
-  padding: 0.3em;
+  background: __background_alt__;
+  padding: 0.1em;
   display: block;
-  margin-left: 0.1em;
-  margin-right: 0.1em;
 }
 
 /* code blocks by indention */

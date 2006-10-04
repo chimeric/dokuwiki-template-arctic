@@ -6,9 +6,9 @@
 
 /* -------------- top row --------------- */
 div.dokuwiki .header {
-  height:__heightHeader__;
-  border:1px solid __mediumgray__;
-  background-color:__WikiHeaderBg__;
+  height:__header_height__;
+  border:1px solid __border__;
+  background-color:__header_background__;
   margin-bottom:0.2em;
 }
 
@@ -24,18 +24,18 @@ div.dokuwiki .logo {
 }
 
 div.dokuwiki .pagename a {
-  color:__PageNameColor__ !important;
+  color:__pagename_color__ !important;
 }
 
 div.dokuwiki .logo a {
-  color:__LogoColor__ !important;
+  color:__logo_color__ !important;
 }
 
 
 /* ---------------  top and bottom bar ---------------- */
 div.dokuwiki .bar {
-  border-top:1px solid __mediumgray__;
-  border-bottom:1px solid __mediumgray__;
+  border-top:1px solid __border__;
+  border-bottom:1px solid __border__;
   padding-left:0.3em;
   padding-right:0.3em;
 } 
