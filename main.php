@@ -99,15 +99,15 @@ $sepchar = tpl_getConf('sepchar');
                 if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 break;
               case('links'):
-                if(tpl_actionlink('admin')) print ($sepchar);
+                if(tpl_actionlink('admin'))   print ($sepchar);
                 if(tpl_actionlink('profile')) print ($sepchar);
-                tpl_actionlink('recent');
-                print ($sepchar);
-                tpl_actionlink('index');
-                print ($sepchar);
+                if(tpl_actionlink('recent'))  print ($sepchar);
+                if(tpl_actionlink('index'))   print ($sepchar);
                 tpl_actionlink('login');
-                print ($sepchar);
-                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                if(tpl_getConf('sidebar') == 'none') {
+                  print ($sepchar);
+                  tpl_searchform();
+                }
                 break;
             }
           ?>
