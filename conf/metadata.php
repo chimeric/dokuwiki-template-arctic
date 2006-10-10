@@ -10,7 +10,6 @@ $meta['sidebar']                  = array('multichoice', '_choices' => array('le
 $meta['pagename']                 = array('string', '_pattern' => '#[a-z]*');
 $meta['breadcrumbs']              = array('multichoice', '_choices' => array('top', 'sidebar', 'both'));
 $meta['wiki_actionlinks']         = array('multichoice', '_choices' => array('links', 'buttons'));
-$meta['sepchar']                  = array('string');
 $meta['user_sidebar']             = array('onoff');
 $meta['user_sidebar_namespace']   = array('string', '_pattern' => '#^[a-z:]*#');
 $meta['group_sidebar']            = array('onoff');

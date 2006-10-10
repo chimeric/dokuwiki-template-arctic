@@ -34,19 +34,16 @@ div.dokuwiki .logo a {
 
 /* ---------------  top and bottom bar ---------------- */
 div.dokuwiki .bar {
-  padding: 0.2em;
-  height: 2em;
+  padding: 2px;
+  height: 26px;
 }
 
 div.dokuwiki #bar__top {
   background: none;
-  margin-bottom: 0.2em;
-  display: block;
 }
 
 div.dokuwiki #bar__bottom {
   background: none;
-  margin-top: 0.2em;
 }
 
 /* ------------- File Metadata ----------------------- */

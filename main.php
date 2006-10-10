@@ -21,8 +21,6 @@ if (!defined('DOKU_INC')) die();
 
 // include arctic template functions
 require_once(dirname(__FILE__).'/tpl_functions.php');
-
-$sepchar = tpl_getConf('sepchar');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -79,7 +77,6 @@ $sepchar = tpl_getConf('sepchar');
                 break;
               case('links'):
                 tpl_actionlink('edit');
-                print ($sepchar);
                 tpl_actionlink('history');
                 break;
             } 
@@ -99,15 +96,12 @@ $sepchar = tpl_getConf('sepchar');
                 if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 break;
               case('links'):
-                if(tpl_actionlink('admin'))   print ($sepchar);
-                if(tpl_actionlink('profile')) print ($sepchar);
-                if(tpl_actionlink('recent'))  print ($sepchar);
-                if(tpl_actionlink('index'))   print ($sepchar);
+                tpl_actionlink('admin');
+                tpl_actionlink('profile');
+                tpl_actionlink('recent');
+                tpl_actionlink('index');
                 tpl_actionlink('login');
-                if(tpl_getConf('sidebar') == 'none') {
-                  print ($sepchar);
-                  tpl_searchform();
-                }
+                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
                 break;
             }
           ?>
@@ -200,7 +194,6 @@ $sepchar = tpl_getConf('sepchar');
               break;
             case('links'):
               tpl_actionlink('edit');
-              print ($sepchar);
               tpl_actionlink('history');
               break;
           }
@@ -216,7 +209,7 @@ $sepchar = tpl_getConf('sepchar');
               tpl_button('top');
               break;
             case('links'):
-              if(tpl_actionlink('subscription')) print ($sepchar);
+              tpl_actionlink('subscription');
               tpl_actionlink('top');
               break;
           }

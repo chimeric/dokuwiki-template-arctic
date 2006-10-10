@@ -148,8 +148,15 @@ div.dokuwiki h1 a {
 }
 
 div.dokuwiki a.action {
-  font-size: 80%;
   color: __extern__;
+}
+
+div.dokuwiki .bar a.action {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+  height: 24px;
+  padding-top: 2px;
+  float: left;
 }
 
 div.dokuwiki a.urlextern{

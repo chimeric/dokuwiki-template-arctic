@@ -14,7 +14,6 @@ $conf['group_sidebar']            = 1;                      // let groups have s
 $conf['group_sidebar_namespace']  = 'groups';               // namespace to look for groups-namespaces
 $conf['namespace_sidebar']        = 1;                      // enable/disable namespace-sidebars
 $conf['breadcrumbs']              = 'top';                  // were to show trace (top|sidebar|both)
-$conf['sepchar']                  = '&nbsp;&middot;&nbsp;'; // string to seperate the topbar-links
 $conf['wiki_actionlinks']         = 'links';                // use buttons instead of links
 $conf['sidebar_order']            = 'U-G-N-M';              // define the order of the sidebar
 
