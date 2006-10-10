@@ -105,6 +105,7 @@ div.dokuwiki div.right_sidebar h6
   font-weight: bold;
   padding: 0.1em;
   border: none;
+  margin-bottom: 0.2em;
 }
 
 div.dokuwiki div.left_sidebar h1,
@@ -155,7 +156,7 @@ div.dokuwiki .bar a.action {
   margin-left: 0.3em;
   margin-right: 0.3em;
   height: 24px;
-  padding-top: 2px;
+  padding-top: 3px;
   float: left;
 }
 
@@ -177,11 +178,6 @@ div.dokuwiki a.nolink {
 /* ------------- Page elements ----------------- */
 div.dokuwiki div.breadcrumbs{
   background: none;
-}
-
-div.dokuwiki div.left_sidebar div.breadcrumbs,
-div.dokuwiki div.right_sidebar div.breadcrumbs {
-  padding-left: 0.5em;
 }
 
 /* general headline setup */
