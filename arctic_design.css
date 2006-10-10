@@ -297,7 +297,7 @@ div.dokuwiki div#bar__top div.ajax_qsearch {
 div.dokuwiki  div.ajax_qsearch strong {
   font-size: 115%;
   background: __background_alt__;
-  padding: 0.1em;
+  padding: 0.2em;
   display: block;
 }
 
