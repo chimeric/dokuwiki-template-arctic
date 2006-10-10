@@ -6,56 +6,53 @@
 
 /* -------------- top row --------------- */
 div.dokuwiki .header {
-  height:__header_height__;
-  border:1px solid __border__;
-  background-color:__header_background__;
-  margin-bottom:0.2em;
+  height: __header_height__;
+  border: 1px solid __border__;
+  background-color: __header_background__;
+  margin-bottom: 0.2em;
 }
 
 div.dokuwiki .pagename {
-  margin:0.2em;
-  font-size:130%;
-  color:__lightgray__;
+  margin: 0.2em;
+  font-size: 130%;
+  color: __lightgray__;
 }
 
 div.dokuwiki .logo {
-  margin:0.2em;
-  font-size:130%;
+  margin: 0.2em;
+  font-size: 130%;
 }
 
 div.dokuwiki .pagename a {
-  color:__pagename_color__ !important;
+  color: __pagename_color__ !important;
 }
 
 div.dokuwiki .logo a {
-  color:__logo_color__ !important;
+  color: __logo_color__ !important;
 }
 
 
 /* ---------------  top and bottom bar ---------------- */
 div.dokuwiki .bar {
-  border-top:1px solid __border__;
-  border-bottom:1px solid __border__;
-  padding-left:0.3em;
-  padding-right:0.3em;
-} 
+  padding: 0.2em;
+  height: 2em;
+}
 
 div.dokuwiki #bar__top {
-  height: 1.9em;
-  background:none;
-  margin-bottom:0.2em;
+  background: none;
+  margin-bottom: 0.2em;
+  display: block;
 }
 
 div.dokuwiki #bar__bottom {
-  height: 1.9em;
-  background:none;
-  margin-top:0.2em;
+  background: none;
+  margin-top: 0.2em;
 }
 
 /* ------------- File Metadata ----------------------- */
 div.dokuwiki div.meta {
-  padding-left:0.5em;
-  padding-right:0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 /* 
