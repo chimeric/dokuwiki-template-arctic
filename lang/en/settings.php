@@ -9,7 +9,6 @@ $lang['sidebar']                  = "sidebar";
 $lang['pagename']                 = "pagename to use for sidebars";
 $lang['breadcrumbs']              = "breadcrumbs setup";
 $lang['wiki_actionlinks']         = "actionlink style";
-$lang['sepchar']                  = "actionlink separator";
 $lang['user_sidebar']             = "enable/disable per user sidebars";
 $lang['user_sidebar_namespace']   = "namespace for user sidebars";
 $lang['group_sidebar']            = "enable/disable per group sidebars";
