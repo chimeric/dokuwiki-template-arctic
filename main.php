@@ -115,7 +115,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php if(tpl_getConf('sidebar') == 'left') { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
 
         <div class="left_sidebar">
           <?php tpl_searchform() ?>
@@ -138,7 +138,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       <?php } ?>
 
     <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
 
         <div class="left_page">
           <!-- wikipage start -->
