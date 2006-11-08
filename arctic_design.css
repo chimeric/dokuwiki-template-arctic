@@ -242,23 +242,12 @@ div.dokuwiki .bar input.button {
 
 /* ---------- table of contents ------------------- */
 div.dokuwiki div.toc {
+  margin-top: 1.8em;
   width: 20em;
 }
 
 div.dokuwiki div.tocheader {
-  border-color: __border__;
-}
-
-div.dokuwiki div.tocheader img {
-  margin-top: 0.6em;
-}
-
-div.dokuwiki #toc__inside {
-  border-color:__border__;
-}
-
-div.dokuwiki a.toc:hover {
-  color: __extern__;
+  line-height: 110%;
 }
 
 /* ---------- AJAX quicksearch ----------- */
