@@ -9,9 +9,9 @@
 $conf['sidebar']                  = 'left';                 // enable/disable sidebar
 $conf['pagename']                 = 'sidebar';              // the pagename for sidebars inside namespaces
 $conf['user_sidebar']             = 1;                      // let users have their own sidebar
-$conf['user_sidebar_namespace']   = 'users';                // namespace to look for namespace of logged in users
+$conf['user_sidebar_namespace']   = 'user';                 // namespace to look for namespace of logged in users
 $conf['group_sidebar']            = 1;                      // let groups have shared sidebars
-$conf['group_sidebar_namespace']  = 'groups';               // namespace to look for groups-namespaces
+$conf['group_sidebar_namespace']  = 'group';                // namespace to look for groups-namespaces
 $conf['namespace_sidebar']        = 1;                      // enable/disable namespace-sidebars
 $conf['breadcrumbs']              = 'top';                  // were to show trace (top|sidebar|both)
 $conf['wiki_actionlinks']         = 'links';                // use buttons instead of links
