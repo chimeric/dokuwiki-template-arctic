@@ -121,12 +121,14 @@ div.dokuwiki div.right_sidebar ul
 	margin-top: 0;
 }
 
+div.dokuwiki div.left_sidebar div.t_sidebar,
 div.dokuwiki div.left_sidebar div.i_sidebar,
 div.dokuwiki div.left_sidebar div.m_sidebar,
 div.dokuwiki div.left_sidebar div.u_sidebar,
 div.dokuwiki div.left_sidebar div.g_sidebar,
 div.dokuwiki div.left_sidebar div.ns_sidebar,
 div.dokuwiki div.left_sidebar div.bc_sidebar,
+div.dokuwiki div.right_sidebar div.t_sidebar,
 div.dokuwiki div.right_sidebar div.i_sidebar,
 div.dokuwiki div.right_sidebar div.m_sidebar,
 div.dokuwiki div.right_sidebar div.u_sidebar,
@@ -246,8 +248,25 @@ div.dokuwiki div.toc {
   width: 20em;
 }
 
+div.dokuwiki div.t_sidebar div.toc {
+  margin: 0;
+  float: none;
+  width: 100%;
+}
+
 div.dokuwiki div.tocheader {
   line-height: 110%;
+}
+
+div.dokuwiki div.t_sidebar div.tocheader {
+  font-size: 120%;
+  line-height: 140%;
+  border: none;
+}
+
+div.dokuwiki div.t_sidebar div#toc__inside {
+  border: none;
+  padding: 0;
 }
 
 /* ---------- AJAX quicksearch ----------- */

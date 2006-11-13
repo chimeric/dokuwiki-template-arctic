@@ -38,6 +38,16 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   <link rel="shortcut icon" href="<?php echo DOKU_TPL?>images/favicon.ico" />
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
+
+  <?php if(tpl_getConf('toc2sidebar')) { ?>
+  <style type="text/css" media="screen">
+    div.dokuwiki div.left_page div.toc,
+    div.dokuwiki div.right_page div.toc {
+      display: none;
+    }
+  </style>
+  <?php } ?>
+
 </head>
 
 <body>

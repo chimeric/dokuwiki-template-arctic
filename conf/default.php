@@ -8,6 +8,7 @@
 
 $conf['sidebar']                  = 'left';                 // enable/disable sidebar
 $conf['pagename']                 = 'sidebar';              // the pagename for sidebars inside namespaces
+$conf['toc2sidebar']              = 0;                      // moves the TOC to the sidebar
 $conf['user_sidebar']             = 1;                      // let users have their own sidebar
 $conf['user_sidebar_namespace']   = 'user';                 // namespace to look for namespace of logged in users
 $conf['group_sidebar']            = 1;                      // let groups have shared sidebars

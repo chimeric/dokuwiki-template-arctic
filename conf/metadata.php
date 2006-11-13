@@ -8,6 +8,7 @@
 
 $meta['sidebar']                  = array('multichoice', '_choices' => array('left', 'right', 'none'));
 $meta['pagename']                 = array('string', '_pattern' => '#[a-z]*');
+$meta['toc2sidebar']              = array('onoff');
 $meta['breadcrumbs']              = array('multichoice', '_choices' => array('top', 'sidebar', 'both'));
 $meta['wiki_actionlinks']         = array('multichoice', '_choices' => array('links', 'buttons'));
 $meta['user_sidebar']             = array('onoff');

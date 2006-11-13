@@ -7,6 +7,7 @@
 
 $lang['sidebar']                  = "sidebar";
 $lang['pagename']                 = "pagename to use for sidebars";
+$lang['toc2sidebar']              = "show TOC inside the sidebar";
 $lang['breadcrumbs']              = "breadcrumbs setup";
 $lang['wiki_actionlinks']         = "actionlink style";
 $lang['user_sidebar']             = "enable/disable per user sidebars";
