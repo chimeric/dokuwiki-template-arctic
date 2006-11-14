@@ -15,5 +15,5 @@ $lang['user_sidebar_namespace']   = "namespace for user sidebars";
 $lang['group_sidebar']            = "enable/disable per group sidebars";
 $lang['group_sidebar_namespace']  = "namespace for group sidebars";
 $lang['namespace_sidebar']        = "enable/disable namespace sidebars";
-$lang['sidebar_order']            = "sidebar order (M=main, U=user, G=group, N=namespace)";
+$lang['sidebar_order']            = "sidebar order (M=main, T=toc, U=user, G=group, N=namespace)";
 ?>

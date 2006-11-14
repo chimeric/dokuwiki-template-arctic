@@ -16,7 +16,10 @@ $meta['user_sidebar_namespace']   = array('string', '_pattern' => '#^[a-z:]*#');
 $meta['group_sidebar']            = array('onoff');
 $meta['group_sidebar_namespace']  = array('string', '_pattern' => '#^[a-z:]*#');
 $meta['namespace_sidebar']        = array('onoff');
-$meta['sidebar_order']            = array('multichoice', '_choices' => array('U-G-N-M','M-N-U-G','N-M-U-G'));
+$meta['sidebar_order']            = array('multichoice', '_choices' => array(
+                                                                        'T-U-G-N-M','M-N-T-U-G','N-M-U-G-T',
+                                                                        'T-N-M-U-G','N-M-T-U-G','U-G-T-N-M'
+                                                                        ));
 
 //Setup vim: ts=2 sw=2:
 ?>

@@ -33,9 +33,9 @@ function tpl_sidebar() {
         $meta = p_get_metadata($svID);
         $toc  = $meta['description']['tableofcontents'];
         if(count($toc) >= 3) {
-            print '<div class="t_sidebar">' . DOKU_LF;
-            p_toc_xhtml($toc);
-            print '</div>' . DOKU_LF;
+            $out['T'] .= '<div class="t_sidebar">' . DOKU_LF;
+            $out['T'] .= p_toc_xhtml($toc);
+            $out['T'] .= '</div>' . DOKU_LF;
         }
     }
 
@@ -142,7 +142,7 @@ function p_toc_xhtml($toc) {
     $out .= html_buildlist($toc,'toc','_tocitem');
     $out .= '</div>'.DOKU_LF.'</div>'.DOKU_LF;
 
-    print ($out);
+    return ($out);
 }
 
 /**
