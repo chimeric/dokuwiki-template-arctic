@@ -98,8 +98,7 @@ div.dokuwiki div.right_sidebar h2,
 div.dokuwiki div.right_sidebar h3,
 div.dokuwiki div.right_sidebar h4,
 div.dokuwiki div.right_sidebar h5,
-div.dokuwiki div.right_sidebar h6 
-{
+div.dokuwiki div.right_sidebar h6 {
   font-size: 100%;
   font-family: Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -109,15 +108,18 @@ div.dokuwiki div.right_sidebar h6
 }
 
 div.dokuwiki div.left_sidebar h1,
-div.dokuwiki div.right_sidebar h1
-{
+div.dokuwiki div.right_sidebar h1 {
   background: __background_alt__;
   padding-left: 0.2em;
 }
 
+div.dokuwiki div.left_sidebar div.level2,
+div.dokuwiki div.right_sidebar div.level2 {
+  margin-left: 3px;
+}
+
 div.dokuwiki div.left_sidebar ul,
-div.dokuwiki div.right_sidebar ul 
-{
+div.dokuwiki div.right_sidebar ul {
 	margin-top: 0;
 }
 
@@ -178,7 +180,7 @@ div.dokuwiki a.nolink {
 }
 
 /* ------------- Page elements ----------------- */
-div.dokuwiki div.breadcrumbs{
+div.dokuwiki div.breadcrumbs {
   background: none;
 }
 
