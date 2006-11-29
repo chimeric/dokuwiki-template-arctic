@@ -1,6 +1,6 @@
 <?php
 /**
- * language file for configuration manager
+ * english language file for the configuration manager
  * 
  * @author:     Michael Klier <chi@chimeric.de>
  */
