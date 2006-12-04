@@ -10,8 +10,6 @@
 
 if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
 
-#require_once(DOKU_INC.'/inc/parserutils.php');
-
 /**
  * fetches the sidebar-pages and displays the sidebar
  * 
