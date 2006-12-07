@@ -37,7 +37,7 @@ function tpl_sidebar() {
         }
     }
 
-    if(file_exists(wikiFN($mSb))) { 
+    if(@file_exists(wikiFN($mSb)) && auth_quickaclcheck($mSb)) { 
         $out['M'] .= '<div class="m_sidebar">' . DOKU_LF;
         $out['M'] .= '  ' . p_sidebar_xhtml($mSb) . DOKU_LF;
         $out['M'] .= '</div>';
@@ -50,7 +50,7 @@ function tpl_sidebar() {
     if(isset($INFO['userinfo']['name'])) {
         if(tpl_getConf('user_sidebar')) {
             $uSb = $uSbNs . ':' . $_SERVER['REMOTE_USER'] . ':' . $SbPn; 
-            if(file_exists(wikiFN($uSb))) {
+            if(@file_exists(wikiFN($uSb))) {
                 $out['U'] .= '<div class="u_sidebar">' . DOKU_LF;
                 $out['U'] .= '  ' . p_sidebar_xhtml($uSb) . DOKU_LF;
                 $out['U'] .= '</div>' . DOKU_LF;
@@ -59,7 +59,7 @@ function tpl_sidebar() {
         if(tpl_getConf('group_sidebar')) {
             foreach($INFO['userinfo']['grps'] as $grp) {
                 $gSb = $gSbNs.':'.$grp.':'.$SbPn;
-                if(file_exists(wikiFN($gSb))) {
+                if(@file_exists(wikiFN($gSb)) && auth_quickaclcheck($gSb)) {
                     $out['G'] .= '<div class="g_sidebar">' . DOKU_LF;
                     $out['G'] .= '  ' . p_sidebar_xhtml($gSb) . DOKU_LF;
                     $out['G'] .= '</div>' . DOKU_LF;
@@ -76,10 +76,10 @@ function tpl_sidebar() {
             $found = false;
             while(!$found && count($path) > 0) {
                 $nSb   = implode(':', $path).':'.$SbPn;
-                $found = file_exists(wikiFN($nSb));
+                $found = @file_exists(wikiFN($nSb));
                 array_pop($path);
             }
-            if($found) {
+            if($found && auth_quickaclcheck($nSb)) {
                 $out['N'] .= '<div class="ns_sidebar">' . DOKU_LF;
                 $out['N'] .= '  ' . p_sidebar_xhtml($nSb) . DOKU_LF;
                 $out['N'] .= '</div>' . DOKU_LF;
