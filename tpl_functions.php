@@ -37,7 +37,7 @@ function tpl_sidebar() {
         }
     }
 
-    if(@file_exists(wikiFN($mSb)) && auth_quickaclcheck($mSb)) { 
+    if(@file_exists(wikiFN($mSb)) && auth_quickaclcheck($mSb) >= AUTH_READ) { 
         $out['M'] .= '<div class="m_sidebar">' . DOKU_LF;
         $out['M'] .= '  ' . p_sidebar_xhtml($mSb) . DOKU_LF;
         $out['M'] .= '</div>';
@@ -59,7 +59,7 @@ function tpl_sidebar() {
         if(tpl_getConf('group_sidebar')) {
             foreach($INFO['userinfo']['grps'] as $grp) {
                 $gSb = $gSbNs.':'.$grp.':'.$SbPn;
-                if(@file_exists(wikiFN($gSb)) && auth_quickaclcheck($gSb)) {
+                if(@file_exists(wikiFN($gSb)) && auth_quickaclcheck($gSb) >= AUTH_READ) {
                     $out['G'] .= '<div class="g_sidebar">' . DOKU_LF;
                     $out['G'] .= '  ' . p_sidebar_xhtml($gSb) . DOKU_LF;
                     $out['G'] .= '</div>' . DOKU_LF;
@@ -79,7 +79,7 @@ function tpl_sidebar() {
                 $found = @file_exists(wikiFN($nSb));
                 array_pop($path);
             }
-            if($found && auth_quickaclcheck($nSb)) {
+            if($found && auth_quickaclcheck($nSb) >= AUTH_READ) {
                 $out['N'] .= '<div class="ns_sidebar">' . DOKU_LF;
                 $out['N'] .= '  ' . p_sidebar_xhtml($nSb) . DOKU_LF;
                 $out['N'] .= '</div>' . DOKU_LF;
