@@ -1,11 +1,13 @@
 <?php
 /**
  * polish language file for the configuration manager
+ * 
+ *
  */
  
 $lang['sidebar']                  = "położenie bocznego panelu (menu)";
 $lang['pagename']                 = "nazwa strony dla bocznego panelu";
-$conf['toc2sidebar']              = "pokaż TOC (spis treści strony) wewnątrz bocznego panelu"
+$lang['toc2sidebar']              = "pokaż TOC (spis treści strony) wewnątrz bocznego panelu";
 $lang['breadcrumbs']              = "ustawienie położenia śladu";
 $lang['wiki_actionlinks']         = "styl actionlink (linku)";
 $lang['user_sidebar']             = "włącz/wyłącz boczny panel użytkownika";
