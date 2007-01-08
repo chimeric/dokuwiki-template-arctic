@@ -57,6 +57,13 @@ div.dokuwiki div.left_page {
   padding: 2%;
 }
 
+div.dokuwiki div.center_page {
+  text-align: justify;
+  float: left;
+  width: 50%;
+  padding: 2%;
+}
+
 div.footerinc {
   border: 1px solid __border__;
   background-color: __footer_background__;
@@ -265,6 +272,10 @@ div.dokuwiki div.t_sidebar div.tocheader {
   font-size: 120%;
   line-height: 140%;
   border: none;
+}
+
+div.dokuwiki ul.toc {
+  padding-left: 0.5em;
 }
 
 div.dokuwiki div.t_sidebar div#toc__inside {

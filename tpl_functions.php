@@ -1,6 +1,6 @@
 <?php
 /**
- * functions for arctic template
+ * functions for the arctic template
  *
  * License: GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
@@ -11,116 +11,156 @@
 if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
 
 /**
- * fetches the sidebar-pages and displays the sidebar
+ * displays the sidebar
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function tpl_sidebar() {
-    global $conf, $ID, $REV, $INFO, $lang;
-   
-    $out   = array(); 
-    $SbPn  = tpl_getConf('pagename');
-    $uSbNs = tpl_getConf('user_sidebar_namespace');
-    $gSbNs = tpl_getConf('group_sidebar_namespace');
-    $mSb   = $SbPn;
-    
-    $svID  = $ID;
-    $svREV = $REV;
+function tpl_sidebar($pos) {
 
-    if(tpl_getConf('toc2sidebar')) {
-        $meta = p_get_metadata($svID);
-        $toc  = $meta['description']['tableofcontents'];
-        if(count($toc) >= 3) {
-            $out['T'] .= '<div class="t_sidebar">' . DOKU_LF;
-            $out['T'] .= p_toc_xhtml($toc);
-            $out['T'] .= '</div>' . DOKU_LF;
+    $sb_order   = ($pos == 'left') ? explode(',',tpl_getConf('left_sidebar_order')) : explode(',',tpl_getConf('right_sidebar_order'));
+    $sb_content = ($pos == 'left') ? explode(',',tpl_getConf('left_sidebar_content')) : explode(',',tpl_getConf('right_sidebar_content'));
+
+    // process contents by given order
+    foreach($sb_order as $sb) {
+        if(in_array($sb,$sb_content)) {
+            $key = array_search($sb,$sb_content);
+            unset($sb_content[$key]);
+            tpl_sidebar_dispatch($sb,$pos);
         }
     }
 
-    if(@file_exists(wikiFN($mSb)) && auth_quickaclcheck($mSb) >= AUTH_READ) { 
-        $out['M'] .= '<div class="m_sidebar">' . DOKU_LF;
-        $out['M'] .= '  ' . p_sidebar_xhtml($mSb) . DOKU_LF;
-        $out['M'] .= '</div>';
-    } else {
-        print '<div class="i_sidebar">' . DOKU_LF;
-        print '  ' . html_index($svID) . DOKU_LF;
-        print '</div>';
-    }
-
-    if(isset($INFO['userinfo']['name'])) {
-        if(tpl_getConf('user_sidebar')) {
-            $uSb = $uSbNs . ':' . $_SERVER['REMOTE_USER'] . ':' . $SbPn; 
-            if(@file_exists(wikiFN($uSb))) {
-                $out['U'] .= '<div class="u_sidebar">' . DOKU_LF;
-                $out['U'] .= '  ' . p_sidebar_xhtml($uSb) . DOKU_LF;
-                $out['U'] .= '</div>' . DOKU_LF;
-            }
+    // check for left content not specified by order
+    if(is_array($sb_content) && !empty($sb_content) > 0) {
+        foreach($sb_content as $sb) {
+            tpl_sidebar_dispatch($sb,$pos);
         }
-        if(tpl_getConf('group_sidebar')) {
-            foreach($INFO['userinfo']['grps'] as $grp) {
-                $gSb = $gSbNs.':'.$grp.':'.$SbPn;
-                if(@file_exists(wikiFN($gSb)) && auth_quickaclcheck($gSb) >= AUTH_READ) {
-                    $out['G'] .= '<div class="g_sidebar">' . DOKU_LF;
-                    $out['G'] .= '  ' . p_sidebar_xhtml($gSb) . DOKU_LF;
-                    $out['G'] .= '</div>' . DOKU_LF;
-                }
-            }
-        
-        }
-    }
-    
-    if(tpl_getConf('namespace_sidebar')) {
-        if(!preg_match("/".$uSbNs."|".$gSbNs."/", $svID)) {
-            $path  = explode(':', $svID);
-            $nSb   = '';
-            $found = false;
-            while(!$found && count($path) > 0) {
-                $nSb   = implode(':', $path).':'.$SbPn;
-                $found = @file_exists(wikiFN($nSb));
-                array_pop($path);
-            }
-            if($found && auth_quickaclcheck($nSb) >= AUTH_READ) {
-                $out['N'] .= '<div class="ns_sidebar">' . DOKU_LF;
-                $out['N'] .= '  ' . p_sidebar_xhtml($nSb) . DOKU_LF;
-                $out['N'] .= '</div>' . DOKU_LF;
-            }
-        }
-    }
-
-    $ID  = $svID;
-    $REV = $svREV;
-
-    $ORDER = explode('-',tpl_getConf('sidebar_order'));
-    
-    foreach($ORDER as $Sb) {
-        print $out[$Sb] . DOKU_LF;
-    }
-
-    // print breadcrumbs
-    if(tpl_getConf('breadcrumbs') == 'sidebar' or tpl_getConf('breadcrumbs') == 'both') {
-        print '<div class="bc_sidebar">' . DOKU_LF;
-        print '  <h1>'.$lang['breadcrumb'].'</h1>' . DOKU_LF;
-        print '  <div class="breadcrumbs">' . DOKU_LF;
-
-       ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
-
-        print '  </div>' . DOKU_LF;
-        print '</div>' . DOKU_LF;
     }
 }
 
 /**
- * removes the TOC of the sidebar-pages and shows a edit-button if user has enough rights
+ * dispatches the given sidebar string to return the right content
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function tpl_sidebar_dispatch($sb,$pos) {
+    global $lang;
+    global $conf;
+    global $ID;
+    global $REV;
+    global $INFO;
+
+    $svID  = $ID;   // save current ID
+    $svREV = $REV;  // save current REV 
+
+    $pname   = tpl_getConf('pagename');
+
+    switch($sb) {
+
+        case 'main':
+            $main_sb = $pname;
+            if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
+                print '<div class="m_sidebar">' . DOKU_LF;
+                print p_sidebar_xhtml($main_sb) . DOKU_LF;
+                print '</div>' . DOKU_LF;
+            }
+            break;
+
+        case 'namespace':
+            $user_ns = tpl_getConf('user_sidebar_namespace');
+            $group_ns = tpl_getConf('group_sidebar_namespace');
+            if(!preg_match("/".$user_ns."|".$group_ns."/", $svID)) { // skip group/user sidebars and current ID
+                $path  = explode(':', $svID);
+                $ns_sb = '';
+                $found = false;
+                while(!$found && count($path) > 0) {
+                    $ns_sb = implode(':', $path).':'.$pname;
+                    $found = @file_exists(wikiFN($ns_sb));
+                    array_pop($path);
+                }
+                if($found && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
+                    print '<div class="ns_sidebar">' . DOKU_LF;
+                    print p_sidebar_xhtml($ns_sb) . DOKU_LF;
+                    print '</div>' . DOKU_LF;
+                }
+            }
+            break;
+
+        case 'user':
+            if(isset($INFO['userinfo']['name'])) {
+                $user_sb = $user_ns . ':' . $_SERVER['REMOTE_USER'] . ':' . $pname;
+                if(@file_exists(wikiFN($user_sb))) {
+                    print '<div class="u_sidebar">' . DOKU_LF;
+                    print p_sidebar_xhtml($user_sb) . DOKU_LF;
+                    print '</div>';
+                }
+            }
+            break;
+
+        case 'group':
+            $group_ns = tpl_getConf('group_sidebar_namespace');
+            if(isset($INFO['userinfo']['name'])) {
+                foreach($INFO['userinfo']['grps'] as $grp) {
+                    $group_sb = $group_ns.':'.$grp.':'.$pname;
+                    if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck($group_sb) >= AUTH_READ) {
+                        print '<div class="g_sidebar">' . DOKU_LF;
+                        print p_sidebar_xhtml($group_sb) . DOKU_LF;
+                        print '</div>' . DOKU_LF;
+                    }
+                }
+            }
+            break;
+
+        case 'index':
+            print '<div class="i_sidebar">' . DOKU_LF;
+            print '  ' . html_index($svID) . DOKU_LF;
+            print '</div>' . DOKU_LF;
+            break;
+
+        case 'toc':
+            $meta = p_get_metadata($svID);
+            $toc  = $meta['description']['tableofcontents'];
+            if(count($toc) >= 3) {
+                print '<div class="t_sidebar">' . DOKU_LF;
+                print p_toc_xhtml($toc);
+                print '</div>' . DOKU_LF;
+            }
+            break;
+
+        case 'trace':
+            if(tpl_getConf('trace') == 'sidebar' or tpl_getConf('trace') == 'both') {
+                print '<div class="bc_sidebar">' . DOKU_LF;
+                print '  <h1>'.$lang['breadcrumb'].'</h1>' . DOKU_LF;
+                print '  <div class="breadcrumbs">' . DOKU_LF;
+               ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
+                print '  </div>' . DOKU_LF;
+                print '</div>' . DOKU_LF;
+            }
+            break;
+
+        case 'extra':
+            @include(dirname(__FILE__).'/' . $pos .'_sidebar.html');
+            break;
+    }
+
+    // restore ID and REV
+    $ID  = $svID;
+    $REV = $svREV;
+}
+
+/**
+ * removes the TOC of the sidebar pages and 
+ * shows a edit-button if user has enough rights
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_sidebar_xhtml($Sb) {
-    $data = p_wiki_xhtml($Sb,'',false);
-    if(auth_quickaclcheck($Sb) >= AUTH_EDIT) {
-        $data .= '<div class="secedit">'.html_btn('secedit',$Sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
+function p_sidebar_xhtml($sb) {
+    $data = p_wiki_xhtml($sb,'',false);
+    if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
+        $data .= '<div class="secedit">'.html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
     }
     return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
 }
+
 
 /**
  * renders the TOC, copies render_TOC from 

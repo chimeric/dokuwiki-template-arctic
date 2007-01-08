@@ -10,6 +10,7 @@
  *
  * @link   http://wiki.splitbrain.org/wiki:tpl:templates
  * @author Andreas Gohr <andi@splitbrain.org>
+ *
  * additional editing by
  * @author Michael Klier <chi@chimeric.de>
  * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
@@ -39,17 +40,22 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
 
-  <?php if(tpl_getConf('toc2sidebar')) { ?>
+  <?php 
+  if(tpl_getConf('sidebar') != 'none') {
+    $left_content  = explode(',',tpl_getConf('left_sidebar_content'));
+    $right_content = explode(',',tpl_getConf('right_sidebar_content'));
+    if(in_array('toc',$left_content) || in_array('toc',$right_content)) {
+  ?>
   <style type="text/css" media="screen">
     div.dokuwiki div.left_page div.toc,
-    div.dokuwiki div.right_page div.toc {
+    div.dokuwiki div.right_page div.toc,
+    div.dokuwiki div.center_page div.toc {
       display: none;
     }
   </style>
-  <?php } ?>
+  <?php } } ?>
 
 </head>
-
 <body>
 <?php /*old includehook*/ @include(dirname(__FILE__).'/topheader.html')?>
 <div id="wrapper">
@@ -67,7 +73,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         </div>
       </div>
     
-      <?php if(tpl_getConf('breadcrumbs') == 'top' or tpl_getConf('breadcrumbs') == 'both') {?> 
+      <?php if(tpl_getConf('trace') == 'top' or tpl_getConf('trace') == 'both') {?> 
       <div class="breadcrumbs">
         <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
       </div>
@@ -119,65 +125,68 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         </div>
     </div>
 
-    <?php flush()?>
-
     <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
+
+    <?php flush()?>
 
     <?php if(tpl_getConf('sidebar') == 'left') { ?>
 
       <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
-
         <div class="left_sidebar">
           <?php tpl_searchform() ?>
-          <?php tpl_sidebar() ?>
+          <?php tpl_sidebar('left') ?>
         </div>
         <div class="right_page">
-          <!-- wikipage start -->
           <?php tpl_content()?>
-          <!-- wikipage stop -->
         </div>
-
       <?php } else { ?>
-
         <div class="page">
-          <!-- wikipage start -->
           <?php tpl_content()?> 
-          <!-- wikipage stop -->
         </div> 
-
       <?php } ?>
 
     <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
 
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
         <div class="left_page">
-          <!-- wikipage start -->
           <?php tpl_content()?>
-          <!-- wikipage stop -->
         </div>
         <div class="right_sidebar">
           <?php tpl_searchform() ?>
-          <?php tpl_sidebar() ?>
+          <?php tpl_sidebar('right') ?>
         </div>
-
       <?php } else { ?>
-
         <div class="page">
-          <!-- wikipage start -->
           <?php tpl_content()?> 
-          <!-- wikipage stop -->
         </div> 
-
       <?php }?>
+
+    <?php } elseif(tpl_getConf('sidebar') == 'both') { ?>
+
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
+        <div class="left_sidebar">
+          <?php if(tpl_getConf('search') == 'left') tpl_searchform() ?>
+          <?php tpl_sidebar('left') ?>
+        </div>
+        <div class="center_page">
+          <?php tpl_content()?>
+        </div>
+        <div class="right_sidebar">
+          <?php if(tpl_getConf('search') == 'right') tpl_searchform() ?>
+          <?php tpl_sidebar('right') ?>
+        </div>
+      <?php } else { ?>
+        <div class="page">
+          <?php tpl_content()?> 
+        </div> 
+      <?php }?>
+
     <?php } elseif(tpl_getConf('sidebar') == 'none') { ?>
-
       <div class="page">
-      <!-- wikipage start -->
         <?php tpl_content() ?>
-      <!-- wikipage stop -->
       </div>
-
     <?php } ?>
+
       <div class="stylefoot">
         <div class="meta">
           <div class="user">
@@ -228,12 +237,10 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       </div>
     </div>
 
-
   <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
   </div>
 </div>
 
 <div class="no"><?php /* provide DokuWiki housekeeping, required in all templates */ tpl_indexerWebBug()?></div>
-<?php //setup vim: ts=2 sw=2: ?>
 </body>
 </html>
