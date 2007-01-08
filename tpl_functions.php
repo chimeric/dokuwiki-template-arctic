@@ -59,7 +59,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
         case 'main':
             $main_sb = $pname;
             if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
-                print '<div class="m_sidebar">' . DOKU_LF;
+                print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
                 print p_sidebar_xhtml($main_sb) . DOKU_LF;
                 print '</div>' . DOKU_LF;
             }
@@ -78,7 +78,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                     array_pop($path);
                 }
                 if($found && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
-                    print '<div class="ns_sidebar">' . DOKU_LF;
+                    print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($ns_sb) . DOKU_LF;
                     print '</div>' . DOKU_LF;
                 }
@@ -89,7 +89,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(isset($INFO['userinfo']['name'])) {
                 $user_sb = $user_ns . ':' . $_SERVER['REMOTE_USER'] . ':' . $pname;
                 if(@file_exists(wikiFN($user_sb))) {
-                    print '<div class="u_sidebar">' . DOKU_LF;
+                    print '<div class="user_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($user_sb) . DOKU_LF;
                     print '</div>';
                 }
@@ -102,7 +102,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 foreach($INFO['userinfo']['grps'] as $grp) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
                     if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck($group_sb) >= AUTH_READ) {
-                        print '<div class="g_sidebar">' . DOKU_LF;
+                        print '<div class="group_sidebar sidebar_box">' . DOKU_LF;
                         print p_sidebar_xhtml($group_sb) . DOKU_LF;
                         print '</div>' . DOKU_LF;
                     }
@@ -111,7 +111,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'index':
-            print '<div class="i_sidebar">' . DOKU_LF;
+            print '<div class="index_sidebar sidebar_box">' . DOKU_LF;
             print '  ' . html_index($svID) . DOKU_LF;
             print '</div>' . DOKU_LF;
             break;
@@ -120,7 +120,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             $meta = p_get_metadata($svID);
             $toc  = $meta['description']['tableofcontents'];
             if(count($toc) >= 3) {
-                print '<div class="t_sidebar">' . DOKU_LF;
+                print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
                 print p_toc_xhtml($toc);
                 print '</div>' . DOKU_LF;
             }
@@ -128,7 +128,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
 
         case 'trace':
             if(tpl_getConf('trace') == 'sidebar' or tpl_getConf('trace') == 'both') {
-                print '<div class="bc_sidebar">' . DOKU_LF;
+                print '<div class="trace_sidebar sidebar_box">' . DOKU_LF;
                 print '  <h1>'.$lang['breadcrumb'].'</h1>' . DOKU_LF;
                 print '  <div class="breadcrumbs">' . DOKU_LF;
                ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
@@ -138,7 +138,9 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'extra':
+            print '<div class="extra_sidebar sidebar_box">' . DOKU_LF;
             @include(dirname(__FILE__).'/' . $pos .'_sidebar.html');
+            print '</div>' . DOKU_LF;
             break;
     }
 

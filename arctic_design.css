@@ -131,21 +131,7 @@ div.dokuwiki div.right_sidebar ul {
 	margin-top: 0;
 }
 
-div.dokuwiki div.left_sidebar div.t_sidebar,
-div.dokuwiki div.left_sidebar div.i_sidebar,
-div.dokuwiki div.left_sidebar div.m_sidebar,
-div.dokuwiki div.left_sidebar div.u_sidebar,
-div.dokuwiki div.left_sidebar div.g_sidebar,
-div.dokuwiki div.left_sidebar div.ns_sidebar,
-div.dokuwiki div.left_sidebar div.bc_sidebar,
-div.dokuwiki div.right_sidebar div.t_sidebar,
-div.dokuwiki div.right_sidebar div.i_sidebar,
-div.dokuwiki div.right_sidebar div.m_sidebar,
-div.dokuwiki div.right_sidebar div.u_sidebar,
-div.dokuwiki div.right_sidebar div.g_sidebar,
-div.dokuwiki div.right_sidebar div.ns_sidebar,
-div.dokuwiki div.right_sidebar div.bc_sidebar
-{
+div.dokuwiki div.sidebar_box {
 	border: 1px solid __border__;
 	margin-bottom: 0.2em;
   padding: 0.3em;
@@ -258,7 +244,7 @@ div.dokuwiki div.toc {
   width: 20em;
 }
 
-div.dokuwiki div.t_sidebar div.toc {
+div.dokuwiki div.toc_sidebar div.toc {
   margin: 0;
   float: none;
   width: 100%;
@@ -268,7 +254,7 @@ div.dokuwiki div.tocheader {
   line-height: 110%;
 }
 
-div.dokuwiki div.t_sidebar div.tocheader {
+div.dokuwiki div.toc_sidebar div.tocheader {
   font-size: 120%;
   line-height: 140%;
   border: none;
@@ -278,7 +264,7 @@ div.dokuwiki ul.toc {
   padding-left: 0.5em;
 }
 
-div.dokuwiki div.t_sidebar div#toc__inside {
+div.dokuwiki div.toc_sidebar div#toc__inside {
   border: none;
   padding: 0;
 }
