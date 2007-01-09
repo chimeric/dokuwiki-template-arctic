@@ -86,6 +86,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'user':
+            $user_ns = tpl_getConf('user_sidebar_namespace');
             if(isset($INFO['userinfo']['name'])) {
                 $user_sb = $user_ns . ':' . $_SERVER['REMOTE_USER'] . ':' . $pname;
                 if(@file_exists(wikiFN($user_sb))) {
