@@ -5,7 +5,6 @@
 
 $lang['sidebar']                  = "emplacement des barres d'outil";
 $lang['pagename']                 = "nom du fichier contenant la barre d'outils";
-$lang['toc2sidebar']              = "afficher les TOC dans les barres d'outils";
 $lang['trace']                    = "affichage du chemin parcouru";
 $lang['wiki_actionlinks']         = "style des actionlink";
 $lang['user_sidebar_namespace']   = "nom du fichier contenant la barre d'outils des utilisateurs";
