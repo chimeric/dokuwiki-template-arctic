@@ -1,17 +1,15 @@
 <?php
 /**
- * functions for the arctic template
+ * DokuWiki Template Arctic Functions
  *
- * License: GPL 2 (http://www.gnu.org/licenses/gpl.html)
- *
- * @author:         Michael Klier <chi@chimeric.de>
- * @homepage:       http://www.chimeric.de
+ * @license GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author  Michael Klier <chi@chimeric.de>
  */
 
 if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
 
 /**
- * displays the sidebar
+ * Prints the sidebars
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
@@ -38,7 +36,7 @@ function tpl_sidebar($pos) {
 }
 
 /**
- * dispatches the given sidebar string to return the right content
+ * Dispatches the given sidebar type to return the right content
  *
  * @author Michael Klier <chi@chimeric.de>
  */
@@ -151,8 +149,8 @@ function tpl_sidebar_dispatch($sb,$pos) {
 }
 
 /**
- * removes the TOC of the sidebar pages and 
- * shows a edit-button if user has enough rights
+ * Removes the TOC of the sidebar pages and 
+ * shows a edit button if the user has enough rights
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
@@ -166,8 +164,9 @@ function p_sidebar_xhtml($sb) {
 
 
 /**
- * renders the TOC, copies render_TOC from 
- * <dokuwiki>/inc/parser/xhtml.php
+ * Renders the TOC
+ *
+ * copy of render_TOC() located in /inc/parser/xhtml.php
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  */
@@ -187,7 +186,7 @@ function p_toc_xhtml($toc) {
 }
 
 /**
- * callback function for html_buildlist
+ * Callback function for html_buildlist()
  */
 function _tocitem($item) {
     return '<span class="li"><a href="#'.$item['hid'].'" class="toc">'.htmlspecialchars($item['title']).'</a></span>';
