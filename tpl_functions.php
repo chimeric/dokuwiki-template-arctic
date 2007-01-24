@@ -116,6 +116,11 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'toc':
+            $instructions = p_cached_instructions(wikiFN($svID));
+            foreach($instructions as $instruction) {
+                // ~~NOTOC~~ is set - do nothing
+                if($instruction[0] == 'notoc') return;
+            }
             $meta = p_get_metadata($svID);
             $toc  = $meta['description']['tableofcontents'];
             if(count($toc) >= 3) {
@@ -172,6 +177,7 @@ function p_sidebar_xhtml($sb) {
  */
 function p_toc_xhtml($toc) {
     global $lang;
+
 
     $out  = '';
     $out  = '<div class="toc">'.DOKU_LF;
