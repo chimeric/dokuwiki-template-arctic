@@ -116,17 +116,21 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'toc':
-            $instructions = p_cached_instructions(wikiFN($svID));
-            foreach($instructions as $instruction) {
-                // ~~NOTOC~~ is set - do nothing
-                if($instruction[0] == 'notoc') return;
-            }
-            $meta = p_get_metadata($svID);
-            $toc  = $meta['description']['tableofcontents'];
-            if(count($toc) >= 3) {
-                print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
-                print p_toc_xhtml($toc);
-                print '</div>' . DOKU_LF;
+            if(auth_quickaclcheck($svID) >= AUTH_READ) {
+                $instructions = p_cached_instructions(wikiFN($svID));
+                if(!empty($instructions)) {
+                    foreach($instructions as $instruction) {
+                        // ~~NOTOC~~ is set - do nothing
+                        if($instruction[0] == 'notoc') return;
+                    }
+                }
+                $meta = p_get_metadata($svID);
+                $toc  = $meta['description']['tableofcontents'];
+                if(count($toc) >= 3) {
+                    print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
+                    print p_toc_xhtml($toc);
+                    print '</div>' . DOKU_LF;
+                }
             }
             break;
 
