@@ -15,8 +15,8 @@ if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
  */
 function tpl_sidebar($pos) {
 
-    $sb_order   = ($pos == 'left') ? explode(',',tpl_getConf('left_sidebar_order')) : explode(',',tpl_getConf('right_sidebar_order'));
-    $sb_content = ($pos == 'left') ? explode(',',tpl_getConf('left_sidebar_content')) : explode(',',tpl_getConf('right_sidebar_content'));
+    $sb_order   = ($pos == 'left') ? explode(',', tpl_getConf('left_sidebar_order'))   : explode(',', tpl_getConf('right_sidebar_order'));
+    $sb_content = ($pos == 'left') ? explode(',', tpl_getConf('left_sidebar_content')) : explode(',', tpl_getConf('right_sidebar_content'));
 
     // process contents by given order
     foreach($sb_order as $sb) {
@@ -149,6 +149,15 @@ function tpl_sidebar_dispatch($sb,$pos) {
             print '<div class="extra_sidebar sidebar_box">' . DOKU_LF;
             @include(dirname(__FILE__).'/' . $pos .'_sidebar.html');
             print '</div>' . DOKU_LF;
+            break;
+
+        default:
+            // check for user defined sidebars
+            if(@file_exists(DOKU_TPLINC.'sidebars/'.$sb.'/sidebar.php')) {
+                print '<div class="'.$sb.'_sidebar sidebar_box">' . DOKU_LF;
+                @require_once(DOKU_TPLINC.'sidebars/'.$sb.'/sidebar.php');
+                print '</div>' . DOKU_LF;
+            }
             break;
     }
 
