@@ -147,9 +147,10 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
                 print '     <li><div class="li">';
                 tpl_actionlink($action);
-                print '     </div></li>' . DOKU_LF;
+                print '     </li>' . DOKU_LF;
             }
 
+            print '    </ul>' . DOKU_LF;
             print '  </div>' . DOKU_LF;
             print '</div>' . DOKU_LF;
             break;
