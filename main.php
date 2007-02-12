@@ -82,9 +82,9 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
       </div>
 
+      <?php if(!in_array('toolbox',$left_content) && !in_array('toolbox',$right_content)) {?>
       <div class="bar" id="bar__top">
         <div class="bar-left">
-
           <?php 
             switch(tpl_getConf('wiki_actionlinks')) {
               case('buttons'):
@@ -97,10 +97,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
                 break;
             } 
           ?>
-
         </div>
         <div class="bar-right">
-
           <?php
             switch(tpl_getConf('wiki_actionlinks')) {
               case('buttons'):
@@ -121,9 +119,9 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
                 break;
             }
           ?>
-
         </div>
     </div>
+    <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
 
@@ -202,9 +200,9 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php flush()?>
 
+    <?php if(!in_array('toolbox',$left_content) && !in_array('toolbox',$right_content)) {?>
     <div class="bar" id="bar__bottom">
       <div class="bar-left">
-
         <?php 
           switch(tpl_getConf('wiki_actionlinks')) {
             case('buttons'):
@@ -217,10 +215,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
               break;
           }
         ?>
-
       </div>
       <div class="bar-right">
-
         <?php 
           switch(tpl_getConf('wiki_actionlinks')) {
             case('buttons'):
@@ -233,9 +229,9 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
               break;
           }
         ?>
-
       </div>
     </div>
+    <?php } ?>
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
   </div>

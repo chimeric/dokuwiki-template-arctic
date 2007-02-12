@@ -133,6 +133,26 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 }
             }
             break;
+        
+        case 'toolbox':
+            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscription', 'index', 'login');
+
+            print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
+            print '  <div class="level1">' . DOKU_LF;
+            print '    <ul>' . DOKU_LF;
+
+            foreach($actions as $action) {
+                if(!actionOK($action)) continue;
+                if($action == 'admin' && auth_quickaclcheck($svID) != 255) continue;
+                if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
+                print '     <li><div class="li">';
+                tpl_actionlink($action);
+                print '     </li>' . DOKU_LF;
+            }
+
+            print '  </div>' . DOKU_LF;
+            print '</div>' . DOKU_LF;
+            break;
 
         case 'trace':
             if(tpl_getConf('trace') == 'sidebar' or tpl_getConf('trace') == 'both') {
