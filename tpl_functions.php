@@ -8,6 +8,32 @@
 
 if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
 
+// load sidebar contents
+$sbl   = explode(',',tpl_getConf('left_sidebar_content'));
+$sbr   = explode(',',tpl_getConf('right_sidebar_content'));
+$sbpos = tpl_getConf('sidebar');
+
+// set notoc option and toolbar regarding the sitebar setup
+switch($sbpos) {
+  case 'both':
+    $notoc = (in_array('toc',$sbl) || in_array('toc',$sbr)) ? true : false;
+    $toolb = (in_array('toolbox',$sbl) || in_array('toolbox',$sbr)) ? true : false;
+    break;
+  case 'left':
+    $notoc = (in_array('toc',$sbl)) ? true : false;
+    $toolb = (in_array('toolbox',$sbl)) ? true : false;
+    break;
+  case 'right':
+    $notoc = (in_array('toc',$sbr)) ? true : false;
+    $toolb = (in_array('toolbox',$sbr)) ? true : false;
+    break;
+  case 'none':
+    $notoc = false;
+    $toolb = false;
+    break;
+}
+
+
 /**
  * Prints the sidebars
  * 
