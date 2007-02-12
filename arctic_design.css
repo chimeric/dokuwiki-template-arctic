@@ -321,6 +321,7 @@ div.dokuwiki pre.file {
 div.dokuwiki div.toolbox_sidebar ul {
   list-style: none;
   margin: 0;
+  clear: both;
 }
 
 div.dokuwiki div.toolbox_sidebar a.login,
