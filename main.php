@@ -20,6 +20,18 @@
 // must be run from within DokuWiki
 if (!defined('DOKU_INC')) die();
 
+// load sidebar contents
+$sbl = explode(',',tpl_getConf('left_sidebar_content'));
+$sbr = explode(',',tpl_getConf('right_sidebar_content'));
+
+if(tpl_getConf('sidebar') != 'none') {
+    $notoc = (in_array('toc',$sbl) || in_array('toc',$sbr)) ? true : false;
+    $toolb = (in_array('toolbox',$sbl) || in_array('toolbox',$sbr)) ? true : false;
+} else {
+    $notoc = false;
+    $toolb = false;
+}
+
 // include arctic template functions
 require_once(dirname(__FILE__).'/tpl_functions.php');
 ?>
@@ -41,10 +53,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
   <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
 
   <?php 
-  if(tpl_getConf('sidebar') != 'none') {
-    $left_content  = explode(',',tpl_getConf('left_sidebar_content'));
-    $right_content = explode(',',tpl_getConf('right_sidebar_content'));
-    if(in_array('toc',$left_content) || in_array('toc',$right_content)) {
+  if($notoc) {
   ?>
   <style type="text/css" media="screen">
     div.dokuwiki div.left_page div.toc,
@@ -53,7 +62,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       display: none;
     }
   </style>
-  <?php } } ?>
+  <?php } ?>
 
 </head>
 <body>
@@ -82,7 +91,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
       </div>
 
-      <?php if(!in_array('toolbox',$left_content) && !in_array('toolbox',$right_content)) {?>
+      <?php if(!$toolb) {?>
       <div class="bar" id="bar__top">
         <div class="bar-left">
           <?php 
@@ -200,7 +209,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php flush()?>
 
-    <?php if(!in_array('toolbox',$left_content) && !in_array('toolbox',$right_content)) {?>
+    <?php if(!$toolb) {?>
     <div class="bar" id="bar__bottom">
       <div class="bar-left">
         <?php 
