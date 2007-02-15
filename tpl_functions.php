@@ -161,7 +161,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
         
         case 'toolbox':
-            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscription', 'index', 'login');
+            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscription', 'index', 'login', 'profile');
 
             print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
             print '  <div class="level1">' . DOKU_LF;
@@ -173,7 +173,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
                 print '     <li><div class="li">';
                 tpl_actionlink($action);
-                print '     </li>' . DOKU_LF;
+                print '     </div></li>' . DOKU_LF;
             }
 
             print '    </ul>' . DOKU_LF;

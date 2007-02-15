@@ -324,9 +324,13 @@ div.dokuwiki div.toolbox_sidebar ul {
   clear: both;
 }
 
-div.dokuwiki div.toolbox_sidebar a.login,
-div.dokuwiki div.toolbox_sidebar a.logout {
+div.dokuwiki div.toolbox_sidebar a.login {
   background: transparent url(images/tool-login.png) 0px 1px no-repeat;
+  padding: 1px 0px 1px 18px;
+}
+
+div.dokuwiki div.toolbox_sidebar a.logout {
+  background: transparent url(images/tool-logout.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
@@ -370,6 +374,11 @@ div.dokuwiki div.toolbox_sidebar a.unsubscribe {
 
 div.dokuwiki div.toolbox_sidebar a.backlink {
   background: transparent url(images/tool-backlink.png) 0px 1px no-repeat;
+  padding: 1px 0px 1px 18px;
+}
+
+div.dokuwiki div.toolbox_sidebar a.profile {
+  background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
   padding: 1px 0px 1px 18px;
 }
 
