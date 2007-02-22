@@ -122,7 +122,13 @@ div.dokuwiki div.right_sidebar h1 {
 }
 
 div.dokuwiki div.left_sidebar div.level2,
-div.dokuwiki div.right_sidebar div.level2 {
+div.dokuwiki div.right_sidebar div.level2,
+div.dokuwiki div.left_sidebar div.level3,
+div.dokuwiki div.right_sidebar div.level3,
+div.dokuwiki div.left_sidebar div.level4,
+div.dokuwiki div.right_sidebar div.level4,
+div.dokuwiki div.left_sidebar div.level5,
+div.dokuwiki div.right_sidebar div.level5 {
   margin-left: 3px;
 }
 
