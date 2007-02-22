@@ -90,18 +90,12 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'namespace':
-            $user_ns = tpl_getConf('user_sidebar_namespace');
+            $user_ns  = tpl_getConf('user_sidebar_namespace');
             $group_ns = tpl_getConf('group_sidebar_namespace');
             if(!preg_match("/".$user_ns."|".$group_ns."/", $svID)) { // skip group/user sidebars and current ID
-                $path  = explode(':', $svID);
-                $ns_sb = '';
-                $found = false;
-                while(!$found && count($path) > 0) {
-                    $ns_sb = implode(':', $path).':'.$pname;
-                    $found = @file_exists(wikiFN($ns_sb));
-                    array_pop($path);
-                }
-                if($found && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
+                $ns_sb = _getNsSb($svID);
+                echo $ns_sb;
+                if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
                     print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($ns_sb) . DOKU_LF;
                     print '</div>' . DOKU_LF;
@@ -112,12 +106,23 @@ function tpl_sidebar_dispatch($sb,$pos) {
         case 'user':
             $user_ns = tpl_getConf('user_sidebar_namespace');
             if(isset($INFO['userinfo']['name'])) {
-                $user_sb = $user_ns . ':' . $_SERVER['REMOTE_USER'] . ':' . $pname;
+                $user = $_SERVER['REMOTE_USER'];
+                $user_sb = $user_ns . ':' . $user . ':' . $pname;
                 if(@file_exists(wikiFN($user_sb))) {
                     print '<div class="user_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($user_sb) . DOKU_LF;
                     print '</div>';
                 }
+                // check for namespace sidebars in user namespace too
+                if(preg_match('/'.$user_ns.':'.$user.':.*/', $svID)) {
+                    $ns_sb = _getNsSb($svID); 
+                    if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
+                        print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
+                        print p_sidebar_xhtml($ns_sb) . DOKU_LF;
+                        print '</div>' . DOKU_LF;
+                    }
+                }
+
             }
             break;
 
@@ -256,6 +261,27 @@ function p_toc_xhtml($toc) {
  */
 function _tocitem($item) {
     return '<span class="li"><a href="#'.$item['hid'].'" class="toc">'.htmlspecialchars($item['title']).'</a></span>';
+}
+
+/**
+ * searches for namespace sidebars
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function _getNsSb($id) {
+    $pname = tpl_getConf('pagename');
+    $ns_sb = '';
+    $path  = explode(':', $id);
+    $found = false;
+
+    while(count($path) > 0) {
+        $ns_sb = implode(':', $path).':'.$pname;
+        if(@file_exists(wikiFN($ns_sb))) return $ns_sb;
+        array_pop($path);
+    }
+    
+    // nothing found
+    return false;
 }
 
 //Setup vim: ts=4 sw=4:
