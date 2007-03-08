@@ -127,7 +127,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
 
         case 'group':
             $group_ns = tpl_getConf('group_sidebar_namespace');
-            if(isset($INFO['userinfo']['name'])) {
+            if(isset($INFO['userinfo']['name'], $INFO['userinfo']['grps'])) {
                 foreach($INFO['userinfo']['grps'] as $grp) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
                     if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck($group_sb) >= AUTH_READ) {
