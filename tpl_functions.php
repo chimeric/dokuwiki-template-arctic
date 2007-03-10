@@ -115,7 +115,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 // check for namespace sidebars in user namespace too
                 if(preg_match('/'.$user_ns.':'.$user.':.*/', $svID)) {
                     $ns_sb = _getNsSb($svID); 
-                    if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
+                    if($ns_sb && $ns_sb != $user_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
                         print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
                         print p_sidebar_xhtml($ns_sb) . DOKU_LF;
                         print '</div>' . DOKU_LF;
