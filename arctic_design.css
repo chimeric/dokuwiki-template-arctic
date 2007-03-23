@@ -318,62 +318,139 @@ div.dokuwiki div.toolbox_sidebar ul {
   clear: both;
 }
 
-div.dokuwiki div.toolbox_sidebar a.login {
-  background: transparent url(images/tool-login.png) 0px 1px no-repeat;
+div.dokuwiki div.toolbox_sidebar a.login,
+div.dokuwiki div.toolbox_sidebar a.logout,
+div.dokuwiki div.toolbox_sidebar a.index,
+div.dokuwiki div.toolbox_sidebar a.recent,
+div.dokuwiki div.toolbox_sidebar a.create,
+div.dokuwiki div.toolbox_sidebar a.edit,
+div.dokuwiki div.toolbox_sidebar a.source,
+div.dokuwiki div.toolbox_sidebar a.show,
+div.dokuwiki div.toolbox_sidebar a.admin,
+div.dokuwiki div.toolbox_sidebar a.revisions,
+div.dokuwiki div.toolbox_sidebar a.subscribe,
+div.dokuwiki div.toolbox_sidebar a.unsubscribe,
+div.dokuwiki div.toolbox_sidebar a.backlink,
+div.dokuwiki div.toolbox_sidebar a.profile {
   padding: 1px 0px 1px 18px;
 }
 
-div.dokuwiki div.toolbox_sidebar a.logout {
+div.dokuwiki div.toolbox_sidebar a.login {
+  background: transparent url(images/tool-login.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.logout,
+div.dokuwiki div.bar a.logout {
   background: transparent url(images/tool-logout.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.index {
   background: transparent url(images/tool-index.png) 1px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.recent {
   background: transparent url(images/tool-recent.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.create,
 div.dokuwiki div.toolbox_sidebar a.edit {
   background: transparent url(images/tool-edit.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.source,
 div.dokuwiki div.toolbox_sidebar a.show {
   background: transparent url(images/tool-source.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.admin {
   background: transparent url(images/tool-admin.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.revisions {
   background: transparent url(images/tool-revisions.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.subscribe,
 div.dokuwiki div.toolbox_sidebar a.unsubscribe {
   background: transparent url(images/tool-subscribe.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.backlink {
   background: transparent url(images/tool-backlink.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
 }
 
 div.dokuwiki div.toolbox_sidebar a.profile {
   background: transparent url(images/tool-profile.png) 0px 1px no-repeat;
-  padding: 1px 0px 1px 18px;
+}
+
+div.dokuwiki div.bar a.login,
+div.dokuwiki div.bar a.logout,
+div.dokuwiki div.bar a.index,
+div.dokuwiki div.bar a.recent,
+div.dokuwiki div.bar a.create,
+div.dokuwiki div.bar a.edit,
+div.dokuwiki div.bar a.source,
+div.dokuwiki div.bar a.show,
+div.dokuwiki div.bar a.admin,
+div.dokuwiki div.bar a.revisions,
+div.dokuwiki div.bar a.subscribe,
+div.dokuwiki div.bar a.unsubscribe,
+div.dokuwiki div.bar a.backlink,
+div.dokuwiki div.bar a.profile,
+div.dokuwiki div.bar a.top {
+  padding-left: 20px;
+}
+
+div.dokuwiki div.bar a.login {
+  background: transparent url(images/tool-login.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.logout,
+div.dokuwiki div.bar a.logout {
+  background: transparent url(images/tool-logout.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.index {
+  background: transparent url(images/tool-index.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.recent {
+  background: transparent url(images/tool-recent.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.create,
+div.dokuwiki div.bar a.edit {
+  background: transparent url(images/tool-edit.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.source,
+div.dokuwiki div.bar a.show {
+  background: transparent url(images/tool-source.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.admin {
+  background: transparent url(images/tool-admin.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.revisions {
+  background: transparent url(images/tool-revisions.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.subscribe,
+div.dokuwiki div.bar a.unsubscribe {
+  background: transparent url(images/tool-subscribe.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.backlink {
+  background: transparent url(images/tool-backlink.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.profile {
+  background: transparent url(images/tool-profile.png) 0px 5px no-repeat;
+}
+
+div.dokuwiki div.bar a.top {
+  background: transparent url(images/tool-top.png) 0px 5px no-repeat;
 }
 
 /* 
