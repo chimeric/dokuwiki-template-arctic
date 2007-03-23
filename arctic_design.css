@@ -1,11 +1,10 @@
 /**
- * Design Elements - additional  CSS for the arctic-template
+ * Design Elements - additional  CSS for the Arctic template
  *
  * @author Michael Klier <chi@chimeric.de>
  */
 
-/* -------------- general elements --------------- */
-
+/* ----- General Elements ----- */
 body {
   font: __font_size__ Verdana, "Lucida Grande", Lucida, Helvetica, Arial, sans-serif;
   color: __text__;
@@ -25,16 +24,14 @@ div#wrapper {
 div.dokuwiki div.left_sidebar {
   float: left;
   width: 22%;
-  padding-top: 0.2em;
-  padding-right: 0.5em;
+  padding: 0.2em 0.5em 0 0;
   border-right: 1px solid  __border__;
 }
 
 div.dokuwiki div.right_sidebar {
   float: right;
   width: 22%;
-  padding-top: 0.2em;
-  padding-left: 0.5em;
+  padding: 0.2em 0em 0 0.5em;
   border-left: 1px solid __border__;
 }
 
@@ -43,14 +40,8 @@ div.dokuwiki div.page {
   padding-top: 0;
 }
 
+div.dokuwiki div.left_page,
 div.dokuwiki div.right_page {
-  text-align: justify;
-  float: left;
-  width: 72%;
-  padding: 2%;
-}
-
-div.dokuwiki div.left_page {
   text-align: justify;
   float: left;
   width: 72%;
@@ -75,8 +66,7 @@ div.dokuwiki .footerinc a img {
   padding-bottom: __footer_padding__;
 }
 
-/* -------------- the sidebar --------------- */
-
+/* ----- Sidebar -------------- */
 div.dokuwiki div.left_sidebar div.secedit,
 div.dokuwiki div.right_sidebar div.secedit {
     text-align: right;
@@ -111,8 +101,7 @@ div.dokuwiki div.right_sidebar h6 {
   font-weight: bold;
   padding: 0.1em;
   border: none;
-  margin-bottom: 0.2em;
-  margin-left: 0;
+  margin: 0 0 0.2em 0;
 }
 
 div.dokuwiki div.left_sidebar h1,
@@ -143,7 +132,7 @@ div.dokuwiki div.sidebar_box {
   padding: 0.3em;
 }
 
-/* --------------- Links ------------------ */
+/* ----- Links ---------------- */
 div.dokuwiki a:hover {
   color: __extern__;
 }
@@ -157,8 +146,7 @@ div.dokuwiki a.action {
 }
 
 div.dokuwiki .bar a.action {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
+  margin: 0 0.3em 0 0.3em;
   height: 24px;
   padding-top: 3px;
   float: left;
@@ -179,13 +167,17 @@ div.dokuwiki a.nolink {
   color: __headline_color__ !important;
 }
 
-/* ------------- Page elements ----------------- */
+/* ----- Page Elements -------- */
 div.dokuwiki div.breadcrumbs {
   background: none;
 }
 
 /* general headline setup */
-div.dokuwiki h1, div.dokuwiki h2, div.dokuwiki h3, div.dokuwiki h4, div.dokuwiki h5 {
+div.dokuwiki h1, 
+div.dokuwiki h2, 
+div.dokuwiki h3, 
+div.dokuwiki h4, 
+div.dokuwiki h5 {
   color: __headline_color__;
   border-color: __border__;
 }
@@ -197,8 +189,15 @@ div.dokuwiki h3 {font-size: 160%; font-weight: normal;}
 div.dokuwiki h4 {font-size: 140%; font-weight: normal;}
 div.dokuwiki h5 {font-size: 120%; font-weight: bold;}
 
-/* ---------------- forms ------------------------ */
+/* code blocks by indention */
+div.dokuwiki pre.code,
+div.dokuwiki pre.file {
+  width: auto !important;
+  width: 98%;
+  font-size: 100%;
+}
 
+/* ----- Forms ---------------- */
 div.dokuwiki fieldset {
   border-color: __form_border__;
 }
@@ -228,8 +227,7 @@ div.dokuwiki div.right_sidebar form#dw__search input.edit {
   font-size: 100%;
 }
 
-/* --------- buttons ------------------- */
-
+/* Buttons */
 div.dokuwiki input.button, div.dokuwiki button.button{
   border-color: __form_border__;
   font-size: 100%;
@@ -244,7 +242,7 @@ div.dokuwiki .bar input.button {
   height: 24px;
 }
 
-/* ---------- table of contents ------------------- */
+/* ----- Table of Contents ---- */
 div.dokuwiki div.toc {
   margin-top: 1.3em;
   width: 20em;
@@ -275,14 +273,13 @@ div.dokuwiki div.toc_sidebar div#toc__inside {
   padding: 0;
 }
 
-/* ---------- AJAX quicksearch ----------- */
+/* ----- AJAX Quicksearch ----- */
 div.dokuwiki div.left_sidebar div.ajax_qsearch,
 div.dokuwiki div.right_sidebar div.ajax_qsearch {
   position: relative;
   left: 1px;
   top: 2px;
   display: none;
-  background: none;
   background: __background_neu__;
   border-left: none;
   border-top: none;
@@ -290,22 +287,21 @@ div.dokuwiki div.right_sidebar div.ajax_qsearch {
   font-size: 85%;
   float: left;
   width: 96%;
-  margin-top: 0.2em;
-  margin-bottom: 0.5em;
+  margin: 0.2em 0 0.5em 0;
 }
 
 div.dokuwiki div#bar__top div.ajax_qsearch {
   position: absolute;
   right: 100px;;
-  margin-top: 5px;
   width: 200px;
-  opacity: 0.9;
+  font-size: 85%;
   display: none;
   border: 1px solid __border__;
   background: __background_neu__;
   text-align: left;
   padding: 0.2em;
-  font-size: 85%;
+  margin-top: 5px;
+  opacity: 0.9;
 }
 
 div.dokuwiki  div.ajax_qsearch strong {
@@ -315,15 +311,7 @@ div.dokuwiki  div.ajax_qsearch strong {
   display: block;
 }
 
-/* code blocks by indention */
-div.dokuwiki pre.code,
-div.dokuwiki pre.file {
-  width: auto !important;
-  width: 98%;
-  font-size: 100%;
-}
-
-/* ---------- Toolbox ----------- */
+/* ----- Toolbox -------------- */
 div.dokuwiki div.toolbox_sidebar ul {
   list-style: none;
   margin: 0;
