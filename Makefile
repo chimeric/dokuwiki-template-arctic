@@ -86,6 +86,7 @@ IMAGES=$(DIST_DIR)/images/bullet.gif \
 	   $(DIST_DIR)/images/tool-revisions.png \
 	   $(DIST_DIR)/images/tool-source.png \
 	   $(DIST_DIR)/images/tool-subscribe.png \
+	   $(DIST_DIR)/images/tool-top.png \
 	   $(DIST_DIR)/images/urlextern.png \
 	   $(DIST_DIR)/images/windows.gif
 # }}}
