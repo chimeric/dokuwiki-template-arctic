@@ -17,6 +17,7 @@ CSS=$(DIST_DIR)/arctic_design.css \
 	$(DIST_DIR)/arctic_layout.css \
 	$(DIST_DIR)/arctic_media.css \
 	$(DIST_DIR)/arctic_print.css \
+	$(DIST_DIR)/arctic_rtl.css\
 	$(DIST_DIR)/design.css \
 	$(DIST_DIR)/layout.css \
 	$(DIST_DIR)/media.css \
