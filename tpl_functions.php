@@ -84,7 +84,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             $main_sb = $pname;
             if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
                 print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
-                print p_sidebar_xhtml($main_sb) . DOKU_LF;
+                print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
                 print '</div>' . DOKU_LF;
             }
             break;
@@ -96,7 +96,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 $ns_sb = _getNsSb($svID);
                 if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
                     print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
-                    print p_sidebar_xhtml($ns_sb) . DOKU_LF;
+                    print p_sidebar_xhtml($ns_sb,$pos) . DOKU_LF;
                     print '</div>' . DOKU_LF;
                 }
             }
@@ -109,7 +109,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 $user_sb = $user_ns . ':' . $user . ':' . $pname;
                 if(@file_exists(wikiFN($user_sb))) {
                     print '<div class="user_sidebar sidebar_box">' . DOKU_LF;
-                    print p_sidebar_xhtml($user_sb) . DOKU_LF;
+                    print p_sidebar_xhtml($user_sb,$pos) . DOKU_LF;
                     print '</div>';
                 }
                 // check for namespace sidebars in user namespace too
@@ -117,7 +117,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                     $ns_sb = _getNsSb($svID); 
                     if($ns_sb && $ns_sb != $user_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
                         print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
-                        print p_sidebar_xhtml($ns_sb) . DOKU_LF;
+                        print p_sidebar_xhtml($ns_sb,$pos) . DOKU_LF;
                         print '</div>' . DOKU_LF;
                     }
                 }
@@ -132,7 +132,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
                     if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck($group_sb) >= AUTH_READ) {
                         print '<div class="group_sidebar sidebar_box">' . DOKU_LF;
-                        print p_sidebar_xhtml($group_sb) . DOKU_LF;
+                        print p_sidebar_xhtml($group_sb,$pos) . DOKU_LF;
                         print '</div>' . DOKU_LF;
                     }
                 }
@@ -218,15 +218,21 @@ function tpl_sidebar_dispatch($sb,$pos) {
 /**
  * Removes the TOC of the sidebar pages and 
  * shows a edit button if the user has enough rights
+ *
+ * TODO sidebar caching
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_sidebar_xhtml($sb) {
+function p_sidebar_xhtml($sb,$pos) {
     $data = p_wiki_xhtml($sb,'',false);
     if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
         $data .= '<div class="secedit">'.html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
     }
-    return preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
+    // strip TOC
+    $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
+    // replace headline ids for XHTML compliance
+    $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+    return ($data);
 }
 
 /**
