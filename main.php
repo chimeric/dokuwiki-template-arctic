@@ -70,7 +70,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         </div>
       </div>
     
-      <?php if(tpl_getConf('trace') == 'top' or tpl_getConf('trace') == 'both') {?> 
+      <?php if(tpl_getConf('trace')) {?> 
       <div class="breadcrumbs">
         <?php ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();?>
       </div>

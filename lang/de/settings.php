@@ -7,7 +7,7 @@
 
 $lang['sidebar']                        = 'Sidebar Einstellungen';
 $lang['pagename']                       = 'Seitenname der Sidebars';
-$lang['trace']                          = '"Krümelpfad" Einstellungen';
+$lang['trace']                          = '"Krümelpfad" oberhalb der Seite anzeigen';
 $lang['wiki_actionlinks']               = 'Actionlink Darstellung';
 $lang['user_sidebar_namespace']         = 'Namensraum für Benutzer Sidebars';
 $lang['group_sidebar_namespace']        = 'Namesraum für Gruppen Sidebars';
