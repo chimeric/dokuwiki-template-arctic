@@ -33,7 +33,6 @@ switch($sbpos) {
     break;
 }
 
-
 /**
  * Prints the sidebars
  * 
@@ -141,7 +140,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
 
         case 'index':
             print '<div class="index_sidebar sidebar_box">' . DOKU_LF;
-            print '  ' . p_index_xhtml($svID) . DOKU_LF;
+            print '  ' . p_index_xhtml($svID,$pos) . DOKU_LF;
             print '</div>' . DOKU_LF;
             break;
 
@@ -246,10 +245,12 @@ function p_sidebar_xhtml($sb,$pos) {
  *
  * copy of html_index located in /inc/html.php
  *
+ * TODO update to new AJAX index possible?
+ *
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_index_xhtml($ns) {
+function p_index_xhtml($ns,$pos) {
   require_once(DOKU_INC.'inc/search.php');
   global $conf;
   global $ID;
@@ -262,9 +263,9 @@ function p_index_xhtml($ns) {
   }
   $ns  = utf8_encodeFN(str_replace(':','/',$ns));
 
-  // only extract headline
+  // extract only the headline
   preg_match('/<h1>.*?<\/h1>/', p_locale_xhtml('index'), $match);
-  print $match[0];
+  print preg_replace('#<h1(.*?id=")(.*?)(".*?)h1>#', '<h1\1sidebar_'.$pos.'_\2\3h1>', $match[0]);
 
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
