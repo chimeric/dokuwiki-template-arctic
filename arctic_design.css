@@ -44,15 +44,18 @@ div.dokuwiki div.left_page,
 div.dokuwiki div.right_page {
   text-align: justify;
   float: left;
-  width: 72%;
+  width: 72% !important;
+  width: 69%;
   padding: 2%;
 }
 
 div.dokuwiki div.center_page {
   text-align: justify;
   float: left;
-  width: 50%;
-  padding: 2%;
+  width: 49% !important;
+  width: 47%;
+  padding: 2% !important;
+  padding: 1%;
 }
 
 div.footerinc {
