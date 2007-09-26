@@ -100,7 +100,8 @@ LANG=$(DIST_DIR)/lang/de/settings.php \
      $(DIST_DIR)/lang/fr/settings.php \
      $(DIST_DIR)/lang/it/settings.php \
      $(DIST_DIR)/lang/pl/settings.php \
-     $(DIST_DIR)/lang/pt/settings.php
+     $(DIST_DIR)/lang/pt/settings.php \
+     $(DIST_DIR)/lang/ru/settings.php
 # }}}
 
 # {{{ CONF
