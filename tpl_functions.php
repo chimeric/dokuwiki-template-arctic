@@ -129,7 +129,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(isset($INFO['userinfo']['name'], $INFO['userinfo']['grps'])) {
                 foreach($INFO['userinfo']['grps'] as $grp) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
-                    if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck($group_sb) >= AUTH_READ) {
+                    if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck(cleanID($group_sb)) >= AUTH_READ) {
                         print '<div class="group_sidebar sidebar_box">' . DOKU_LF;
                         print p_sidebar_xhtml($group_sb,$pos) . DOKU_LF;
                         print '</div>' . DOKU_LF;
