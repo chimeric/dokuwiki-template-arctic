@@ -189,14 +189,12 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
 
         case 'trace':
-            if(tpl_getConf('trace') == 'sidebar' or tpl_getConf('trace') == 'both') {
-                print '<div class="trace_sidebar sidebar_box">' . DOKU_LF;
-                print '  <h1>'.$lang['breadcrumb'].'</h1>' . DOKU_LF;
-                print '  <div class="breadcrumbs">' . DOKU_LF;
-               ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
-                print '  </div>' . DOKU_LF;
-                print '</div>' . DOKU_LF;
-            }
+            print '<div class="trace_sidebar sidebar_box">' . DOKU_LF;
+            print '  <h1>'.$lang['breadcrumb'].'</h1>' . DOKU_LF;
+            print '  <div class="breadcrumbs">' . DOKU_LF;
+            ($conf['youarehere'] != 1) ? tpl_breadcrumbs() : tpl_youarehere();
+            print '  </div>' . DOKU_LF;
+            print '</div>' . DOKU_LF;
             break;
 
         case 'extra':
