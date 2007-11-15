@@ -133,6 +133,7 @@ div.dokuwiki div.sidebar_box {
 	border: 1px solid __border__;
 	margin-bottom: 0.2em;
   padding: 0.3em;
+  overflow: hidden;
 }
 
 /* ----- Links ---------------- */
