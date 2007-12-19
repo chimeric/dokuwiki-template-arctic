@@ -178,6 +178,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 if(!actionOK($action)) continue;
                 if($action == 'admin' && auth_quickaclcheck($svID) != 255) continue;
                 if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
+                if($action == 'profile' && !isset($_SERVER['REMOTE_USER'])) continue;
                 print '     <li><div class="li">';
                 tpl_actionlink($action);
                 print '     </div></li>' . DOKU_LF;
