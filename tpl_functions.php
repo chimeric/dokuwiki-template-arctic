@@ -148,6 +148,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(auth_quickaclcheck($svID) >= AUTH_READ) {
                 $instructions = p_cached_instructions(wikiFN($svID));
                 if(!empty($instructions)) {
+                    // FIXME - there's another way - read your todo list
                     foreach($instructions as $instruction) {
                         // ~~NOTOC~~ is set - do nothing
                         if($instruction[0] == 'notoc') return;
@@ -176,12 +177,15 @@ function tpl_sidebar_dispatch($sb,$pos) {
 
             foreach($actions as $action) {
                 if(!actionOK($action)) continue;
-                if($action == 'admin' && auth_quickaclcheck($svID) != 255) continue;
-                if($action == 'subscription' && !isset($_SERVER['REMOTE_USER'])) continue;
-                if($action == 'profile' && !isset($_SERVER['REMOTE_USER'])) continue;
+                // start output buffering
+                ob_start();
                 print '     <li><div class="li">';
-                tpl_actionlink($action);
-                print '     </div></li>' . DOKU_LF;
+                if(tpl_actionlink($action)) {
+                    print '     </div></li>';
+                    ob_end_flush();
+                } else {
+                    ob_end_clean();
+                }
             }
 
             print '    </ul>' . DOKU_LF;
