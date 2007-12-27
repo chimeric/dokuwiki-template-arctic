@@ -181,7 +181,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 ob_start();
                 print '     <li><div class="li">';
                 if(tpl_actionlink($action)) {
-                    print '     </div></li>';
+                    print '     </div></li>' . DOKU_LF;
                     ob_end_flush();
                 } else {
                     ob_end_clean();
