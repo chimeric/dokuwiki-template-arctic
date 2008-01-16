@@ -91,7 +91,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
         case 'namespace':
             $user_ns  = tpl_getConf('user_sidebar_namespace');
             $group_ns = tpl_getConf('group_sidebar_namespace');
-            if(!preg_match("/^".$user_ns."|^".$group_ns."/", $svID)) { // skip group/user sidebars and current ID
+            if(!preg_match("/^".$user_ns.":.*?$|^".$group_ns.":.*?$/", $svID)) { // skip group/user sidebars and current ID
                 $ns_sb = _getNsSb($svID);
                 if($ns_sb && auth_quickaclcheck($ns_sb) >= AUTH_READ) {
                     print '<div class="namespace_sidebar sidebar_box">' . DOKU_LF;
