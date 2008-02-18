@@ -94,6 +94,7 @@ IMAGES=$(DIST_DIR)/images/bullet.gif \
 
 # {{{ LANG
 LANG=$(DIST_DIR)/lang/de/settings.php \
+     $(DIST_DIR)/lang/cs/settings.php \
      $(DIST_DIR)/lang/en/settings.php \
      $(DIST_DIR)/lang/eo/settings.php \
      $(DIST_DIR)/lang/es/settings.php \
