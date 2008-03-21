@@ -126,7 +126,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php if(tpl_getConf('sidebar') == 'left') { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'conflict') { ?>
         <div class="left_sidebar">
           <?php tpl_searchform() ?>
           <?php tpl_sidebar('left') ?>
@@ -142,7 +142,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php } elseif(tpl_getConf('sidebar') == 'right') { ?>
 
-      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin') { ?>
+      <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'conflict') { ?>
         <div class="left_page">
           <?php tpl_content()?>
         </div>
