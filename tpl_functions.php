@@ -272,37 +272,10 @@ function p_index_xhtml($ns,$pos) {
 
   $data = array();
   search($data,$conf['datadir'],'search_index',array('ns' => $ns));
-  print html_buildlist($data,'idx','_html_list_index','html_li_index');
-}
 
-/**
- * Index item formatter
- *
- * User function for html_buildlist()
- *
- * @author Andreas Gohr <andi@splitbrain.org>
- * @author Michael Klier <chi@chimeric.de>
- */
-function _html_list_index($item){
-  global $ID;
-  global $conf;
-  $ret = '';
-  $base = ':'.$item['id'];
-  $base = substr($base,strrpos($base,':')+1);
-  if($item['type']=='d'){
-    if(@file_exists(wikiFN($item['id'].':'.$conf['start']))) {
-      $ret .= '<a href="'.wl($item['id'].':'.$conf['start']).'" class="idx_dir">';
-      $ret .= $base;
-      $ret .= '</a>';
-    } else {
-      $ret .= '<a href="'.wl($ID,'idx='.$item['id']).'" class="idx_dir">';
-      $ret .= $base;
-      $ret .= '</a>';
-    }
-  }else{
-    $ret .= html_wikilink(':'.$item['id']);
-  }
-  return $ret;
+  print '<div id="' . $pos . '__index__tree">' . DOKU_LF;
+  print html_buildlist($data,'idx','html_list_index','html_li_index');
+  print '</div>' . DOKU_INC;
 }
 
 /**

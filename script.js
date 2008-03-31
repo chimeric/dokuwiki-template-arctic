@@ -82,6 +82,14 @@ function toggleSbRightToc() {
   }
 }
 
-// add events on init
+// add TOC events
 addInitEvent(addSbLeftTocToggle);
 addInitEvent(addSbRightTocToggle);
+
+// add AJAX index events
+addInitEvent(function(){
+    index.treeattach($('left__index__tree'));
+});
+addInitEvent(function(){
+    index.treeattach($('right__index__tree'));
+});
