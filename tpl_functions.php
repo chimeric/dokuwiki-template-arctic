@@ -264,7 +264,7 @@ function p_index_xhtml($ns,$pos) {
 
   print '<div id="' . $pos . '__index__tree">' . DOKU_LF;
   print html_buildlist($data,'idx','html_list_index','html_li_index');
-  print '</div>' . DOKU_INC;
+  print '</div>' . DOKU_LF;
 }
 
 /**
