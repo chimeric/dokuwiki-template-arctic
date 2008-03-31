@@ -40,18 +40,6 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/meta.html')?>
 
-  <?php 
-  if($notoc) {
-  ?>
-  <style type="text/css" media="screen">
-    div.dokuwiki div.left_page div.toc,
-    div.dokuwiki div.right_page div.toc,
-    div.dokuwiki div.center_page div.toc {
-      display: none;
-    }
-  </style>
-  <?php } ?>
-
 </head>
 <body>
 <?php /*old includehook*/ @include(dirname(__FILE__).'/topheader.html')?>
@@ -132,7 +120,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           <?php tpl_sidebar('left') ?>
         </div>
         <div class="right_page">
-          <?php tpl_content()?>
+          <?php tpl_content(false)?>
         </div>
       <?php } else { ?>
         <div class="page">
@@ -144,7 +132,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
       <?php if($ACT != 'diff' && $ACT != 'edit' && $ACT != 'preview' && $ACT != 'admin' && $ACT != 'conflict') { ?>
         <div class="left_page">
-          <?php tpl_content()?>
+          <?php tpl_content(false)?>
         </div>
         <div class="right_sidebar">
           <?php tpl_searchform() ?>
@@ -164,7 +152,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           <?php tpl_sidebar('left') ?>
         </div>
         <div class="center_page">
-          <?php tpl_content()?>
+          <?php tpl_content(false)?>
         </div>
         <div class="right_sidebar">
           <?php if(tpl_getConf('search') == 'right') tpl_searchform() ?>
