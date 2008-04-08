@@ -120,7 +120,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           <?php tpl_sidebar('left') ?>
         </div>
         <div class="right_page">
-          <?php tpl_content(false)?>
+          <?php ($notoc) ? tpl_content(false) : tpl_content() ?>
         </div>
       <?php } else { ?>
         <div class="page">
@@ -132,7 +132,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
       <?php if(!tpl_sidebar_hide()) { ?>
         <div class="left_page">
-          <?php tpl_content(false)?>
+          <?php ($notoc) ? tpl_content(false) : tpl_content() ?>
         </div>
         <div class="right_sidebar">
           <?php tpl_searchform() ?>
@@ -140,7 +140,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         </div>
       <?php } else { ?>
         <div class="page">
-          <?php tpl_content()?> 
+          <?php tpl_content() ?> 
         </div> 
       <?php }?>
 
@@ -152,7 +152,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           <?php tpl_sidebar('left') ?>
         </div>
         <div class="center_page">
-          <?php tpl_content(false)?>
+          <?php ($notoc) ? tpl_content(false) : tpl_content() ?>
         </div>
         <div class="right_sidebar">
           <?php if(tpl_getConf('search') == 'right') tpl_searchform() ?>
