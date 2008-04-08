@@ -333,7 +333,9 @@ div.dokuwiki div.toolbox_sidebar a.show,
 div.dokuwiki div.toolbox_sidebar a.admin,
 div.dokuwiki div.toolbox_sidebar a.revisions,
 div.dokuwiki div.toolbox_sidebar a.subscribe,
+div.dokuwiki div.toolbox_sidebar a.subscribens,
 div.dokuwiki div.toolbox_sidebar a.unsubscribe,
+div.dokuwiki div.toolbox_sidebar a.unsubscribens,
 div.dokuwiki div.toolbox_sidebar a.backlink,
 div.dokuwiki div.toolbox_sidebar a.profile {
   padding: 1px 0px 1px 18px;
@@ -375,7 +377,9 @@ div.dokuwiki div.toolbox_sidebar a.revisions {
 }
 
 div.dokuwiki div.toolbox_sidebar a.subscribe,
-div.dokuwiki div.toolbox_sidebar a.unsubscribe {
+div.dokuwiki div.toolbox_sidebar a.subscribens,
+div.dokuwiki div.toolbox_sidebar a.unsubscribe,
+div.dokuwiki div.toolbox_sidebar a.unsubscribens {
   background: transparent url(images/tool-subscribe.png) 0px 1px no-repeat;
 }
 
@@ -398,7 +402,9 @@ div.dokuwiki div.bar a.show,
 div.dokuwiki div.bar a.admin,
 div.dokuwiki div.bar a.revisions,
 div.dokuwiki div.bar a.subscribe,
+div.dokuwiki div.bar a.subscribens,
 div.dokuwiki div.bar a.unsubscribe,
+div.dokuwiki div.bar a.unsubscribens,
 div.dokuwiki div.bar a.backlink,
 div.dokuwiki div.bar a.profile,
 div.dokuwiki div.bar a.top {
@@ -441,7 +447,9 @@ div.dokuwiki div.bar a.revisions {
 }
 
 div.dokuwiki div.bar a.subscribe,
-div.dokuwiki div.bar a.unsubscribe {
+div.dokuwiki div.bar a.subscribens,
+div.dokuwiki div.bar a.unsubscribe,
+div.dokuwiki div.bar a.unsubscribens {
   background: transparent url(images/tool-subscribe.png) 0px 5px no-repeat;
 }
 

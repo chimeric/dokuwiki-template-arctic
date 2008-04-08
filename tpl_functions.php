@@ -160,7 +160,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
         
         case 'toolbox':
-            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscription', 'index', 'login', 'profile');
+            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscribe', 'subscribens', 'index', 'login', 'profile');
 
             print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
             print '  <div class="level1">' . DOKU_LF;
