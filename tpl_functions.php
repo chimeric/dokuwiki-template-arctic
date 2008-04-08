@@ -6,7 +6,9 @@
  * @author  Michael Klier <chi@chimeric.de>
  */
 
-if(!defined('DOKU_LF')) define('DOKU_LF',"\n");
+// must be run from within DokuWiki
+if (!defined('DOKU_INC')) die();
+if (!defined('DOKU_LF')) define('DOKU_LF',"\n");
 
 // load sidebar contents
 $sbl   = explode(',',tpl_getConf('left_sidebar_content'));
@@ -286,6 +288,21 @@ function _getNsSb($id) {
     
     // nothing found
     return false;
+}
+
+/**
+ * Checks wether the sidebar should be hidden or not
+ *
+ * @author Michael Klier <chi@chimeric.de>
+ */
+function tpl_sidebar_hide() {
+    global $ACT;
+    $act_hide = array( 'edit', 'diff', 'preview', 'admin', 'conflict', 'draft', 'recover');
+    if(in_array($ACT, $act_hide)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 //Setup vim: ts=4 sw=4:
