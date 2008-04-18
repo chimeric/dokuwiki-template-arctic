@@ -150,8 +150,8 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(auth_quickaclcheck($svID) >= AUTH_READ) {
                 $toc = tpl_toc(true);
                 // replace ids to keep XHTML compliance
-                $toc = preg_replace('/id="(.*?)"/', 'id="sb__' . $pos . '__\1"', $toc);
                 if(!empty($toc)) {
+                    $toc = preg_replace('/id="(.*?)"/', 'id="sb__' . $pos . '__\1"', $toc);
                     print '<div class="toc_sidebar sidebar_box">' . DOKU_LF;
                     print ($toc);
                     print '</div>' . DOKU_LF;
