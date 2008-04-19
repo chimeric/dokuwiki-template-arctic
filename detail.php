@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
 /**
  * DokuWiki Image Detail Template
@@ -12,7 +10,13 @@
  * @link   http://wiki.splitbrain.org/wiki:tpl:templates
  * @author Andreas Gohr <andi@splitbrain.org>
  */
+
+// must be run from within DokuWiki
+if (!defined('DOKU_INC')) die();
+
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $conf['lang']?>" lang="<?php echo $conf['lang']?>" dir="ltr">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -52,7 +56,7 @@
       <dl class="img_tags">
         <?php
           $t = tpl_img_getTag('Date.EarliestTime');
-          if($t) print '<dt>'.$lang['img_date'].':</dt><dd>'.date($conf['dformat'],$t).'</dd>';
+          if($t) print '<dt>'.$lang['img_date'].':</dt><dd>'.strftime($conf['dformat'],$t).'</dd>';
 
           $t = tpl_img_getTag('File.Name');
           if($t) print '<dt>'.$lang['img_fname'].':</dt><dd>'.hsc($t).'</dd>';
