@@ -7,7 +7,7 @@
  */
 
 $meta['sidebar']                  = array('multichoice', '_choices' => array('left', 'right', 'both', 'none'));
-$meta['pagename']                 = array('string', '_pattern' => '#[a-z0-9]*');
+$meta['pagename']                 = array('string', '_pattern' => '#[a-z0-9]*#');
 $meta['trace']                    = array('onoff');
 $meta['wiki_actionlinks']         = array('multichoice', '_choices' => array('links', 'buttons'));
 $meta['user_sidebar_namespace']   = array('string', '_pattern' => '#^[a-z:]*#');
