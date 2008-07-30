@@ -11,6 +11,7 @@ $conf['pagename']                   = 'sidebar';                    // the pagen
 $conf['user_sidebar_namespace']     = 'user';                       // namespace to look for namespace of logged in users
 $conf['group_sidebar_namespace']    = 'group';                      // namespace to look for groups-namespaces
 $conf['trace']                      = 1;                            // show trace at top of the page
+$conf['main_sidebar_allways']		    = 1;														// show main sidebar on all namespaces
 $conf['wiki_actionlinks']           = 'links';                      // use buttons instead of links
 $conf['left_sidebar_content']       = 'index,main,user,group,namespace';  // defines the content of the left sidebar
 $conf['left_sidebar_order']         = 'index,main,namespace,user,group';  // defines the order of the left sidebar content

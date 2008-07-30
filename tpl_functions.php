@@ -77,16 +77,19 @@ function tpl_sidebar_dispatch($sb,$pos) {
     $svID  = $ID;   // save current ID
     $svREV = $REV;  // save current REV 
 
-    $pname   = tpl_getConf('pagename');
+    $pname = tpl_getConf('pagename');
 
     switch($sb) {
 
         case 'main':
             $main_sb = $pname;
             if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
-                print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
-                print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
-                print '</div>' . DOKU_LF;
+                $allways = tpl_getConf('main_sidebar_allways');
+                if($allways or (!$allways && !getNS($ID))) {
+                    print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
+                    print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
+                    print '</div>' . DOKU_LF;
+                }
             }
             break;
 
@@ -305,5 +308,5 @@ function tpl_sidebar_hide() {
     }
 }
 
-//Setup vim: ts=4 sw=4:
+// vim:ts=4:sw=4:et:enc=utf-8:
 ?>
