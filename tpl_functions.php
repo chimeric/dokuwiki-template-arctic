@@ -112,8 +112,9 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 $user = $_SERVER['REMOTE_USER'];
                 $user_sb = $user_ns . ':' . $user . ':' . $pname;
                 if(@file_exists(wikiFN($user_sb))) {
+                    $subst = array('pattern' => array('/@USER@/'), 'replace' => array($user));
                     print '<div class="user_sidebar sidebar_box">' . DOKU_LF;
-                    print p_sidebar_xhtml($user_sb,$pos) . DOKU_LF;
+                    print p_sidebar_xhtml($user_sb,$pos,$subst) . DOKU_LF;
                     print '</div>';
                 }
                 // check for namespace sidebars in user namespace too
@@ -135,8 +136,9 @@ function tpl_sidebar_dispatch($sb,$pos) {
                 foreach($INFO['userinfo']['grps'] as $grp) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
                     if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck(cleanID($group_sb)) >= AUTH_READ) {
+                        $subst = array('pattern' => array('/@GROUP@/'), 'replace' => array($grp));
                         print '<div class="group_sidebar sidebar_box">' . DOKU_LF;
-                        print p_sidebar_xhtml($group_sb,$pos) . DOKU_LF;
+                        print p_sidebar_xhtml($group_sb,$pos,$subst) . DOKU_LF;
                         print '</div>' . DOKU_LF;
                     }
                 }
@@ -225,8 +227,11 @@ function tpl_sidebar_dispatch($sb,$pos) {
  * 
  * @author Michael Klier <chi@chimeric.de>
  */
-function p_sidebar_xhtml($sb,$pos) {
+function p_sidebar_xhtml($sb,$pos,$subst=array()) {
     $data = p_wiki_xhtml($sb,'',false);
+    if(!empty($subst)) {
+        $data = preg_replace($subst['pattern'], $subst['replace'], $data);
+    }
     if(auth_quickaclcheck($sb) >= AUTH_EDIT) {
         $data .= '<div class="secedit">'.html_btn('secedit',$sb,'',array('do'=>'edit','rev'=>'','post')).'</div>';
     }
