@@ -35,7 +35,8 @@ div.dokuwiki .logo a {
 /* ----- Top and Bottom bar --- */
 div.dokuwiki .bar {
   padding: 2px;
-  height: 26px;
+	float: left;
+	width: 99.2%;
 }
 
 div.dokuwiki #bar__top,

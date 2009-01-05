@@ -217,6 +217,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         ?>
       </div>
     </div>
+	<div class="clearer"></div>
     <?php } ?>
 
   <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
