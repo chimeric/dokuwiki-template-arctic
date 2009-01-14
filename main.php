@@ -224,11 +224,11 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     </div>
     <div class="clearer"></div>
 
+    <?php } ?>
+
     <div class="license">
       <?php tpl_license(false)?>
     </div>
-
-    <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
 
