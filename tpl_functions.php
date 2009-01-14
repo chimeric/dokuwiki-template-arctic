@@ -174,10 +174,21 @@ function tpl_sidebar_dispatch($sb,$pos) {
             foreach($actions as $action) {
                 if(!actionOK($action)) continue;
                 // start output buffering
+                if($action == 'edit') {
+                    // check if new page button plugin is available
+                    if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+                        $npb = $npd->html_new_page_button(true);
+                        if($npb) {
+                            print '    <li><div class="li">';
+                            print $npb;
+                            print '</div></li>' . DOKU_LF;
+                        }
+                    }
+                }
                 ob_start();
                 print '     <li><div class="li">';
                 if(tpl_actionlink($action)) {
-                    print '     </div></li>' . DOKU_LF;
+                    print '</div></li>' . DOKU_LF;
                     ob_end_flush();
                 } else {
                     ob_end_clean();

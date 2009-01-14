@@ -70,10 +70,18 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           <?php 
             switch(tpl_getConf('wiki_actionlinks')) {
               case('buttons'):
+			    // check if new page button plugin is available
+                if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+                  $npd->html_new_page_button();
+                }
                 tpl_button('edit');
                 tpl_button('history');     
                 break;
               case('links'):
+			    // check if new page button plugin is available
+                if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+                  $npd->html_new_page_button();
+                }
                 tpl_actionlink('edit');
                 tpl_actionlink('history');
                 break;

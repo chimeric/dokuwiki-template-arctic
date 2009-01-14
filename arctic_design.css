@@ -337,7 +337,8 @@ div.dokuwiki div.toolbox_sidebar a.subscribens,
 div.dokuwiki div.toolbox_sidebar a.unsubscribe,
 div.dokuwiki div.toolbox_sidebar a.unsubscribens,
 div.dokuwiki div.toolbox_sidebar a.backlink,
-div.dokuwiki div.toolbox_sidebar a.profile {
+div.dokuwiki div.toolbox_sidebar a.profile,
+div.dokuwiki div.toolbox_sidebar a.npd {
   padding: 1px 0px 1px 18px;
 }
 
@@ -359,7 +360,8 @@ div.dokuwiki div.toolbox_sidebar a.recent {
 }
 
 div.dokuwiki div.toolbox_sidebar a.create,
-div.dokuwiki div.toolbox_sidebar a.edit {
+div.dokuwiki div.toolbox_sidebar a.edit,
+div.dokuwiki div.toolbox_sidebar a.npd {
   background: transparent url(images/tool-edit.png) 0px 1px no-repeat;
 }
 
@@ -407,7 +409,8 @@ div.dokuwiki div.bar a.unsubscribe,
 div.dokuwiki div.bar a.unsubscribens,
 div.dokuwiki div.bar a.backlink,
 div.dokuwiki div.bar a.profile,
-div.dokuwiki div.bar a.top {
+div.dokuwiki div.bar a.top,
+div.dokuwiki div.bar a.npd {
   padding-left: 20px;
 }
 
@@ -429,7 +432,8 @@ div.dokuwiki div.bar a.recent {
 }
 
 div.dokuwiki div.bar a.create,
-div.dokuwiki div.bar a.edit {
+div.dokuwiki div.bar a.edit,
+div.dokuwiki div.bar a.npd {
   background: transparent url(images/tool-edit.png) 0px 5px no-repeat;
 }
 
@@ -464,7 +468,3 @@ div.dokuwiki div.bar a.profile {
 div.dokuwiki div.bar a.top {
   background: transparent url(images/tool-top.png) 0px 5px no-repeat;
 }
-
-/* 
-setup vim: ts=2 sw=2: 
-*/
