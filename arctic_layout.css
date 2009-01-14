@@ -4,7 +4,6 @@
  * @author Michael Klier <chi@chimeric.de>
  */
 
-/* ----- Header --------------- */
 div.dokuwiki .header {
   height: __header_height__;
   border: 1px solid __border__;
@@ -31,8 +30,6 @@ div.dokuwiki .logo a {
   color: __logo_color__ !important;
 }
 
-
-/* ----- Top and Bottom bar --- */
 div.dokuwiki .bar {
   padding: 2px;
 	float: left;
@@ -44,11 +41,16 @@ div.dokuwiki #bar__bottom {
   background: none;
 }
 
-/* ----- File Metadata -------- */
 div.dokuwiki div.meta {
   padding: 0 0.5em 0 0.5em;
 }
 
-/* 
-setup vim: ts=2 sw=2:
-*/
+div.dokuwiki div.license {
+	text-align: center;
+	margin-top: 0.5em;
+}
+
+div.dokuwiki div.license a.urlextern {
+	background: none;
+	padding-left: 0;
+}

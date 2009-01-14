@@ -8,13 +8,10 @@
  * You should leave the doctype at the very top - It should
  * always be the very first line of a document.
  *
- * @link   http://wiki.splitbrain.org/wiki:tpl:templates
  * @author Andreas Gohr <andi@splitbrain.org>
- *
- * additional editing by
  * @author Michael Klier <chi@chimeric.de>
- * @link   http://chimeric.de/wiki/dokuwiki/templates/arctic/
- *
+ * @link   http://wiki.splitbrain.org/template:arctic
+ * @link   http://chimeric.de/projects/dokuwiki/template/arctic
  */
 
 // must be run from within DokuWiki
@@ -217,10 +214,16 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         ?>
       </div>
     </div>
-	<div class="clearer"></div>
+    <div class="clearer"></div>
+
+    <div class="license">
+      <?php tpl_license(false)?>
+    </div>
+
     <?php } ?>
 
-  <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+    <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>
+
   </div>
 </div>
 
