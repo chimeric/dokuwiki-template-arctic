@@ -8,7 +8,7 @@
 $lang['sidebar']                        = 'Sidebar Einstellungen';
 $lang['pagename']                       = 'Seitenname der Sidebars';
 $lang['trace']                          = '"Krümelpfad" oberhalb der Seite anzeigen';
-$lang['main_sidebar_allways']			= 'Haupt Sidebar in allen Namensräumen anzeigen';
+$lang['main_sidebar_always']			= 'Haupt Sidebar in allen Namensräumen anzeigen';
 $lang['wiki_actionlinks']               = 'Actionlink Darstellung';
 $lang['user_sidebar_namespace']         = 'Namensraum für Benutzer Sidebars';
 $lang['group_sidebar_namespace']        = 'Namesraum für Gruppen Sidebars';

@@ -84,8 +84,8 @@ function tpl_sidebar_dispatch($sb,$pos) {
         case 'main':
             $main_sb = $pname;
             if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
-                $allways = tpl_getConf('main_sidebar_allways');
-                if($allways or (!$allways && !getNS($ID))) {
+                $always = tpl_getConf('main_sidebar_always');
+                if($always or (!$always && !getNS($ID))) {
                     print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
                     print '</div>' . DOKU_LF;

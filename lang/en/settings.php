@@ -8,7 +8,7 @@
 $lang['sidebar']                        = "Sidebar setup";
 $lang['pagename']                       = "Pagename to use for sidebars";
 $lang['trace']                          = "Show trace at the top of the page";
-$lang['main_sidebar_allways']			= "Show main sidebar in every namespace";
+$lang['main_sidebar_always']			= "Show main sidebar in every namespace";
 $lang['wiki_actionlinks']               = "Actionlink style";
 $lang['user_sidebar_namespace']         = "Namespace for user sidebars";
 $lang['group_sidebar_namespace']        = "Namespace for group sidebars";

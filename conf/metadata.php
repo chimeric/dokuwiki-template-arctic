@@ -9,7 +9,7 @@
 $meta['sidebar']                  = array('multichoice', '_choices' => array('left', 'right', 'both', 'none'));
 $meta['pagename']                 = array('string', '_pattern' => '#[a-z0-9]*#');
 $meta['trace']                    = array('onoff');
-$meta['main_sidebar_allways']	    = array('onoff');
+$meta['main_sidebar_always']	    = array('onoff');
 $meta['wiki_actionlinks']         = array('multichoice', '_choices' => array('links', 'buttons'));
 $meta['user_sidebar_namespace']   = array('string', '_pattern' => '#^[a-z:]*#');
 $meta['group_sidebar_namespace']  = array('string', '_pattern' => '#^[a-z:]*#');
