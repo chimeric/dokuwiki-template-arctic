@@ -45,6 +45,21 @@ function tpl_sidebar($pos) {
     $sb_order   = ($pos == 'left') ? explode(',', tpl_getConf('left_sidebar_order'))   : explode(',', tpl_getConf('right_sidebar_order'));
     $sb_content = ($pos == 'left') ? explode(',', tpl_getConf('left_sidebar_content')) : explode(',', tpl_getConf('right_sidebar_content'));
 
+    if(tpl_getConf('closedwiki') && !isset($_SERVER['REMOTE_USER'])) {
+        if(in_array('toolbox', $sb_content)) {
+            print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
+            print '  <div class="level1">' . DOKU_LF;
+            print '    <ul>' . DOKU_LF;
+            print '      <li><div class="li">';
+            tpl_actionlink('login');
+            print '      </div></li>' . DOKU_LF;
+            print '    </ul>' . DOKU_LF;
+            print '  </div>' . DOKU_LF;
+            print '</div>' . DOKU_LF;
+        }
+        return;
+    }
+
     // process contents by given order
     foreach($sb_order as $sb) {
         if(in_array($sb,$sb_content)) {

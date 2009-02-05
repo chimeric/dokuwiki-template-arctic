@@ -68,44 +68,54 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       <div class="bar" id="bar__top">
         <div class="bar-left">
           <?php 
-            switch(tpl_getConf('wiki_actionlinks')) {
-              case('buttons'):
-			    // check if new page button plugin is available
-                if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
-                  $npd->html_new_page_button();
-                }
-                tpl_button('edit');
-                tpl_button('history');     
-                break;
-              case('links'):
-			    // check if new page button plugin is available
-                if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
-                  $npd->html_new_page_button();
-                }
-                tpl_actionlink('edit');
-                tpl_actionlink('history');
-                break;
-            } 
+            if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) {
+                switch(tpl_getConf('wiki_actionlinks')) {
+                  case('buttons'):
+                    // check if new page button plugin is available
+                    if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+                      $npd->html_new_page_button();
+                    }
+                    tpl_button('edit');
+                    tpl_button('history');     
+                    break;
+                  case('links'):
+                    // check if new page button plugin is available
+                    if(!plugin_isdisabled('npd') && ($npd =& plugin_load('helper', 'npd'))) {
+                      $npd->html_new_page_button();
+                    }
+                    tpl_actionlink('edit');
+                    tpl_actionlink('history');
+                    break;
+                } 
+            }
           ?>
         </div>
         <div class="bar-right">
           <?php
             switch(tpl_getConf('wiki_actionlinks')) {
               case('buttons'):
-                tpl_button('admin');
-                tpl_button('profile');
-                tpl_button('recent');
-                tpl_button('index');
-                tpl_button('login');
-                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) {
+                  tpl_button('admin');
+                  tpl_button('profile');
+                  tpl_button('recent');
+                  tpl_button('index');
+                  tpl_button('login');
+                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                } else {
+                  tpl_button('login');
+                }
                 break;
               case('links'):
-                tpl_actionlink('admin');
-                tpl_actionlink('profile');
-                tpl_actionlink('recent');
-                tpl_actionlink('index');
-                tpl_actionlink('login');
-                if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) {
+                  tpl_actionlink('admin');
+                  tpl_actionlink('profile');
+                  tpl_actionlink('recent');
+                  tpl_actionlink('index');
+                  tpl_actionlink('login');
+                  if(tpl_getConf('sidebar') == 'none') tpl_searchform();
+                } else {
+                  tpl_actionlink('login');
+                }
                 break;
             }
           ?>
@@ -191,17 +201,18 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
     <?php flush()?>
 
     <?php if(!$toolb) {?>
+    <?php   if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) { ?>
     <div class="bar" id="bar__bottom">
       <div class="bar-left">
         <?php 
           switch(tpl_getConf('wiki_actionlinks')) {
             case('buttons'):
-              tpl_button('edit');
-              tpl_button('history');
+                tpl_button('edit');
+                tpl_button('history');
               break;
             case('links'):
-              tpl_actionlink('edit');
-              tpl_actionlink('history');
+                tpl_actionlink('edit');
+                tpl_actionlink('history');
               break;
           }
         ?>
@@ -210,20 +221,20 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
         <?php 
           switch(tpl_getConf('wiki_actionlinks')) {
             case('buttons'):
-              tpl_button('subscription');
-              tpl_button('top');
+                tpl_button('subscription');
+                tpl_button('top');
               break;
             case('links'):
-              tpl_actionlink('subscribe');
-              tpl_actionlink('subscribens');
-              tpl_actionlink('top');
+                tpl_actionlink('subscribe');
+                tpl_actionlink('subscribens');
+                tpl_actionlink('top');
               break;
           }
         ?>
       </div>
     </div>
     <div class="clearer"></div>
-
+    <?php   } ?>
     <?php } ?>
 
     <div class="license">
