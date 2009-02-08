@@ -264,7 +264,7 @@ function p_sidebar_xhtml($sb,$pos,$subst=array()) {
     // strip TOC
     $data = preg_replace('/<div class="toc">.*?(<\/div>\n<\/div>)/s', '', $data);
     // replace headline ids for XHTML compliance
-    $data = preg_replace('/(<h.*?><a.*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3', $data);
+    $data = preg_replace('/(<h.*?><a.*?name=")(.*?)(".*?id=")(.*?)(">.*?<\/a><\/h.*?>)/','\1sb_'.$pos.'_\2\3sb_'.$pos.'_\4\5', $data);
     return ($data);
 }
 
