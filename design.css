@@ -2,7 +2,7 @@
  * Design elements for default Template
  *
  * @author Andreas Gohr <andi@splitbrain.org>
- * @author Anika Henke <henke@cosmocode.de>
+ * @author Anika Henke <anika@selfthinker.org>
  */
 
 /* -------------- general elements --------------- */
@@ -171,8 +171,18 @@ div.dokuwiki div#draft__status {
   color: __text_alt__;
 }
 
-/* --------- buttons ------------------- */
+div.dokuwiki div.license {
+  padding: 0.5em;
+  font-size: 90%;
+  text-align: center;
+}
 
+div.dokuwiki form#dw__editform div.license {
+  clear: left;
+  font-size: 90%;
+}
+
+/* --------- buttons ------------------- */
 
 div.dokuwiki input.button,
 div.dokuwiki button.button {
@@ -405,7 +415,7 @@ div.dokuwiki ul {
   line-height: 1.5em;
   list-style-type: square;
   list-style-image: none;
-  margin: 0 0 0.5em 1.5em;
+  margin: 0 0 1em 3.5em;
   color: __text_alt__;
 }
 
@@ -413,9 +423,17 @@ div.dokuwiki ul {
 div.dokuwiki ol {
   line-height: 1.5em;
   list-style-image: none;
-  margin: 0 0 0.5em 1.5em;
+  margin: 0 0 1em 3.5em;
   color: __text_alt__;
   font-weight: bold;
+}
+
+/* no gap in between nested lists */
+div.dokuwiki li ul {
+  margin-bottom: 0;
+}
+div.dokuwiki li ol {
+  margin-bottom: 0;
 }
 
 /* the list items overriding the ul/ol definition */
@@ -577,10 +595,24 @@ div.dokuwiki td.diff-blockheader {
 }
 div.dokuwiki table.diff th {
   border-bottom: 1px solid __border__;
-  font-size: 120%;
+  font-size: 110%;
   width: 50%;
   font-weight: normal;
   text-align: left;
+}
+div.dokuwiki table.diff th a {
+    font-weight: bold;
+}
+div.dokuwiki table.diff th span.user {
+    color: __text__;
+    font-size: 80%;
+}
+div.dokuwiki table.diff th span.sum {
+    font-size: 80%;
+    font-weight: bold;
+}
+div.dokuwiki table.diff th.minor {
+  font-style: italic;
 }
 div.dokuwiki table.diff td {
   font-family: monospace;

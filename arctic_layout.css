@@ -47,6 +47,8 @@ div.dokuwiki div.meta {
 
 div.dokuwiki div.footerinc div.license {
   display: inline;
+  padding: 0;
+  font-size: 100%;
 }
 
 div.dokuwiki div.footerinc div.license img {
