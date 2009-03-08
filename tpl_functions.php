@@ -37,7 +37,7 @@ switch($sbpos) {
 
 // render content
 ob_start();
-($notoc) ? tpl_content(false) : tpl_content;
+($notoc && $ACT != 'admin') ? tpl_content(false) : tpl_content();
 $tpl_content = ob_get_clean();
 
 /**
