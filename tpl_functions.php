@@ -35,6 +35,11 @@ switch($sbpos) {
     break;
 }
 
+// render content
+ob_start();
+($notoc) ? tpl_content(false) : tpl_content;
+$tpl_content = ob_get_clean();
+
 /**
  * Prints the sidebars
  * 
