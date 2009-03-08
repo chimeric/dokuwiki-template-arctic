@@ -253,6 +253,11 @@ div.dokuwiki div.toc {
   width: 20em;
 }
 
+div.dokuwiki div.toc ul.toc {
+  margin: 0 0 0 0.5em;
+  padding-left: 0.2em;
+}
+
 div.dokuwiki div.toc_sidebar div.toc {
   margin: 0;
   float: none;
@@ -267,15 +272,6 @@ div.dokuwiki div.toc_sidebar div.tocheader {
   font-size: 120%;
   line-height: 140%;
   border: none;
-}
-
-div.dokuwiki ul.toc {
-  padding-left: 0.5em;
-}
-
-div.dokuwiki div.toc_sidebar div#toc__inside {
-  border: none;
-  padding: 0;
 }
 
 /* ----- AJAX Quicksearch ----- */
