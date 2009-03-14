@@ -35,21 +35,6 @@ switch($sbpos) {
     break;
 }
 
-// prepare content
-ob_start();
-if($notoc && $ACT != 'admin') { 
-    // FIXME dirty hack to force toc generation for sidebar when include plugin
-    // is present, implement proper sidebar caching to get rid of this
-    if(in_array('include', plugin_list())) {
-        global $_REQUEST;
-        $_REQUEST['purge'] = 1;
-    }
-    tpl_content(false); 
-} else { 
-    tpl_content();
-}
-$tpl_content = ob_get_clean();
-
 /**
  * Prints the sidebars
  * 
