@@ -110,11 +110,7 @@ CONF=$(DIST_DIR)/conf/default.php \
 	 $(DIST_DIR)/conf/metadata.php
 # }}}
 
-# {{{ SIDEBARS
-SIDEBARS=$(DIST_DIR)/sidebars
-# }}}
-
-DIST_FILES= $(DOCS) $(CSS) $(HTML) $(SCRIPT) $(PHP) $(STYLE_INI) $(IMAGES) $(LANG) $(CONF) $(SIDEBARS)
+DIST_FILES= $(DOCS) $(CSS) $(HTML) $(SCRIPT) $(PHP) $(STYLE_INI) $(IMAGES) $(LANG) $(CONF)
 
 dist:
 	tar czf $(DIST_NAME).tgz $(DIST_FILES)
@@ -122,4 +118,4 @@ dist:
 clean: 
 	rm $(DIST_NAME).tgz
 
-# setup vim:ts=4:sw=4:fdm:marker:
+# vim:ts=4:sw=4:fdm=marker:
