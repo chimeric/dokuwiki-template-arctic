@@ -98,7 +98,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
 
         case 'main':
             $main_sb = $pname;
-            if(@file_exists(wikiFN($main_sb)) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
+            if(@page_exists($main_sb) && auth_quickaclcheck($main_sb) >= AUTH_READ) {
                 $always = tpl_getConf('main_sidebar_always');
                 if($always or (!$always && !getNS($ID))) {
                     print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
@@ -136,7 +136,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(isset($INFO['userinfo']['name'])) {
                 $user = $_SERVER['REMOTE_USER'];
                 $user_sb = $user_ns . ':' . $user . ':' . $pname;
-                if(@file_exists(wikiFN($user_sb))) {
+                if(@page_exists($user_sb)) {
                     $subst = array('pattern' => array('/@USER@/'), 'replace' => array($user));
                     print '<div class="user_sidebar sidebar_box">' . DOKU_LF;
                     print p_sidebar_xhtml($user_sb,$pos,$subst) . DOKU_LF;
@@ -160,7 +160,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             if(isset($INFO['userinfo']['name'], $INFO['userinfo']['grps'])) {
                 foreach($INFO['userinfo']['grps'] as $grp) {
                     $group_sb = $group_ns.':'.$grp.':'.$pname;
-                    if(@file_exists(wikiFN($group_sb)) && auth_quickaclcheck(cleanID($group_sb)) >= AUTH_READ) {
+                    if(@page_exists($group_sb) && auth_quickaclcheck(cleanID($group_sb)) >= AUTH_READ) {
                         $subst = array('pattern' => array('/@GROUP@/'), 'replace' => array($grp));
                         print '<div class="group_sidebar sidebar_box">' . DOKU_LF;
                         print p_sidebar_xhtml($group_sb,$pos,$subst) . DOKU_LF;
@@ -326,7 +326,7 @@ function _getNsSb($id) {
 
     while(count($path) > 0) {
         $ns_sb = implode(':', $path).':'.$pname;
-        if(@file_exists(wikiFN($ns_sb))) return $ns_sb;
+        if(@page_exists($ns_sb)) return $ns_sb;
         array_pop($path);
     }
     
