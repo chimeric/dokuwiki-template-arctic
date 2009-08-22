@@ -105,6 +105,16 @@ function tpl_sidebar_dispatch($sb,$pos) {
                     print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
                     print '</div>' . DOKU_LF;
                 }
+            } else {
+                if(@file_exists(DOKU_TPLINC.'lang/'. $conf['lang'].'/nonavigation.txt')) {
+                    $out = p_render('xhtml', p_get_instructions(io_readFile(DOKU_TPLINC.'lang/'.$conf['lang'].'/nosidebar.txt')), $info);
+                } else {
+                    $out = p_render('xhtml', p_get_instructions(io_readFile(DOKU_TPLINC.'lang/en/nosidebar.txt')), $info);
+                }
+                $link = '<a href="' . wl($pname) . '" class="wikilink2">' . $pname . '</a>' . DOKU_LF;
+                print '<div class="main_sidebar sidebar_box">' . DOKU_LF;
+                print str_replace('LINK', $link, $out);
+                print '</div>' . DOKU_LF;
             }
             break;
 
