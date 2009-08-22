@@ -202,6 +202,11 @@ div.dokuwiki pre.file {
   font-size: 100%;
 }
 
+/* Footnotes fix for IE7 */
+* html div.insitu-footnote {
+  margin: 12em 0 0 38em;
+}
+
 /* ----- Forms ---------------- */
 div.dokuwiki fieldset {
   border-color: __form_border__;
