@@ -303,7 +303,6 @@ div.dokuwiki div.right_sidebar div.ajax_qsearch {
   display: none;
   background: __background_neu__;
   font-size: 85%;
-  float: left;
   width: 95.5%;
   margin: 0.2em 0 0.5em 0;
 }
