@@ -96,6 +96,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
               case('buttons'):
                 if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) {
                   tpl_button('admin');
+                  tpl_button('revert');
                   tpl_button('profile');
                   tpl_button('recent');
                   tpl_button('index');
@@ -108,6 +109,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
               case('links'):
                 if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) {
                   tpl_actionlink('admin');
+                  tpl_actionlink('revert');
                   tpl_actionlink('profile');
                   tpl_actionlink('recent');
                   tpl_actionlink('index');

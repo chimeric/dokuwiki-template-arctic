@@ -190,7 +190,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
         
         case 'toolbox':
-            $actions = array('admin', 'edit', 'history', 'recent', 'backlink', 'subscribe', 'subscribens', 'index', 'login', 'profile');
+            $actions = array('admin', 'revert', 'edit', 'history', 'recent', 'backlink', 'subscribe', 'subscribens', 'index', 'login', 'profile');
 
             print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
             print '  <div class="level1">' . DOKU_LF;
@@ -341,7 +341,7 @@ function _getNsSb($id) {
  */
 function tpl_sidebar_hide() {
     global $ACT;
-    $act_hide = array( 'edit', 'diff', 'preview', 'admin', 'conflict', 'draft', 'recover');
+    $act_hide = array( 'edit', 'preview', 'admin', 'conflict', 'draft', 'recover');
     if(in_array($ACT, $act_hide)) {
         return true;
     } else {
