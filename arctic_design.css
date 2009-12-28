@@ -292,22 +292,19 @@ div.dokuwiki div.toc_sidebar div#toc__inside {
 div.dokuwiki div.left_sidebar div.ajax_qsearch,
 div.dokuwiki div.right_sidebar div.ajax_qsearch {
   position: relative;
-  left: 1px;
+  left: 0;
   top: 2px;
   display: none;
   background: __background_neu__;
-  border-left: none;
-  border-top: none;
-  border-right: none;
   font-size: 85%;
   float: left;
-  width: 96%;
+  width: 95.5%;
   margin: 0.2em 0 0.5em 0;
 }
 
 div.dokuwiki div#bar__top div.ajax_qsearch {
   position: absolute;
-  right: 100px;;
+  right: 100px;
   width: 200px;
   font-size: 85%;
   display: none;
