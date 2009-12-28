@@ -235,6 +235,12 @@ div.dokuwiki div.left_sidebar form#dw__search input.edit,
 div.dokuwiki div.right_sidebar form#dw__search input.edit {
   margin-left: 0;
   font-size: 100%;
+  width: 95.5%;
+}
+
+div.dokuwiki div.left_sidebar form#dw__search input.button,
+div.dokuwiki div.right_sidebar form#dw__search input.button {
+  display: none;
 }
 
 /* Buttons */

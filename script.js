@@ -89,7 +89,7 @@ addInitEvent(addSbRightTocToggle);
 // add AJAX index events
 addInitEvent(function(){
     index.treeattach($('left__index__tree'));
-});
-addInitEvent(function(){
     index.treeattach($('right__index__tree'));
 });
+
+// vim:ts=4:sw=4:et:enc=utf-8:
