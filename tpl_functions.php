@@ -105,7 +105,7 @@ function tpl_sidebar_dispatch($sb,$pos) {
                     print p_sidebar_xhtml($main_sb,$pos) . DOKU_LF;
                     print '</div>' . DOKU_LF;
                 }
-            } else {
+            } elseif(!@page_exists($main_sb) && auth_quickaclcheck($main_sb) >= AUTH_CREATE) {
                 if(@file_exists(DOKU_TPLINC.'lang/'. $conf['lang'].'/nonsidebar.txt')) {
                     $out = p_render('xhtml', p_get_instructions(io_readFile(DOKU_TPLINC.'lang/'.$conf['lang'].'/nosidebar.txt')), $info);
                 } else {
