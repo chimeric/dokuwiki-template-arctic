@@ -64,7 +64,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       <?php /*old includehook*/ @include(dirname(__FILE__).'/header.html')?>
       </div>
 
-      <?php if(!$toolb) {?>
+      <?php if(!$toolb) { ?>
+      <?php if(!tpl_getConf('hideactions') || tpl_getConf('hideactions') && isset($_SERVER['REMOTE_USER'])) { ?>
       <div class="bar" id="bar__top">
         <div class="bar-left">
           <?php 
@@ -123,6 +124,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
           ?>
         </div>
     </div>
+    <?php } ?>
     <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/pageheader.html')?>
@@ -202,8 +204,9 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
 
     <?php flush()?>
 
-    <?php if(!$toolb) {?>
-    <?php   if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) { ?>
+    <?php if(!$toolb) { ?>
+    <?php if(!tpl_getConf('hideactions') || tpl_getConf('hideactions') && isset($_SERVER['REMOTE_USER'])) { ?>
+    <?php if(!tpl_getConf('closedwiki') || (tpl_getConf('closedwiki') && isset($_SERVER['REMOTE_USER']))) { ?>
     <div class="bar" id="bar__bottom">
       <div class="bar-left">
         <?php 
@@ -236,7 +239,8 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
       </div>
     </div>
     <div class="clearer"></div>
-    <?php   } ?>
+    <?php } ?>
+    <?php } ?>
     <?php } ?>
 
     <?php /*old includehook*/ @include(dirname(__FILE__).'/footer.html')?>

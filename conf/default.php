@@ -19,6 +19,7 @@ $conf['right_sidebar_content']      = 'main,user,group,namespace';  // defines t
 $conf['right_sidebar_order']        = 'main,namespace,user,group';  // defines the order of the right sidebar content
 $conf['search']                     = 'left';                       // defines the position  of the search form when 2 sidebars are used
 $conf['closedwiki']                 = 0;                            // don't show sidebars for logged out users at all
+$conf['hideactions']                = 0;                            // hide all wiki related actions for non logged in users
 
 //Setup vim: ts=2 sw=2:
 ?>

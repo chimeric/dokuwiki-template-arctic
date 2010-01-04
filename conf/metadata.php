@@ -19,5 +19,6 @@ $meta['right_sidebar_order']      = array('string', '_pattern' => '#[a-z0-9,]*#'
 $meta['right_sidebar_content']    = array('multicheckbox', '_choices' => array('main','toc','user','group','namespace','toolbox','index','trace','extra'));
 $meta['search']                   = array('multichoice', '_choices' => array('left', 'right'));
 $meta['closedwiki']               = array('onoff');
+$meta['hideactions']              = array('onoff');
 //Setup vim:ts=2:sw=2:
 ?>
