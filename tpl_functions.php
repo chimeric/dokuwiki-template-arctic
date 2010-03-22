@@ -73,9 +73,11 @@ function tpl_sidebar_dispatch($sb,$pos) {
     global $ID;
     global $REV;
     global $INFO;
+    global $TOC;
 
     $svID  = $ID;   // save current ID
     $svREV = $REV;  // save current REV 
+    $svTOC = $TOC;  // save current TOC
 
     $pname = tpl_getConf('pagename');
 
@@ -270,9 +272,10 @@ function tpl_sidebar_dispatch($sb,$pos) {
             break;
     }
 
-    // restore ID and REV
+    // restore ID, REV and TOC
     $ID  = $svID;
     $REV = $svREV;
+    $TOC = $svTOC;
 }
 
 /**
