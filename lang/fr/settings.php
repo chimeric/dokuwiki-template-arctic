@@ -18,4 +18,3 @@ $lang['right_sidebar_order']            = "ordre dans le bloc de droite (sépar�
 $lang['right_sidebar_content']          = "contenu du bloc de droite";
 $lang['right_sidebar_content_other']    = "contenu des les autres blocs (séparés par une virgule)";
 $lang['search']                         = "position du champ de recherche (s'applique seulement si 2 blocs sont utilisés)";
-?>

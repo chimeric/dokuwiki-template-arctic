@@ -18,4 +18,3 @@ $lang['right_sidebar_order']            = "Ordo de la dekstraj ligilaroj (aparti
 $lang['right_sidebar_content']          = "Kio estos en la dekstra flanko";
 $lang['right_sidebar_content_other']    = "Aliaj dekstraj ligilaroj (apertite per komoj)";
 $lang['search']                         = "Pozicio de la serĉskatolo (nur se estas ligilaroj en ambaŭ flankoj)";
-?>

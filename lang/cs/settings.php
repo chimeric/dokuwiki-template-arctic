@@ -19,4 +19,3 @@ $lang['right_sidebar_order']            = "Pořadí v levé postranní liště (
 $lang['right_sidebar_content']          = "Obsah levé postranní lišty";
 $lang['right_sidebar_content_other']    = "Další postranní lišty (comma separated)";
 $lang['search']                         = "Umístění vyhledávacího pole (pokud jsou zobrazeny obě postranní lišty)";
-?>

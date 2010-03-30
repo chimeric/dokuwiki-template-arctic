@@ -18,4 +18,3 @@ $lang['right_sidebar_order']            = "Orden de la barra lateral derecha (se
 $lang['right_sidebar_content']          = "Contenido de la barra lateral derecha";
 $lang['right_sidebar_content_other']    = "Otras barras laterales derechas (separadas por comas)";
 $lang['search']                         = "Posición del campo de búsqueda (aplica solamente si se usan 2 barras laterales)";
-?>

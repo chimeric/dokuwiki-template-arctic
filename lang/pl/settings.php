@@ -16,4 +16,3 @@ $lang['right_sidebar_order']            = "kolejność menu (rozdzielone przecin
 $lang['right_sidebar_content']          = "zawartość prawego menu";
 $lang['right_sidebar_content_other']    = "inne menu (rozdzielone przecinkami)";
 $lang['search']                         = "pozycja pola wyszukiwania (ma zastosowanie tylko gdy używane są 2 menu)";
-?>
