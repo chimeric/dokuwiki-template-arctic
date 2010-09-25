@@ -347,6 +347,7 @@ div.dokuwiki div.toolbox_sidebar a.unsubscribens,
 div.dokuwiki div.toolbox_sidebar a.backlink,
 div.dokuwiki div.toolbox_sidebar a.profile,
 div.dokuwiki div.toolbox_sidebar a.revert,
+div.dokuwiki div.toolbox_sidebar a.top,
 div.dokuwiki div.toolbox_sidebar a.npd {
   padding: 1px 0px 1px 18px;
 }
@@ -404,6 +405,10 @@ div.dokuwiki div.toolbox_sidebar a.profile {
 
 div.dokuwiki div.toolbox_sidebar a.revert {
   background: transparent url(images/tool-revert.png) 0px 1px no-repeat;
+}
+
+div.dokuwiki div.toolbox_sidebar a.top {
+  background: transparent url(images/tool-top.png) 0px 5px no-repeat;
 }
 
 div.dokuwiki div.bar a.login,

@@ -207,7 +207,8 @@ function tpl_sidebar_dispatch($sb,$pos) {
                                  'subscribens', 
                                  'index', 
                                  'login', 
-                                 'profile');
+                                 'profile',
+                                 'top');
 
                 print '<div class="toolbox_sidebar sidebar_box">' . DOKU_LF;
                 print '  <div class="level1">' . DOKU_LF;
