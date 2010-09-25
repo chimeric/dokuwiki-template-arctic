@@ -339,7 +339,7 @@ div.dokuwiki div.toolbox_sidebar a.edit,
 div.dokuwiki div.toolbox_sidebar a.source,
 div.dokuwiki div.toolbox_sidebar a.show,
 div.dokuwiki div.toolbox_sidebar a.admin,
-div.dokuwiki div.toolbox_sidebar a.revisions,
+div.dokuwiki div.toolbox_sidebar a.revs,
 div.dokuwiki div.toolbox_sidebar a.subscribe,
 div.dokuwiki div.toolbox_sidebar a.subscribens,
 div.dokuwiki div.toolbox_sidebar a.unsubscribe,
@@ -384,7 +384,7 @@ div.dokuwiki div.toolbox_sidebar a.admin {
   background: transparent url(images/tool-admin.png) 0px 1px no-repeat;
 }
 
-div.dokuwiki div.toolbox_sidebar a.revisions {
+div.dokuwiki div.toolbox_sidebar a.revs {
   background: transparent url(images/tool-revisions.png) 0px 1px no-repeat;
 }
 
@@ -420,7 +420,7 @@ div.dokuwiki div.bar a.edit,
 div.dokuwiki div.bar a.source,
 div.dokuwiki div.bar a.show,
 div.dokuwiki div.bar a.admin,
-div.dokuwiki div.bar a.revisions,
+div.dokuwiki div.bar a.revs,
 div.dokuwiki div.bar a.subscribe,
 div.dokuwiki div.bar a.subscribens,
 div.dokuwiki div.bar a.unsubscribe,
@@ -465,7 +465,7 @@ div.dokuwiki div.bar a.admin {
   background: transparent url(images/tool-admin.png) 0px 5px no-repeat;
 }
 
-div.dokuwiki div.bar a.revisions {
+div.dokuwiki div.bar a.revs {
   background: transparent url(images/tool-revisions.png) 0px 5px no-repeat;
 }
 
