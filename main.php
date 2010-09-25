@@ -230,8 +230,7 @@ require_once(dirname(__FILE__).'/tpl_functions.php');
                 tpl_button('top');
               break;
             case('links'):
-                tpl_actionlink('subscribe');
-                tpl_actionlink('subscribens');
+                tpl_actionlink('subscription');
                 tpl_actionlink('top');
               break;
           }
