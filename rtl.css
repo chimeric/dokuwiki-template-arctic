@@ -1,5 +1,5 @@
 /**
- * Layout and dedsign corrections for right-to-left languages
+ * Layout and design corrections for right-to-left languages
  *
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Dotan Kamber <kamberd@yahoo.com>
@@ -45,6 +45,10 @@ div.meta div.doc {
 
 div.dokuwiki ul,
 div.dokuwiki ol {
+  margin: 0.5em 3.5em 0.5em 0;
+}
+div.dokuwiki li ul,
+div.dokuwiki li ol {
   margin: 0.5em 1.5em 0.5em 0;
 }
 
@@ -113,7 +117,31 @@ div.dokuwiki ul.toc li.clear {
   padding-right: 0.4em;
 }
 
-div.dokuwiki pre {
+div.dokuwiki .code {
+  direction: ltr;
   text-align: left;
+}
+div.dokuwiki blockquote {
+  border-left: 0;
+  padding-left: 0;
+  border-right: 2px solid  __border__;
+  padding-right: 3px;
+}
+
+/* Admin corrections */
+#admin__version {
+    clear: right;
+    float: left;
+}
+
+.dokuwiki ul.admin_tasks {
+    float: right;
+}
+
+.dokuwiki ul.admin_tasks li {
+    padding-left: 0px;
+    padding-right: 35px;
+    background: transparent none no-repeat scroll right 0;
+    text-align: right;
 }
 
